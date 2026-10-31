@@ -196,22 +196,27 @@
     .nav-link:hover {
       color: var(--color-pool-light);
     }
-
-    /* Hero Section */
-    .hero-section {
-      position: relative;
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      padding-top: 7rem;
-      padding-bottom: 4rem;
-    }
-   
-      background-image: linear-gradient(to right, rgba(7, 11, 18, 0.95) 0%, rgba(7, 11, 18, 0.8) 40%, rgba(7, 11, 18, 0) 70%), url('./livio-piscina.jpeg');
+    hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 7rem 8% 4rem 8%;
+    
+    background-image: linear-gradient(to right, 
+        rgba(7, 11, 18, 0.98) 0%, 
+        rgba(7, 11, 18, 0.85) 35%, 
+        rgba(7, 11, 18, 0.3) 65%, 
+        rgba(7, 11, 18, 0) 85%
+    ), url('./livio-piscina.jpeg');
     background-size: cover;
-    background-position: center right;
+    background-position: 80% center; 
     background-repeat: no-repeat;
-    z-index: 1;
+}
+
+[class*="watermark"], [class*="bg-text"], .hero-watermark, .bg-text {
+    display: none !important;
+}
 }
 
 .hero-headline {
