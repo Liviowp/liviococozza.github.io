@@ -196,13 +196,15 @@
     .nav-link:hover {
       color: var(--color-pool-light);
     }
-    hero-section {
+  
+}hero-section {
     position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
     padding: 7rem 8% 4rem 8%;
     
+    /* Foto a destra con sfumatura nera solo sul lato sinistro per far leggere il testo */
     background-image: linear-gradient(to right, 
         rgba(7, 11, 18, 0.98) 0%, 
         rgba(7, 11, 18, 0.85) 35%, 
@@ -210,13 +212,13 @@
         rgba(7, 11, 18, 0) 85%
     ), url('./livio-piscina.jpeg');
     background-size: cover;
-    background-position: 80% center; 
+    background-position: 80% center; /* Anchora la foto e la tua figura verso destra */
     background-repeat: no-repeat;
 }
 
+/* Sicurezza per rimuovere del tutto scritte watermark di sfondo */
 [class*="watermark"], [class*="bg-text"], .hero-watermark, .bg-text {
     display: none !important;
-}
 }
 
 .hero-headline {
