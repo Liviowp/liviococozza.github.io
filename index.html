@@ -206,11 +206,16 @@
       padding-top: 7rem;
       padding-bottom: 4rem;
 
-    background-image: linear-gradient(to right, rgba(7, 11, 18, 1) 0%, rgba(7, 11, 18, 0.8) 40%, rgba(7, 11, 18, 0) 100%), url('./livio-piscina.jpeg');
-    background-size: contain; /* Mantiene le proporzioni reali */
-    background-position: right center; /* La spinge sul bordo destro */
+   background: linear-gradient(to right, 
+        rgba(7, 11, 18, 0.98) 0%, 
+        rgba(7, 11, 18, 0.9) 35%, 
+        rgba(7, 11, 18, 0.4) 55%, 
+        rgba(7, 11, 18, 0) 75%
+    ), url('./livio-piscina.jpeg');
+    
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
-    z-index: 1;
      }
     .hero-bg-img {
       position: absolute;
