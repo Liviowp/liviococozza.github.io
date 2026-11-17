@@ -7,13 +7,10 @@ public_folder: "/"
 
 collections:
   - name: "pagine"
-    label: "Contenuti del Sito"
+    label: "Contenuti"
     files:
-      - label: "Sezione Principale (Hero)"
-        name: "hero"
-        file: "dati.json"
+      - file: "dati.json"
+        label: "Testi Sito"
+        name: "testi"
         fields:
-          - { label: "Sottotitolo Ruoli", name: "sottotitolo", widget: "string" }
-          - { label: "Titolo Grande", name: "titolo_principale", widget: "string" }
-          - { label: "Testo Descrittivo", name: "descrizione_hero", widget: "text" }
-          - { label: "Foto Principale", name: "foto_sfondo", widget: "image" }
+          - { label: "Titolo", name: "titolo", widget: "string" }
