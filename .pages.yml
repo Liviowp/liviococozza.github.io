@@ -1,0 +1,13 @@
+media:
+  input: .
+  output: /
+
+content:
+  - name: pagina_principale
+    label: Sito Principale (index.html)
+    type: file
+    path: index.html
+    fields:
+      - name: body
+        label: Codice Pagina
+        type: code
