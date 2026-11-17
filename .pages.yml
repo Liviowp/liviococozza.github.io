@@ -3,26 +3,11 @@ media:
   output: /
 
 content:
-  - name: homepage
-    label: Contenuti Sito Principale
+  - name: sito_principale
+    label: Modifica Sito (index.html)
     type: file
     path: index.html
     fields:
-      - name: hero_badge
-        label: Testo in alto (Badge Hero)
-        type: text
-      - name: hero_headline
-        label: Titolo Principale (Hero Headline)
-        type: text
-      - name: hero_subtext
-        label: Sottotitolo Hero
-        type: textarea
-      - name: philosophy_quote
-        label: Citazione Filosofia
-        type: textarea
-      - name: philosophy_text
-        label: Testo Filosofia
-        type: textarea
-      - name: email_contact
-        label: Email di Contatto
-        type: text
+      - name: body
+        label: Codice Completo del Sito
+        type: code
