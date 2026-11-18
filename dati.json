@@ -2,5 +2,118 @@
   "sottotitolo": "Water Polo & Swimming Coach • Supervisor • Team Manager • PE Teacher",
   "titolo_principale": "WATER, MOVEMENT, FUTURE.",
   "descrizione_hero": "High-performance coaching, athletic development, organizational leadership and physical education built through 20 years of international experience across 7 countries.",
-  "foto_sfondo": "IMG_0588.JPG"
+  "foto_sfondo": "liviopiscina.jpeg",
+  "filosofia_etichetta": "Coaching & Teaching Philosophy",
+  "filosofia_titolo": "Better Athletes. Better Decisions. Better People.",
+  "filosofia_citazione": "A player cannot make the right decision if he doesn't understand what he is seeing.",
+  "filosofia_testo": "Technique matters. Conditioning matters. But at the highest level, sport becomes a sequence of split-second decisions under physical and cognitive stress. Whether supervising national-level programs or teaching physical education, my vision centers on developing autonomous, resilient individuals.",
+  "foto_filosofia": "244.jpeg",
+  "galleria_etichetta": "Authentic Presence & Expertise",
+  "galleria_titolo": "The 5 Dimensions of the Brand",
+  "galleria_descrizione": "Quiet authority, tactical precision, and human connection across the pool deck, team management, and physical education.",
+  "galleria": [
+    {
+      "etichetta": "Dimension 01 • Tactical Leader",
+      "titolo": "Strategic Game Planning",
+      "descrizione": "Translating complex match dynamics into tactical clarity at the board.",
+      "foto": "555.jpeg",
+      "alt": "Aquatic training environment"
+    },
+    {
+      "etichetta": "Dimension 02 • Head Coach & Supervisor",
+      "titolo": "Poolside Direction",
+      "descrizione": "High standards, continuous oversight, and tactical adjustments in real time.",
+      "foto": "522.jpeg",
+      "alt": "Coach poolside"
+    },
+    {
+      "etichetta": "Dimension 03 • Observation & Vision",
+      "titolo": "Quiet Analysis",
+      "descrizione": "Deep observation of player mechanics, spatial dynamics, and team behavior.",
+      "foto": "244.jpeg",
+      "alt": "Coach observing training"
+    },
+    {
+      "etichetta": "Dimension 04 • Human Connection",
+      "titolo": "Empathy & Mentorship",
+      "descrizione": "Building genuine trust and character development beyond the water.",
+      "foto": "3334.jpeg",
+      "alt": "Coach and athlete"
+    },
+    {
+      "etichetta": "Dimension 05 • PE & Multi-Sport",
+      "titolo": "Physical Education Leadership",
+      "descrizione": "Holistic athletic foundations, outdoor conditioning, and youth empowerment.",
+      "foto": "liviopiscina.jpeg",
+      "alt": "Sports coaching"
+    }
+  ],
+  "esperienze_etichetta": "20+ Years of International Career",
+  "esperienze_titolo": "Verified Experience & Elite Arenas",
+  "esperienze": [
+    {
+      "titolo": "Pro Recco Heritage & Italian System",
+      "sottotitolo": "Tactical Excellence & Elite Traditions",
+      "descrizione": "Rooted in world-class tactical methodology, high-intensity game preparation, and technical development.",
+      "foto": "ewe.jpeg",
+      "alt": "Aquatic sports facility"
+    },
+    {
+      "titolo": "European Tournaments & Competitions",
+      "sottotitolo": "Continental Leagues & Championships",
+      "descrizione": "Navigating top European club environments, Division 1 promotions, and international tournament execution.",
+      "foto": "14.jpeg",
+      "alt": "Outdoor swimming pool"
+    },
+    {
+      "titolo": "Indoor High-Performance Training",
+      "sottotitolo": "Systematic Tactical Codification",
+      "descrizione": "Deep-dive video analysis, positional drills, perimeter rotation, and defensive organization.",
+      "foto": "eeee.jpeg",
+      "alt": "Indoor swimming pool"
+    },
+    {
+      "titolo": "Night Sessions & Relentless Discipline",
+      "sottotitolo": "Under the Lights",
+      "descrizione": "Cultivating mental fortitude, team resilience, and continuous physical preparation under any condition.",
+      "foto": "wwww.jpeg",
+      "alt": "Night training session"
+    }
+  ],
+  "blog_etichetta": "Insights & Publications",
+  "blog_titolo": "Coach’s Blog",
+  "blog_descrizione": "Technical articles, coaching insights and official publications. New articles can be added from the management panel.",
+  "articoli": [],
+  "servizi_etichetta": "Scope of Expertise",
+  "servizi_titolo": "Professional Services",
+  "servizi": [
+    {
+      "titolo": "Water Polo Coaching",
+      "descrizione": "Senior team head coaching, tactical game plans, perimeter/center defense specialization."
+    },
+    {
+      "titolo": "Swimming Coaching",
+      "descrizione": "Biomechanics, stroke refinement, race pacing, and aerobic/anaerobic conditioning programs."
+    },
+    {
+      "titolo": "Aquatic Supervision",
+      "descrizione": "Technical direction for clubs and academies, staff mentorship, and safety/quality standards."
+    },
+    {
+      "titolo": "Team Management",
+      "descrizione": "Roster construction, season planning, tournament travel logistics, and internal culture building."
+    },
+    {
+      "titolo": "Physical Education",
+      "descrizione": "Curriculum development, youth motor skill mastery, outdoor education, and sport ethics."
+    }
+  ],
+  "contatti_etichetta": "Direct Communication",
+  "contatti_titolo": "Initiate Dialogue",
+  "contatti_descrizione": "Whether representing a sporting club, national federation, academic institution, or elite athlete, reach out directly to discuss potential engagements.",
+  "email": "doriamondo@gmail.com",
+  "linkedin": "",
+  "instagram": "",
+  "facebook": "",
+  "footer_testo": "© 2026 Livio Cocozza. All rights reserved. Water Polo & Swimming Coach • Supervisor • Team Manager • PE Teacher."
 }
