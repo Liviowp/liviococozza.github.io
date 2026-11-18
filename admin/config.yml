@@ -1,14 +1,28 @@
+
 backend:
-  name: git-gateway
+  name: github
+  repo: Liviowp/liviococozza.github.io
   branch: main
-media_folder: ""
-public_folder: "/"
+  auth_methods:
+    - token
+
+media_folder: uploads
+public_folder: /uploads
+
 collections:
-  - name: "pagine"
-    label: "Contenuti"
+  - name: contenuti_home
+    label: Contenuti del sito
     files:
-      - file: "dati.json"
-        label: "Testi"
-        name: "testi"
+      - name: testi_home
+        label: Testi della homepage
+        file: dati.json
         fields:
-          - { label: "Titolo", name: "titolo", widget: "string" }
+          - label: Sottotitolo (in inglese)
+            name: sottotitolo
+            widget: string
+          - label: Titolo principale (in inglese)
+            name: titolo_principale
+            widget: string
+          - label: Descrizione iniziale (in inglese)
+            name: descrizione_hero
+            widget: text
