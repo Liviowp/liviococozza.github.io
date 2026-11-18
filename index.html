@@ -895,5 +895,33 @@
       }
     }
   </script>
+
+<script>
+  // Load editable homepage text from dati.json (managed through Sveltia CMS).
+  document.addEventListener("DOMContentLoaded", async () => {
+    try {
+      const response = await fetch("./dati.json", { cache: "no-store" });
+      if (!response.ok) throw new Error("Could not load dati.json");
+      const content = await response.json();
+
+      const badge = document.querySelector(".hero-badge-top span");
+      const headline = document.querySelector(".hero-headline .highlight");
+      const description = document.querySelector(".hero-subtext");
+
+      if (badge && typeof content.sottotitolo === "string") {
+        badge.textContent = content.sottotitolo;
+      }
+      if (headline && typeof content.titolo_principale === "string") {
+        headline.textContent = content.titolo_principale;
+      }
+      if (description && typeof content.descrizione_hero === "string") {
+        description.textContent = content.descrizione_hero;
+      }
+    } catch (error) {
+      console.error("Homepage content could not be updated from dati.json:", error);
+    }
+  });
+</script>
+
 </body>
 </html>
