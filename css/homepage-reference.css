@@ -469,3 +469,11 @@ html body main #hero.hero-section {
   #philosophy { padding-top:70px !important; }
   #philosophy::before { top:-80px !important;height:81px !important; }
 }
+
+/* Final header spacing: bring the name closer to the logo */
+.site-nav .brand-name {
+  gap:6px !important;
+}
+@media(max-width:700px) {
+  .site-nav .brand-name { gap:5px !important; }
+}
