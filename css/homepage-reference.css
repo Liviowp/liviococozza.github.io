@@ -1024,3 +1024,12 @@ html body main #hero.hero-section {
     transform: translateY(42px) !important;
   }
 }
+
+
+/* Fine-tune desktop crop: lower the background image a little further */
+@media (min-width:901px) {
+  html body main #hero.hero-section {
+    background-position:center 8% !important;
+    background-size:cover !important;
+  }
+}
