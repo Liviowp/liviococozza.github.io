@@ -477,3 +477,23 @@ html body main #hero.hero-section {
 @media(max-width:700px) {
   .site-nav .brand-name { gap:5px !important; }
 }
+
+/* About section alignment and tighter brand lockup */
+.site-nav .brand-name {
+  gap:2px !important;
+}
+#philosophy .philosophy-grid {
+  align-items:start !important;
+}
+#philosophy .philosophy-image-frame {
+  align-self:start !important;
+  margin-top:0 !important;
+}
+#philosophy .about-copy {
+  align-self:start !important;
+  margin-top:0 !important;
+}
+@media(max-width:700px) {
+  .site-nav .brand-name { gap:2px !important; }
+  #philosophy .philosophy-grid { align-items:start !important; }
+}
