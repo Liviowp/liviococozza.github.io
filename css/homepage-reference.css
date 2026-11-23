@@ -1002,3 +1002,12 @@ html body main #hero.hero-section {
     transform:translateY(42px) !important;
   }
 }
+
+
+/* Desktop: move the coach photograph down so the head clears the navigation */
+@media (min-width:901px) {
+  #hero.hero-section {
+    background-position:center calc(44% + 70px) !important;
+    background-size:cover !important;
+  }
+}
