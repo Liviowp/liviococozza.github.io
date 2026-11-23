@@ -990,3 +990,67 @@ header.site-nav .brand-copy { display:flex !important; flex-direction:column !im
   .hero-actions { gap:.85rem !important; }
   .hero-actions .btn { min-height:54px !important; padding:0 1.15rem !important; font-size:.85rem !important; }
 }
+
+
+/* FINAL FIX: restore the vivid aquatic hero composition and give the coach portrait prominence. */
+.site-nav {
+  position:absolute !important; top:0 !important; left:0 !important; right:0 !important;
+  z-index:100 !important; height:auto !important; min-height:110px !important;
+  background:linear-gradient(180deg,rgba(1,15,27,.72),rgba(1,15,27,0)) !important;
+  border:0 !important; box-shadow:none !important; padding:14px 0 !important;
+}
+.site-nav .nav-content { min-height:86px !important; }
+.hero-section {
+  min-height:100svh !important; height:100svh !important;
+  padding:170px 6.8% 65px !important;
+  background-color:#031522 !important;
+  background-image:
+    radial-gradient(ellipse at 72% 45%,rgba(34,113,150,.38),transparent 34%),
+    radial-gradient(ellipse at 49% 82%,rgba(15,91,124,.34),transparent 36%),
+    radial-gradient(ellipse at 5% 68%,rgba(0,155,215,.2),transparent 32%),
+    linear-gradient(90deg,#031522 0%,#061c2a 42%,#0b2637 70%,#102b3b 100%) !important;
+}
+.hero-section img.hero-bg-img {
+  top:7% !important; right:2.8% !important; left:auto !important;
+  width:43% !important; height:89% !important; max-width:620px !important;
+  object-fit:cover !important; object-position:50% 12% !important;
+  opacity:1 !important; z-index:1 !important;
+  mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.2) 10%,rgba(0,0,0,.88) 27%,#000 43%) !important;
+}
+.hero-section .hero-bg-overlay {
+  display:block !important; z-index:2 !important;
+  background:linear-gradient(90deg,#031522 0%,rgba(3,21,34,.98) 39%,rgba(3,21,34,.52) 62%,rgba(3,21,34,.08) 100%) !important;
+}
+.hero-section .hero-water-detail {
+  display:block !important; position:absolute !important; inset:auto 0 0 0 !important;
+  height:28% !important; z-index:3 !important; pointer-events:none !important;
+  opacity:.9 !important;
+  background:
+    radial-gradient(ellipse at 8% 100%,rgba(0,180,235,.42),transparent 43%),
+    radial-gradient(ellipse at 23% 115%,rgba(30,154,199,.32),transparent 44%),
+    radial-gradient(ellipse at 43% 120%,rgba(0,111,159,.2),transparent 38%) !important;
+}
+#bubblesCanvas { z-index:4 !important; opacity:1 !important; }
+.hero-section .hero-content { z-index:5 !important; }
+.hero-title-main { font-size:clamp(2.15rem,4.05vw,4.15rem) !important; }
+.hero-title-accent { font-size:clamp(1.5rem,2.95vw,3rem) !important; }
+@media(max-width:900px) {
+  .site-nav .nav-content { width:90% !important; }
+  .hero-section { height:auto !important; min-height:94svh !important; padding:145px 5% 58px !important; }
+  .hero-section img.hero-bg-img {
+    top:12% !important; right:0 !important; width:52% !important; height:72% !important;
+    object-fit:cover !important; object-position:50% 10% !important; opacity:.86 !important;
+  }
+  .hero-title-main,.hero-title-accent { white-space:normal !important; }
+}
+@media(max-width:620px) {
+  .site-nav .nav-links { display:none !important; }
+  .hero-section { min-height:94svh !important; padding:130px 6% 52px !important; }
+  .hero-section img.hero-bg-img {
+    top:auto !important; bottom:0 !important; width:74% !important; height:58% !important;
+    object-position:50% 8% !important; opacity:.6 !important;
+    mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.4) 22%,#000 55%) !important;
+  }
+  .hero-title-main { font-size:2.05rem !important; }
+  .hero-title-accent { font-size:1.4rem !important; }
+}
