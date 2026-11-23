@@ -360,3 +360,13 @@ html body header.site-nav img.brand-logo {
   .site-nav .brand-name { flex-direction:row !important; gap:9px !important; }
   .site-nav .brand-name .brand-logo { width:66px !important; max-width:18vw !important; max-height:58px !important; }
 }
+
+/* Lower the hero artwork slightly so the coach's head clears the navigation */
+html body main #hero.hero-section {
+  background-position:center 38% !important;
+}
+@media(max-width:700px) {
+  html body main #hero.hero-section {
+    background-position:62% 42% !important;
+  }
+}
