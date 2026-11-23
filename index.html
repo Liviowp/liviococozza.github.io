@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css?v=hero-layer-fix-20261123">
-  <link rel="stylesheet" href="css/homepage-reference.css?v=20261123-mobile-contrast1">
+  <link rel="stylesheet" href="css/homepage-reference.css?v=20261123-audio-control1">
 </head>
 <body>
 
@@ -64,6 +64,15 @@
         <div class="hero-actions">
           <a href="#journey" class="btn btn-primary"><span aria-hidden="true">🏊</span> My Experience</a>
           <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+        <div class="hero-audio-control">
+          <button type="button" id="heroAudioToggle" class="audio-toggle" aria-pressed="false">
+            <span class="audio-toggle-icon" aria-hidden="true">▶</span>
+            <span class="audio-toggle-label">Play background music</span>
+          </button>
+          <audio id="heroBackgroundAudio" preload="none" loop>
+            <source src="audio/paulyudin-inspirational-490406.mp3.mpeg" type="audio/mpeg">
+          </audio>
         </div>
 
       </div>
@@ -353,6 +362,38 @@
   </div>
 
   <script src="js/main.js"></script>
+  <script>
+    (() => {
+      const audio = document.getElementById('heroBackgroundAudio');
+      const button = document.getElementById('heroAudioToggle');
+      if (!audio || !button) return;
+      const icon = button.querySelector('.audio-toggle-icon');
+      const label = button.querySelector('.audio-toggle-label');
+      button.addEventListener('click', async () => {
+        if (audio.paused) {
+          try {
+            await audio.play();
+            button.setAttribute('aria-pressed', 'true');
+            icon.textContent = 'Ⅱ';
+            label.textContent = 'Pause background music';
+          } catch (error) {
+            label.textContent = 'Audio unavailable — try again';
+          }
+        } else {
+          audio.pause();
+          button.setAttribute('aria-pressed', 'false');
+          icon.textContent = '▶';
+          label.textContent = 'Play background music';
+        }
+      });
+      audio.addEventListener('ended', () => {
+        button.setAttribute('aria-pressed', 'false');
+        icon.textContent = '▶';
+        label.textContent = 'Play background music';
+      });
+    })();
+  </script>
+
 
 </body>
 </html>
