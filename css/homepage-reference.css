@@ -497,3 +497,16 @@ html body main #hero.hero-section {
   .site-nav .brand-name { gap:2px !important; }
   #philosophy .philosophy-grid { align-items:start !important; }
 }
+
+
+/* Correct the visible gap caused by transparent padding inside the logo image */
+.site-nav .brand-name {
+  gap:0 !important;
+}
+.site-nav .brand-name .brand-name-text {
+  margin-left:-34px !important;
+}
+@media(max-width:700px) {
+  .site-nav .brand-name { gap:0 !important; }
+  .site-nav .brand-name .brand-name-text { margin-left:-20px !important; }
+}
