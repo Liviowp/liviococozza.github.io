@@ -1050,3 +1050,14 @@ html body main #hero.hero-section {
     margin-top:1rem !important;
   }
 }
+
+
+/* Final desktop alignment: nudge hero copy and soundtrack control to the right */
+@media (min-width:901px) {
+  html body main #hero.hero-section .hero-content {
+    transform:translate(24px,72px) !important;
+  }
+  html body main #hero.hero-section .hero-audio-control {
+    margin-left:330px !important;
+  }
+}
