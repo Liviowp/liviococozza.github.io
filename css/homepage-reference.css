@@ -1078,3 +1078,23 @@ html body main #hero.hero-section {
     position:relative !important;
   }
 }
+
+
+/* Override all earlier desktop offsets with a measurable 38px content inset */
+@media (min-width:901px) {
+  #hero > .container.hero-content {
+    left:auto !important;
+    margin-left:calc((100% - min(1450px, 100%)) / 2 + 38px) !important;
+    margin-right:0 !important;
+    width:calc(min(1450px, 100%) - 38px) !important;
+    max-width:none !important;
+    padding-left:0 !important;
+    transform:translateY(72px) !important;
+  }
+  #hero > .container.hero-content .hero-audio-control {
+    margin-left:0 !important;
+    position:static !important;
+    width:max-content !important;
+    clear:both !important;
+  }
+}
