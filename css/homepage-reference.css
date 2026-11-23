@@ -833,3 +833,21 @@ html body main #hero.hero-section {
     padding-bottom:90px !important;
   }
 }
+
+
+/* MOBILE HERO: reframe the original background to reveal more of the coach */
+@media (max-width:620px) {
+  html body main #hero.hero-section {
+    background-size:auto 100% !important;
+    background-position:88% center !important;
+    background-repeat:no-repeat !important;
+  }
+  html body main #hero.hero-section::before {
+    background:linear-gradient(
+      90deg,
+      rgba(2,14,27,.78) 0%,
+      rgba(2,14,27,.58) 43%,
+      rgba(2,14,27,.18) 100%
+    ) !important;
+  }
+}
