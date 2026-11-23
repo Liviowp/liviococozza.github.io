@@ -1,0 +1,254 @@
+/* Homepage hero — faithful layout to Livio's supplied reference */
+.site-nav {
+  position:absolute !important;
+  inset:0 0 auto 0 !important;
+  z-index:100 !important;
+  padding:14px 0 !important;
+  background:linear-gradient(180deg,rgba(1,15,27,.78),rgba(1,15,27,0)) !important;
+  border:0 !important;
+  box-shadow:none !important;
+  backdrop-filter:none !important;
+}
+.site-nav .nav-content {
+  width:calc(100% - 9.5%) !important;
+  max-width:1540px !important;
+  min-height:100px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:2rem !important;
+}
+.site-nav .brand-name {
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:flex-start !important;
+  width:auto !important;
+  text-decoration:none !important;
+  white-space:nowrap !important;
+}
+.site-nav .brand-title {
+  display:block !important;
+  font-family:'Dancing Script',cursive !important;
+  font-size:clamp(2.3rem,3.1vw,3.15rem) !important;
+  font-weight:600 !important;
+  line-height:.95 !important;
+  letter-spacing:0 !important;
+  color:#fff !important;
+  text-transform:none !important;
+}
+.site-nav .brand-tagline {
+  display:block !important;
+  margin:.45rem 0 0 1.1rem !important;
+  color:#e8f2fa !important;
+  font-size:.7rem !important;
+  font-weight:500 !important;
+  letter-spacing:.18em !important;
+  white-space:nowrap !important;
+}
+.site-nav nav { margin-left:auto !important; }
+.site-nav .nav-links {
+  display:flex !important;
+  flex-wrap:nowrap !important;
+  align-items:center !important;
+  gap:clamp(1rem,2.05vw,2.35rem) !important;
+}
+.site-nav .nav-link {
+  position:relative !important;
+  padding:.7rem 0 !important;
+  color:#f7fbff !important;
+  font-size:clamp(.76rem,.92vw,.94rem) !important;
+  font-weight:600 !important;
+  text-transform:uppercase !important;
+  white-space:nowrap !important;
+}
+.site-nav .nav-link::after {
+  content:"" !important;
+  position:absolute !important;
+  left:0 !important;
+  right:100% !important;
+  bottom:0 !important;
+  height:4px !important;
+  border-radius:4px !important;
+  background:#079de8 !important;
+  transition:right .25s ease !important;
+}
+.site-nav .nav-link.active::after,
+.site-nav .nav-link:hover::after { right:0 !important; }
+
+.hero-section {
+  position:relative !important;
+  isolation:isolate !important;
+  display:flex !important;
+  align-items:center !important;
+  width:100% !important;
+  min-height:100vh !important;
+  height:100vh !important;
+  padding:155px 6.8% 65px !important;
+  overflow:hidden !important;
+  background:
+    radial-gradient(ellipse at 9% 82%,rgba(0,155,215,.2),transparent 34%),
+    radial-gradient(ellipse at 57% 60%,rgba(31,104,139,.26),transparent 42%),
+    linear-gradient(105deg,#031522 0%,#061c2a 50%,#102b3b 100%) !important;
+}
+.hero-section::before {
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  z-index:0 !important;
+  pointer-events:none !important;
+  background:linear-gradient(90deg,rgba(2,17,29,.98) 0%,rgba(2,17,29,.94) 39%,rgba(2,17,29,.42) 64%,rgba(2,17,29,.04) 100%) !important;
+}
+.hero-section > img.hero-bg-img {
+  display:block !important;
+  position:absolute !important;
+  z-index:1 !important;
+  top:5% !important;
+  right:2.8% !important;
+  left:auto !important;
+  width:43% !important;
+  height:95% !important;
+  max-width:680px !important;
+  object-fit:contain !important;
+  object-position:center bottom !important;
+  opacity:1 !important;
+  mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.18) 11%,rgba(0,0,0,.92) 29%,#000 44%) !important;
+}
+.hero-section > .hero-bg-overlay {
+  display:block !important;
+  position:absolute !important;
+  z-index:2 !important;
+  inset:0 !important;
+  pointer-events:none !important;
+  background:linear-gradient(90deg,#031522 0%,rgba(3,21,34,.96) 39%,rgba(3,21,34,.28) 65%,transparent 100%) !important;
+}
+.hero-section > .hero-water-detail {
+  display:block !important;
+  position:absolute !important;
+  z-index:3 !important;
+  inset:auto 0 0 !important;
+  height:29% !important;
+  pointer-events:none !important;
+  opacity:.95 !important;
+  background:
+    radial-gradient(ellipse at 7% 100%,rgba(0,190,240,.48),transparent 40%),
+    radial-gradient(ellipse at 23% 115%,rgba(17,151,199,.35),transparent 42%),
+    radial-gradient(ellipse at 43% 125%,rgba(0,105,153,.22),transparent 40%) !important;
+}
+#bubblesCanvas {
+  display:block !important;
+  position:fixed !important;
+  z-index:4 !important;
+  inset:0 !important;
+  pointer-events:none !important;
+  opacity:.82 !important;
+}
+.hero-section > .hero-content {
+  position:relative !important;
+  z-index:5 !important;
+  width:100% !important;
+  max-width:1450px !important;
+  margin:0 auto !important;
+  padding:0 !important;
+}
+.hero-headline {
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:flex-start !important;
+  max-width:1000px !important;
+  margin:0 0 1.55rem !important;
+  line-height:1.08 !important;
+  filter:none !important;
+}
+.hero-title-main {
+  display:block !important;
+  color:#f8fafc !important;
+  -webkit-text-fill-color:#f8fafc !important;
+  font-size:clamp(2.2rem,4.05vw,4.15rem) !important;
+  font-weight:800 !important;
+  letter-spacing:-.025em !important;
+  white-space:nowrap !important;
+}
+.hero-title-accent {
+  display:block !important;
+  margin-top:.25rem !important;
+  color:#129fe8 !important;
+  -webkit-text-fill-color:#129fe8 !important;
+  font-size:clamp(1.5rem,2.95vw,3rem) !important;
+  font-weight:600 !important;
+  letter-spacing:-.02em !important;
+  white-space:nowrap !important;
+}
+.hero-rule {
+  width:96px !important;
+  height:6px !important;
+  margin:2.05rem 0 1.7rem !important;
+  border-radius:5px !important;
+  background:#079de8 !important;
+}
+.hero-subtext {
+  max-width:760px !important;
+  margin-bottom:2.7rem !important;
+  color:#f1f5f9 !important;
+  font-size:clamp(1.05rem,1.55vw,1.5rem) !important;
+  line-height:1.5 !important;
+  text-shadow:0 2px 10px rgba(0,0,0,.35) !important;
+}
+.hero-actions {
+  position:relative !important;
+  z-index:6 !important;
+  display:flex !important;
+  align-items:center !important;
+  flex-wrap:wrap !important;
+  gap:2.2rem !important;
+}
+.hero-actions .btn {
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  min-height:64px !important;
+  padding:1rem 2.35rem !important;
+  border-radius:13px !important;
+  color:#fff !important;
+  font-size:1rem !important;
+}
+.hero-actions .btn-primary {
+  background:linear-gradient(110deg,#08a9ef,#0878e6) !important;
+  box-shadow:0 8px 28px rgba(0,145,230,.25) !important;
+}
+.hero-actions .btn-outline {
+  border:2px solid #f1f5f9 !important;
+  background:rgba(3,17,31,.32) !important;
+}
+@media(max-width:1100px) {
+  .site-nav .nav-links { gap:.9rem !important; }
+  .site-nav .nav-link { font-size:.7rem !important; }
+  .hero-title-main { font-size:clamp(2rem,4vw,3.4rem) !important; }
+  .hero-title-accent { font-size:clamp(1.4rem,2.8vw,2.5rem) !important; }
+}
+@media(max-width:900px) {
+  .site-nav .nav-content { width:90% !important; }
+  .site-nav .nav-links { display:none !important; }
+  .hero-section { height:auto !important; min-height:94svh !important; padding:145px 5% 58px !important; }
+  .hero-section > img.hero-bg-img {
+    top:10% !important; right:0 !important; width:58% !important; height:75% !important;
+    object-position:center top !important; opacity:.78 !important;
+    mask-image:linear-gradient(180deg,rgba(0,0,0,.2),#000 40%) !important;
+  }
+  .hero-title-main,.hero-title-accent { white-space:normal !important; }
+  .hero-subtext { max-width:90% !important; }
+}
+@media(max-width:620px) {
+  .site-nav { padding:.65rem 0 !important; }
+  .site-nav .brand-title { font-size:2rem !important; }
+  .site-nav .brand-tagline { margin-left:.35rem !important; font-size:.52rem !important; }
+  .hero-section { min-height:94svh !important; padding:130px 6% 52px !important; }
+  .hero-section > img.hero-bg-img {
+    top:auto !important; bottom:0 !important; right:0 !important; width:78% !important; height:58% !important;
+    object-position:center top !important; opacity:.58 !important;
+  }
+  .hero-title-main { font-size:2.05rem !important; }
+  .hero-title-accent { font-size:1.4rem !important; }
+  .hero-subtext { font-size:1rem !important; }
+  .hero-actions { gap:.85rem !important; }
+  .hero-actions .btn { min-height:54px !important; padding:0 1.1rem !important; font-size:.85rem !important; }
+}
