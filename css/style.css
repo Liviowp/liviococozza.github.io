@@ -529,3 +529,33 @@
  .site-nav .brand-signature { font-size:2rem !important; }
  .hero-title-main,.hero-title-accent { white-space:normal !important; }
 }
+
+
+/* Final hero portrait framing: show Livio's face and full upper body */
+.hero-section { position:relative !important; background:#031322 !important; }
+.hero-section::before {
+ background:
+   radial-gradient(ellipse at 76% 52%, rgba(13,91,129,.24), transparent 48%),
+   linear-gradient(90deg,#03111f 0%,rgba(3,17,31,.96) 34%,rgba(3,17,31,.52) 59%,rgba(3,17,31,.12) 100%) !important;
+}
+.hero-bg-img {
+ position:absolute !important;
+ top:0 !important;
+ right:2.5% !important;
+ width:48% !important;
+ height:100% !important;
+ object-fit:contain !important;
+ object-position:right center !important;
+ opacity:1 !important;
+ z-index:-1 !important;
+ mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.3) 12%,#000 34%) !important;
+}
+.hero-bg-overlay { display:none !important; }
+@media(max-width:900px) {
+ .hero-bg-img {
+   right:0 !important; width:100% !important; height:100% !important;
+   object-fit:contain !important; object-position:right top !important;
+   opacity:.68 !important;
+   mask-image:linear-gradient(180deg,rgba(0,0,0,.5),#000 40%) !important;
+ }
+}
