@@ -851,3 +851,30 @@ html body main #hero.hero-section {
     ) !important;
   }
 }
+
+
+/* ABOUT ME: unify paragraph colour and typography across the full text */
+#philosophy .about-copy p {
+  color:#CBD5E1 !important;
+  font-size:1rem !important;
+  line-height:1.75 !important;
+  font-weight:400 !important;
+  margin-bottom:1rem !important;
+}
+#philosophy .about-copy p:last-of-type {
+  color:#159FE8 !important;
+  font-weight:800 !important;
+  letter-spacing:.04em !important;
+  margin-top:1rem !important;
+  margin-bottom:0 !important;
+}
+@media(max-width:620px) {
+  #philosophy .about-copy p {
+    color:#CBD5E1 !important;
+    font-size:.94rem !important;
+    line-height:1.7 !important;
+  }
+  #philosophy .about-copy p:last-of-type {
+    color:#159FE8 !important;
+  }
+}
