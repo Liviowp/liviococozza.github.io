@@ -994,3 +994,11 @@ html body main #hero.hero-section {
   #hero .hero-actions { margin-top:1.7rem !important; }
   #hero .hero-audio-control { margin-top:1rem !important; }
 }
+
+
+/* Desktop: lower the hero text block slightly beneath the navigation */
+@media (min-width:901px) {
+  #hero .hero-content {
+    transform:translateY(42px) !important;
+  }
+}
