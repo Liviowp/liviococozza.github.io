@@ -307,3 +307,28 @@ html body header.site-nav img.brand-logo {
   html body header.site-nav img.brand-logo { width:220px !important;max-width:58vw !important;max-height:82px !important; }
   html body main #hero.hero-section { background-position:62% center !important; }
 }
+
+/* Header brand: graphic mark followed by the owner's name */
+.site-nav .brand-name {
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  gap:16px !important;
+  flex:0 0 auto !important;
+  white-space:nowrap !important;
+}
+.site-nav .brand-name-text {
+  display:inline-block !important;
+  color:#fff !important;
+  font-family:'Dancing Script','Segoe Script',cursive !important;
+  font-size:clamp(1.9rem,2.7vw,2.75rem) !important;
+  font-weight:600 !important;
+  line-height:1 !important;
+  letter-spacing:0 !important;
+  text-shadow:0 2px 12px rgba(0,0,0,.28) !important;
+}
+@media(max-width:700px) {
+  .site-nav .brand-name { gap:9px !important; }
+  .site-nav .brand-name img.brand-logo { width:66px !important; max-width:18vw !important; max-height:58px !important; }
+  .site-nav .brand-name-text { font-size:1.65rem !important; }
+}
