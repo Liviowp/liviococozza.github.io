@@ -332,3 +332,31 @@ html body header.site-nav img.brand-logo {
   .site-nav .brand-name img.brand-logo { width:66px !important; max-width:18vw !important; max-height:58px !important; }
   .site-nav .brand-name-text { font-size:1.65rem !important; }
 }
+
+/* Keep the logo mark and the name on one horizontal line */
+.site-nav .brand-name {
+  display:flex !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  gap:16px !important;
+  white-space:nowrap !important;
+}
+.site-nav .brand-name .brand-logo {
+  display:block !important;
+  flex:0 0 auto !important;
+  width:105px !important;
+  max-width:12vw !important;
+  height:auto !important;
+  max-height:82px !important;
+}
+.site-nav .brand-name .brand-name-text {
+  display:inline-block !important;
+  flex:0 0 auto !important;
+  white-space:nowrap !important;
+  margin:0 !important;
+}
+@media(max-width:700px) {
+  .site-nav .brand-name { flex-direction:row !important; gap:9px !important; }
+  .site-nav .brand-name .brand-logo { width:66px !important; max-width:18vw !important; max-height:58px !important; }
+}
