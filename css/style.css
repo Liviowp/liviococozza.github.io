@@ -510,3 +510,22 @@
  .hero-actions { gap:1rem; }
  .hero-actions .btn { min-height:56px; padding:.9rem 1.35rem; font-size:.9rem; }
 }
+
+
+/* Reference-match corrections */
+.site-nav .nav-content { display:flex !important; align-items:center !important; justify-content:space-between !important; gap:2rem !important; }
+.site-nav .brand-name { display:flex !important; flex:0 0 auto !important; flex-direction:column !important; width:max-content !important; max-width:none !important; white-space:nowrap !important; font-family:'Dancing Script',cursive !important; font-size:initial !important; font-weight:500 !important; letter-spacing:0 !important; line-height:1 !important; }
+.site-nav .brand-signature { display:block !important; font-family:'Dancing Script',cursive !important; font-size:2.65rem !important; font-weight:600 !important; line-height:.95 !important; text-transform:none !important; letter-spacing:0 !important; color:#fff !important; }
+.site-nav .brand-tagline { display:block !important; font-family:var(--font-body) !important; font-size:.68rem !important; font-weight:500 !important; letter-spacing:.19em !important; line-height:1.3 !important; color:#e8f2fa !important; white-space:nowrap !important; margin:.45rem 0 0 1.1rem !important; }
+.site-nav nav { margin-left:auto !important; }
+.site-nav .nav-links { display:flex !important; flex-wrap:nowrap !important; gap:clamp(.9rem,2vw,2rem) !important; }
+.site-nav .nav-link { white-space:nowrap !important; text-transform:uppercase !important; font-size:.86rem !important; color:#f1f5f9 !important; }
+.hero-content { width:100% !important; }
+.hero-headline { display:flex !important; flex-direction:column !important; align-items:flex-start !important; max-width:1000px !important; line-height:1.08 !important; }
+.hero-title-main { display:block !important; color:#f8fafc !important; -webkit-text-fill-color:#f8fafc !important; font-size:clamp(2.1rem,4.3vw,4.1rem) !important; font-weight:800 !important; letter-spacing:-.025em !important; white-space:nowrap !important; }
+.hero-title-accent { display:block !important; color:#129fe8 !important; -webkit-text-fill-color:#129fe8 !important; font-size:clamp(1.5rem,3.05vw,2.95rem) !important; font-weight:600 !important; letter-spacing:-.02em !important; white-space:nowrap !important; margin-top:.25rem !important; }
+@media(max-width:900px) {
+ .site-nav .nav-links { display:none !important; }
+ .site-nav .brand-signature { font-size:2rem !important; }
+ .hero-title-main,.hero-title-accent { white-space:normal !important; }
+}
