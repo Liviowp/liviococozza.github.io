@@ -1,0 +1,4 @@
+# File di lavoro di Pinegrow, non servono online
+_pgbackup/
+_pginfo/
+pinegrow.json

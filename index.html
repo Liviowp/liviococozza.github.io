@@ -14,439 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --color-midnight-dark: #050814;
-      --color-midnight-base: #0A1128;
-      --color-midnight-card: #0F1A36;
-      --color-midnight-border: rgba(56, 189, 248, 0.15);
-      
-      --color-pool-blue: #0284C7;
-      --color-pool-cyan: #06B6D4;
-      --color-pool-light: #38BDF8;
-      --color-glow: rgba(56, 189, 248, 0.4);
-
-      --color-white: #FFFFFF;
-      --color-text-main: #F1F5F9;
-      --color-text-dim: #94A3B8;
-
-      --font-heading: 'Outfit', sans-serif;
-      --font-body: 'Inter', sans-serif;
-
-      --container-max: 1240px;
-      --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-    }
-
-    body {
-      background-color: var(--color-midnight-dark);
-      color: var(--color-text-main);
-      font-family: var(--font-body);
-      line-height: 1.6;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    #bubblesCanvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .container {
-      width: 100%;
-      max-width: var(--container-max);
-      margin: 0 auto;
-      padding: 0 1.5rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-label {
-      display: inline-block;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--color-pool-light);
-      margin-bottom: 0.5rem;
-    }
-
-    .section-heading {
-      font-family: var(--font-heading);
-      font-size: 2.2rem;
-      font-weight: 800;
-      line-height: 1.2;
-      color: var(--color-white);
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-    }
-
-    .section-subheading {
-      font-size: 1.05rem;
-      color: var(--color-text-dim);
-      max-width: 650px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.85rem 1.75rem;
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: var(--transition-smooth);
-      cursor: pointer;
-      border: none;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--color-pool-blue), var(--color-pool-cyan));
-      color: var(--color-white);
-      box-shadow: 0 4px 20px var(--color-glow);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(56, 189, 248, 0.6);
-    }
-
-    .btn-secondary {
-      background: rgba(15, 26, 54, 0.8);
-      color: var(--color-text-main);
-      border: 1px solid var(--color-midnight-border);
-      backdrop-filter: blur(8px);
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--color-pool-light);
-      color: var(--color-pool-light);
-    }
-
-    /* Navigation Bar */
-    .site-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 100;
-      padding: 1.2rem 0;
-      background: rgba(5, 8, 20, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--color-midnight-border);
-    }
-
-    .nav-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    /* Brand Name: Significantly larger, high impact, strictly non-underlined */
-    .brand-name {
-      font-family: var(--font-heading);
-      font-weight: 900;
-      font-size: 2.2rem;
-      color: var(--color-white);
-      letter-spacing: 0.1em;
-      text-decoration: none !important;
-      border-bottom: none !important;
-      line-height: 1;
-    }
-    .brand-name:hover {
-      color: var(--color-white);
-      text-decoration: none !important;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.8rem;
-      list-style: none;
-      align-items: center;
-    }
-
-    .nav-link {
-      color: var(--color-text-dim);
-      text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 500;
-      transition: var(--transition-smooth);
-    }
-
-    .nav-link:hover {
-      color: var(--color-pool-light);
-    
-    
-    }
-    .hero-section {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 12rem 8% 4rem 8%;
-    
-    /* Foto a destra con sfumatura nera solo sul lato sinistro per far leggere il testo */
-    background-image: linear-gradient(to right, 
-        rgba(7, 11, 18, 0.98) 0%, 
-        rgba(7, 11, 18, 0.85) 35%, 
-        rgba(7, 11, 18, 0.3) 65%, 
-        rgba(7, 11, 18, 0) 85%
-    ), url('./livio-piscina.jpeg');
-    background-size: cover;
-    background-position: 80% center; /* Anchora la foto e la tua figura verso destra */
-    background-repeat: no-repeat;
-}
-
-/* Sicurezza per rimuovere del tutto scritte watermark di sfondo */
-[class*="watermark"], [class*="bg-text"], .hero-watermark, .bg-text {
-    display: none !important;
-}
-
-.hero-headline {
-    display: flex;
-    flex-direction: column; 
-    font-size: 3.5rem;
-    font-weight: 900;
-    line-height: 1.1;
-    text-transform: uppercase;
-    margin-bottom: 24px;
-    color: #FFFFFF;
-}
-    
-    .hero-bg-img {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 60%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 70% 15%;
-      opacity: 0.75;
-      z-index: -2;
-    }
-    
-
-    .hero-bg-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, #050814 0%, #050814 38%, rgba(5, 8, 20, 0.65) 62%, rgba(5, 8, 20, 0.15) 100%);
-      z-index: -1;
-    }
-
-    .hero-badge-top {
-      display: inline-block;
-      padding: 0.4rem 1rem;
-      background: rgba(2, 132, 199, 0.2);
-      border: 1px solid var(--color-pool-light);
-      border-radius: 50px;
-      font-size: 0.8rem;
-      color: var(--color-pool-light);
-      font-weight: 600;
-      margin-bottom: 1.2rem;
-    }
-
-    .hero-headline {
-      font-family: var(--font-heading);
-      font-size: clamp(2.5rem, 5vw, 4.2rem);
-      font-weight: 900;
-      line-height: 1.1;
-      color: var(--color-white);
-      margin-bottom: 1.2rem;
-      max-width: 650px;
-      filter: drop-shadow(0 4px 16px rgba(5, 8, 20, 0.9));
-    }
-
-    .hero-headline .highlight {
-      background: linear-gradient(135deg, #38BDF8, #06B6D4);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-subtext {
-      font-size: 1.15rem;
-      color: #CBD5E1;
-      max-width: 680px;
-      margin-bottom: 2rem;
-    }
-
-    /* 5 Dimensions Visual Gallery */
-    .visual-gallery-section {
-      padding: 5rem 0;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .gallery-card {
-      position: relative;
-      height: 380px;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--color-midnight-border);
-      background: var(--color-midnight-card);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    }
-
-    .gallery-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-
-    .gallery-card:hover img {
-      transform: scale(1.08);
-    }
-
-    .gallery-card-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 1.75rem;
-      background: linear-gradient(0deg, rgba(5, 8, 20, 0.95) 0%, rgba(5, 8, 20, 0.4) 70%, transparent 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
-
-    .gallery-pill {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--color-pool-light);
-      margin-bottom: 0.4rem;
-    }
-
-    .gallery-title {
-      font-family: var(--font-heading);
-      font-size: 1.25rem;
-      color: var(--color-white);
-      font-weight: 700;
-      margin-bottom: 0.4rem;
-    }
-
-    .gallery-caption {
-      font-size: 0.85rem;
-      color: var(--color-text-dim);
-    }
-
-    /* Philosophy Section Grid */
-    .philosophy-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-      padding: 5rem 0;
-    }
-
-    .philosophy-image-frame {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--color-midnight-border);
-      height: 480px;
-    }
-
-    .philosophy-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Contact & Form Section */
-    .contact-section {
-      padding: 5rem 0;
-      background: rgba(15, 26, 54, 0.4);
-      border-top: 1px solid var(--color-midnight-border);
-    }
-
-    .contact-layout {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 3rem;
-    }
-
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
-
-    .form-label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--color-text-main);
-      margin-bottom: 0.4rem;
-    }
-
-    .form-input, .form-select, .form-textarea {
-      width: 100%;
-      padding: 0.8rem 1rem;
-      background: var(--color-midnight-base);
-      border: 1px solid var(--color-midnight-border);
-      border-radius: 8px;
-      color: var(--color-white);
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-    }
-
-    .form-input:focus, .form-select:focus, .form-textarea:focus {
-      outline: none;
-      border-color: var(--color-pool-light);
-      box-shadow: 0 0 10px var(--color-glow);
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    /* Footer */
-    .site-footer {
-      padding: 3rem 0;
-      border-top: 1px solid var(--color-midnight-border);
-      font-size: 0.85rem;
-      color: var(--color-text-dim);
-    }
-
-    @media (max-width: 900px) {
-      .philosophy-grid, .contact-layout {
-        grid-template-columns: 1fr;
-      }
-      .nav-links {
-        display: none;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -479,22 +47,20 @@
          Hero Section
          ========================================================================== -->
     <section id="hero" class="hero-section">
-      <img src="liviopiscina.jpeg" alt="Livio Cocozza - Coach at poolside" class="hero-bg-img" onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/0A1128/38BDF8?text=Livio+Cocozza';">
+      <img src="images/copertina-livio-in-piscina.jpg" alt="Livio Cocozza - Coach at poolside" class="hero-bg-img">
       <div class="hero-bg-overlay"></div>
 
       <div class="container">
         <div class="hero-badge-top">
-          <span id="cms-sottotitolo">Water Polo &amp; Swimming Coach • Supervisor • Team Manager • PE Teacher</span>
+          <span>Water Polo &amp; Swimming Coach • Supervisor • Team Manager • PE Teacher</span>
         </div>
 
         <!-- Nuova frase d'impatto con gradiente -->
         <h1 class="hero-headline">
-          <span class="highlight" id="cms-titolo">WATER, MOVEMENT, FUTURE.</span>
+          <span class="highlight">WATER, MOVEMENT, FUTURE.</span>
         </h1>
 
-        <p class="hero-subtext" id="cms-descrizione-hero">
-          High-performance coaching, athletic development, organizational leadership and physical education built through 20 years of international experience across 7 countries.
-        </p>
+        <p class="hero-subtext">High-performance coaching, athletic development, organizational leadership and physical education built through 20 years of international experience across 7 countries.</p>
 
         <!-- Pulsanti aggiornati: Work With Livio, Video e Pics -->
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
@@ -511,18 +77,14 @@
     <section id="philosophy" class="container">
       <div class="philosophy-grid">
         <div class="philosophy-image-frame">
-          <img src="244.jpeg" alt="Livio Cocozza observing the pool deck - The Thinker" class="philosophy-img" onerror="this.onerror=null; this.src='https://placehold.co/800x900/0F1A36/38BDF8?text=Philosophy';">
+          <img src="images/filosofia-livio-osserva.jpg" alt="Livio Cocozza observing the pool deck - The Thinker" class="philosophy-img">
         </div>
 
         <div>
-          <span class="section-label" id="cms-filosofia-etichetta">Coaching &amp; Teaching Philosophy</span>
-          <h2 class="section-heading" id="cms-filosofia-titolo">Better Athletes. Better Decisions. Better People.</h2>
-          <p id="cms-filosofia-citazione" style="color: #CBD5E1; margin-bottom: 1.5rem;">
-            "A player cannot make the right decision if he doesn't understand what he is seeing."
-          </p>
-          <p id="cms-filosofia-testo" style="color: var(--color-text-dim); margin-bottom: 1rem;">
-            Technique matters. Conditioning matters. But at the highest level, sport becomes a sequence of split-second decisions under physical and cognitive stress. Whether supervising national-level programs or teaching physical education, my vision centers on developing autonomous, resilient individuals.
-          </p>
+          <span class="section-label">Coaching &amp; Teaching Philosophy</span>
+          <h2 class="section-heading">Better Athletes. Better Decisions. Better People.</h2>
+          <p style="color: #CBD5E1; margin-bottom: 1.5rem;">A player cannot make the right decision if he doesn't understand what he is seeing.</p>
+          <p style="color: var(--color-text-dim); margin-bottom: 1rem;">Technique matters. Conditioning matters. But at the highest level, sport becomes a sequence of split-second decisions under physical and cognitive stress. Whether supervising national-level programs or teaching physical education, my vision centers on developing autonomous, resilient individuals.</p>
         </div>
       </div>
     </section>
@@ -533,16 +95,14 @@
     <section id="gallery" class="visual-gallery-section">
       <div class="container">
         <div style="text-align: center; max-width: 760px; margin: 0 auto;">
-          <span class="section-label" id="cms-galleria-etichetta">Authentic Presence &amp; Expertise</span>
-          <h2 class="section-heading" id="cms-galleria-titolo">The 5 Dimensions of the Brand</h2>
-          <p class="section-subheading" id="cms-galleria-descrizione" style="margin: 0 auto;">
-            Quiet authority, tactical precision, and human connection across the pool deck, team management, and physical education.
-          </p>
+          <span class="section-label">Authentic Presence &amp; Expertise</span>
+          <h2 class="section-heading">The 5 Dimensions of the Brand</h2>
+          <p class="section-subheading" style="margin: 0 auto;">Quiet authority, tactical precision, and human connection across the pool deck, team management, and physical education.</p>
         </div>
 
-        <div class="gallery-grid" id="cms-galleria-grid">
+        <div class="gallery-grid">
           <div class="gallery-card">
-            <img src="IMG_0591.JPG" alt="Livio directing tactical board" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1128/38BDF8?text=Dimension+1';">
+            <img src="images/galleria-strategia.jpg" alt="Aquatic training environment">
             <div class="gallery-card-overlay">
               <span class="gallery-pill">Dimension 01 • Tactical Leader</span>
               <h3 class="gallery-title">Strategic Game Planning</h3>
@@ -551,7 +111,7 @@
           </div>
 
           <div class="gallery-card">
-            <img src="IMG_0083.JPG" alt="Livio directing poolside intensity" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1128/38BDF8?text=Dimension+2';">
+            <img src="images/galleria-bordo-vasca.jpg" alt="Coach poolside">
             <div class="gallery-card-overlay">
               <span class="gallery-pill">Dimension 02 • Head Coach &amp; Supervisor</span>
               <h3 class="gallery-title">Poolside Direction</h3>
@@ -560,7 +120,7 @@
           </div>
 
           <div class="gallery-card">
-            <img src="IMG_2223.JPG" alt="Livio observing poolside" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1128/38BDF8?text=Dimension+3';">
+            <img src="images/filosofia-livio-osserva.jpg" alt="Coach observing training">
             <div class="gallery-card-overlay">
               <span class="gallery-pill">Dimension 03 • Observation &amp; Vision</span>
               <h3 class="gallery-title">Quiet Analysis</h3>
@@ -569,7 +129,7 @@
           </div>
 
           <div class="gallery-card">
-            <img src="IMG_2221.JPG" alt="Livio talking with athlete" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1128/38BDF8?text=Dimension+4';">
+            <img src="images/galleria-mentorship.jpg" alt="Coach and athlete">
             <div class="gallery-card-overlay">
               <span class="gallery-pill">Dimension 04 • Human Connection</span>
               <h3 class="gallery-title">Empathy &amp; Mentorship</h3>
@@ -578,7 +138,7 @@
           </div>
 
           <div class="gallery-card">
-            <img src="IMG_0587.JPG" alt="Livio outdoor sports coaching" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1128/38BDF8?text=Dimension+5';">
+            <img src="images/copertina-livio-in-piscina.jpg" alt="Sports coaching">
             <div class="gallery-card-overlay">
               <span class="gallery-pill">Dimension 05 • PE &amp; Multi-Sport</span>
               <h3 class="gallery-title">Physical Education Leadership</h3>
@@ -593,38 +153,36 @@
          Journey & Experience (Timeline & Venues)
          ========================================================================== -->
     <section id="journey" class="container" style="padding: 5rem 1.5rem;">
-      <span class="section-label" id="cms-esperienze-etichetta">20+ Years of International Career</span>
-      <h2 class="section-heading" id="cms-esperienze-titolo">Verified Experience &amp; Elite Arenas</h2>
-      <div id="cms-esperienze-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:2rem;"></div>
-      
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-        <div style="background: var(--color-midnight-card); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--color-midnight-border);">
-          <img src="ewe.jpeg" alt="Pro Recco Pool" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1128/38BDF8?text=Pro+Recco';">
-          <h3 style="color: var(--color-white); font-family: var(--font-heading);">Pro Recco Heritage &amp; Italian System</h3>
-          <p style="font-size: 0.85rem; color: var(--color-pool-light); margin-bottom: 0.5rem;">Tactical Excellence &amp; Elite Traditions</p>
-          <p style="font-size: 0.85rem; color: var(--color-text-dim);">Rooted in world-class tactical methodology, high-intensity game preparation, and technical development.</p>
-        </div>
+      <span class="section-label">20+ Years of International Career</span>
+      <h2 class="section-heading">Verified Experience &amp; Elite Arenas</h2>
+      <div class="card-grid">
+          <article class="info-card">
+            <img src="images/esperienza-pro-recco.jpg" alt="Aquatic sports facility">
+            <h3>Pro Recco Heritage &amp; Italian System</h3>
+            <p class="card-sub">Tactical Excellence &amp; Elite Traditions</p>
+            <p class="card-desc">Rooted in world-class tactical methodology, high-intensity game preparation, and technical development.</p>
+          </article>
 
-        <div style="background: var(--color-midnight-card); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--color-midnight-border);">
-          <img src="IMG-20190602-WA0007.jpg" alt="Olympic Outdoor Stadium" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1128/38BDF8?text=Europe';">
-          <h3 style="color: var(--color-white); font-family: var(--font-heading);">European Tournaments &amp; Competitions</h3>
-          <p style="font-size: 0.85rem; color: var(--color-pool-light); margin-bottom: 0.5rem;">Continental Leagues &amp; Championships</p>
-          <p style="font-size: 0.85rem; color: var(--color-text-dim);">Navigating top European club environments, Division 1 promotions, and international tournament execution.</p>
-        </div>
+          <article class="info-card">
+            <img src="images/esperienza-tornei-europei.jpg" alt="Outdoor swimming pool">
+            <h3>European Tournaments &amp; Competitions</h3>
+            <p class="card-sub">Continental Leagues &amp; Championships</p>
+            <p class="card-desc">Navigating top European club environments, Division 1 promotions, and international tournament execution.</p>
+          </article>
 
-        <div style="background: var(--color-midnight-card); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--color-midnight-border);">
-          <img src="eeee.jpeg" alt="Indoor Aquatic Arena Albaro" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1128/38BDF8?text=Indoor+Pool';">
-          <h3 style="color: var(--color-white); font-family: var(--font-heading);">Indoor High-Performance Training</h3>
-          <p style="font-size: 0.85rem; color: var(--color-pool-light); margin-bottom: 0.5rem;">Systematic Tactical Codification</p>
-          <p style="font-size: 0.85rem; color: var(--color-text-dim);">Deep-dive video analysis, positional drills, perimeter rotation, and defensive organization.</p>
-        </div>
+          <article class="info-card">
+            <img src="images/esperienza-indoor.jpg" alt="Indoor swimming pool">
+            <h3>Indoor High-Performance Training</h3>
+            <p class="card-sub">Systematic Tactical Codification</p>
+            <p class="card-desc">Deep-dive video analysis, positional drills, perimeter rotation, and defensive organization.</p>
+          </article>
 
-        <div style="background: var(--color-midnight-card); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--color-midnight-border);">
-          <img src="wwww.jpg" alt="Night Training Session" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0A1128/38BDF8?text=Night+Session';">
-          <h3 style="color: var(--color-white); font-family: var(--font-heading);">Night Sessions &amp; Relentless Discipline</h3>
-          <p style="font-size: 0.85rem; color: var(--color-pool-light); margin-bottom: 0.5rem;">Under the Lights</p>
-          <p style="font-size: 0.85rem; color: var(--color-text-dim);">Cultivating mental fortitude, team resilience, and continuous physical preparation under any condition.</p>
-        </div>
+          <article class="info-card">
+            <img src="images/esperienza-notte.jpg" alt="Night training session">
+            <h3>Night Sessions &amp; Relentless Discipline</h3>
+            <p class="card-sub">Under the Lights</p>
+            <p class="card-desc">Cultivating mental fortitude, team resilience, and continuous physical preparation under any condition.</p>
+          </article>
       </div>
     </section>
 
@@ -632,8 +190,8 @@
          Blog Section
          ========================================================================== -->
     <section id="blog" class="container" style="padding: 5rem 1.5rem;">
-      <span class="section-label" id="cms-blog-etichetta">Insights &amp; Publications</span>
-      <h2 class="section-heading" id="cms-blog-titolo">Coach’s Blog</h2>
+      <span class="section-label">Insights &amp; Publications</span>
+      <h2 class="section-heading">Coach’s Blog</h2>
       <p class="section-subheading" style="margin-bottom: 2rem;">
         Spazio riservato agli articoli tecnici e alle pubblicazioni ufficiali.
       </p>
@@ -643,35 +201,33 @@
          Services / Roles Section
          ========================================================================== -->
     <section id="services" class="container" style="padding-bottom: 5rem;">
-      <span class="section-label" id="cms-servizi-etichetta">Scope of Expertise</span>
-      <h2 class="section-heading" id="cms-servizi-titolo">Professional Services</h2>
-      <div id="cms-servizi-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin-top:2rem;"></div>
-      
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-        <div style="background: var(--color-midnight-card); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--color-midnight-border);">
-          <h3 style="color: var(--color-pool-light); margin-bottom: 0.5rem;">Water Polo Coaching</h3>
-          <p style="font-size: 0.88rem; color: var(--color-text-dim);">Senior team head coaching, tactical game plans, perimeter/center defense specialization.</p>
-        </div>
+      <span class="section-label">Scope of Expertise</span>
+      <h2 class="section-heading">Professional Services</h2>
+      <div class="card-grid card-grid--services">
+          <article class="info-card">
+            <h3>Water Polo Coaching</h3>
+            <p class="card-desc">Senior team head coaching, tactical game plans, perimeter/center defense specialization.</p>
+          </article>
 
-        <div style="background: var(--color-midnight-card); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--color-midnight-border);">
-          <h3 style="color: var(--color-pool-light); margin-bottom: 0.5rem;">Swimming Coaching</h3>
-          <p style="font-size: 0.88rem; color: var(--color-text-dim);">Biomechanics, stroke refinement, race pacing, and aerobic/anaerobic conditioning programs.</p>
-        </div>
+          <article class="info-card">
+            <h3>Swimming Coaching</h3>
+            <p class="card-desc">Biomechanics, stroke refinement, race pacing, and aerobic/anaerobic conditioning programs.</p>
+          </article>
 
-        <div style="background: var(--color-midnight-card); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--color-midnight-border);">
-          <h3 style="color: var(--color-pool-light); margin-bottom: 0.5rem;">Aquatic Supervision</h3>
-          <p style="font-size: 0.88rem; color: var(--color-text-dim);">Technical direction for clubs and academies, staff mentorship, and safety/quality standards.</p>
-        </div>
+          <article class="info-card">
+            <h3>Aquatic Supervision</h3>
+            <p class="card-desc">Technical direction for clubs and academies, staff mentorship, and safety/quality standards.</p>
+          </article>
 
-        <div style="background: var(--color-midnight-card); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--color-midnight-border);">
-          <h3 style="color: var(--color-pool-light); margin-bottom: 0.5rem;">Team Management</h3>
-          <p style="font-size: 0.88rem; color: var(--color-text-dim);">Roster construction, season planning, tournament travel logistics, and internal culture building.</p>
-        </div>
+          <article class="info-card">
+            <h3>Team Management</h3>
+            <p class="card-desc">Roster construction, season planning, tournament travel logistics, and internal culture building.</p>
+          </article>
 
-        <div style="background: var(--color-midnight-card); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--color-midnight-border);">
-          <h3 style="color: var(--color-pool-light); margin-bottom: 0.5rem;">Physical Education</h3>
-          <p style="font-size: 0.88rem; color: var(--color-text-dim);">Curriculum development, youth motor skill mastery, outdoor education, and sport ethics.</p>
-        </div>
+          <article class="info-card">
+            <h3>Physical Education</h3>
+            <p class="card-desc">Curriculum development, youth motor skill mastery, outdoor education, and sport ethics.</p>
+          </article>
       </div>
     </section>
 
@@ -682,12 +238,10 @@
       <div class="container">
         <div class="contact-layout">
           <div>
-            <span class="section-label" id="cms-contatti-etichetta">Direct Communication</span>
-            <h2 class="section-heading" id="cms-contatti-titolo">Initiate Dialogue</h2>
-            <p id="cms-contatti-descrizione" style="color: var(--color-text-dim); margin-bottom: 1.5rem;">
-              Whether representing a sporting club, national federation, academic institution, or elite athlete, reach out directly to discuss potential engagements.
-            </p>
-            <p id="cms-email" style="color: var(--color-pool-light); font-weight: 700;">Email: doriamondo@gmail.com</p>
+            <span class="section-label">Direct Communication</span>
+            <h2 class="section-heading">Initiate Dialogue</h2>
+            <p style="color: var(--color-text-dim); margin-bottom: 1.5rem;">Whether representing a sporting club, national federation, academic institution, or elite athlete, reach out directly to discuss potential engagements.</p>
+            <p style="color: var(--color-pool-light); font-weight: 700;">Email: doriamondo@gmail.com</p>
           </div>
 
           <div>
@@ -741,7 +295,7 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-      <div id="cms-footer">&copy; 2026 Livio Cocozza. All rights reserved. Water Polo &amp; Swimming Coach • Supervisor • Team Manager • PE Teacher.</div>
+      <div>© 2026 Livio Cocozza. All rights reserved. Water Polo &amp; Swimming Coach • Supervisor • Team Manager • PE Teacher.</div>
       <div>Global Perspective</div>
     </div>
   </footer>
@@ -772,248 +326,7 @@
     </div>
   </div>
 
-  <!-- Canvas Bubbles Engine Script & Modal Handler -->
-  <script>
-    const canvas = document.getElementById('bubblesCanvas');
-    const ctx = canvas.getContext('2d');
-
-    let width = canvas.width = window.innerWidth;
-    let height = canvas.height = window.innerHeight;
-
-    window.addEventListener('resize', () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    });
-
-    class Bubble {
-      constructor() {
-        this.reset();
-      }
-
-      reset() {
-        this.x = Math.random() * width;
-        this.y = height + Math.random() * 100;
-        this.radius = Math.random() * 4 + 1;
-        this.speed = Math.random() * 1.2 + 0.4;
-        this.opacity = Math.random() * 0.5 + 0.1;
-        this.oscillation = Math.random() * 0.02;
-        this.angle = Math.random() * Math.PI * 2;
-      }
-
-      update() {
-        this.y -= this.speed;
-        this.angle += this.oscillation;
-        this.x += Math.sin(this.angle) * 0.5;
-
-        if (this.y < -10) {
-          this.reset();
-        }
-      }
-
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(56, 189, 248, ${this.opacity})`;
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = 'rgba(56, 189, 248, 0.4)';
-        ctx.fill();
-        ctx.closePath();
-      }
-    }
-
-    const bubbles = Array.from({ length: 45 }, () => new Bubble());
-
-    function animate() {
-      ctx.clearRect(0, 0, width, height);
-      bubbles.forEach(bubble => {
-        bubble.update();
-        bubble.draw();
-      });
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    // Media Modal Database & Logic
-    const mediaData = {
-      video: [
-        { title: "Tactical Briefing & Game Strategy", desc: "Analysis of opponent center defense and extra-man offense rotations.", thumb: "IMG_0591.JPG" },
-        { title: "Poolside Coaching Session", desc: "High-intensity technical drills during evening training.", thumb: "IMG_0083.JPG" },
-        { title: "Water Polo Match Dynamics", desc: "Full-match supervision and strategic timeouts.", thumb: "IMG_2223.JPG" }
-      ],
-      pics: [
-        { title: "Pro Recco Poolside Atmosphere", desc: "Elite training environments and historical heritage.", thumb: "ewe.jpeg" },
-        { title: "Outdoor Olympic Arena", desc: "International tournament match preparation.", thumb: "IMG-20190602-WA0007.jpg" },
-        { title: "Indoor High-Performance Setup", desc: "Systematic tactical execution under professional lighting.", thumb: "eeee.jpeg" },
-        { title: "Night Training Focus", desc: "Relentless discipline and athletic concentration.", thumb: "wwww.jpg" },
-        { title: "Mentorship & Athlete Connection", desc: "Individual communication on deck.", thumb: "IMG_2221.JPG" }
-      ]
-    };
-
-    function openMediaModal(type) {
-      document.getElementById('mediaModal').style.display = 'flex';
-      switchTab(type);
-    }
-
-    function closeMediaModal() {
-      document.getElementById('mediaModal').style.display = 'none';
-    }
-
-    function switchTab(type) {
-      const vidBtn = document.getElementById('tabVideoBtn');
-      const picsBtn = document.getElementById('tabPicsBtn');
-      const title = document.getElementById('modalTitle');
-      const grid = document.getElementById('modalGridContent');
-
-      if (type === 'video') {
-        vidBtn.className = 'btn btn-primary';
-        picsBtn.className = 'btn btn-secondary';
-        title.innerText = 'Video Archive & Masterclasses';
-      } else {
-        picsBtn.className = 'btn btn-primary';
-        vidBtn.className = 'btn btn-secondary';
-        title.innerText = 'Official Photo Gallery & Moments';
-      }
-
-      grid.innerHTML = mediaData[type].map(item => `
-        <div style="background: var(--color-midnight-base); border: 1px solid var(--color-midnight-border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
-          <img src="${item.thumb}" alt="${item.title}" style="width: 100%; height: 160px; object-fit: cover;" onerror="this.onerror=null; this.src='https://placehold.co/400x300/0F1A36/38BDF8?text=Media';">
-          <div style="padding: 1rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <h4 style="color: var(--color-white); font-family: var(--font-heading); font-size: 1rem; margin-bottom: 0.3rem;">${item.title}</h4>
-              <p style="font-size: 0.8rem; color: var(--color-text-dim);">${item.desc}</p>
-            </div>
-            <span style="font-size: 0.75rem; color: var(--color-pool-light); margin-top: 0.8rem; font-weight: 600; text-transform: uppercase;">${type === 'video' ? '▶ Play Video Clip' : '🔍 View High-Res'}</span>
-          </div>
-        </div>
-      `).join('');
-    }
-
-    // Close modal on background click
-    window.onclick = function(event) {
-      const modal = document.getElementById('mediaModal');
-      if (event.target === modal) {
-        closeMediaModal();
-      }
-    }
-  </script>
-
-<script>
-(function () {
-  const $ = (id) => document.getElementById(id);
-  const setText = (id, value) => { if ($(id) && value != null) $(id).textContent = value; };
-  const setImage = (selector, value, alt) => {
-    const el = document.querySelector(selector);
-    if (el && value) { el.src = value; if (alt) el.alt = alt; }
-  };
-  const makeCard = (title, subtitle, description, image, alt) => {
-    const card = document.createElement('article');
-    card.style.cssText = 'background:var(--color-midnight-card);padding:1.25rem;border-radius:12px;border:1px solid var(--color-midnight-border);overflow:hidden;';
-    if (image) {
-      const img = document.createElement('img');
-      img.src = image; img.alt = alt || title || '';
-      img.style.cssText = 'width:100%;height:190px;object-fit:cover;border-radius:8px;margin-bottom:1rem;';
-      card.appendChild(img);
-    }
-    const heading = document.createElement('h3');
-    heading.textContent = title || '';
-    heading.style.cssText = 'color:var(--color-pool-light);margin-bottom:.5rem;font-family:var(--font-heading);';
-    card.appendChild(heading);
-    if (subtitle) {
-      const sub = document.createElement('p'); sub.textContent = subtitle;
-      sub.style.cssText = 'font-size:.85rem;color:var(--color-pool-light);margin-bottom:.5rem;';
-      card.appendChild(sub);
-    }
-    if (description) {
-      const desc = document.createElement('p'); desc.textContent = description;
-      desc.style.cssText = 'font-size:.88rem;color:var(--color-text-dim);';
-      card.appendChild(desc);
-    }
-    return card;
-  };
-  fetch('/dati.json?v=' + Date.now())
-    .then(response => { if (!response.ok) throw new Error('CMS data not found'); return response.json(); })
-    .then(data => {
-      setText('cms-sottotitolo', data.sottotitolo);
-      setText('cms-titolo', data.titolo_principale);
-      setText('cms-descrizione-hero', data.descrizione_hero);
-      setText('cms-filosofia-etichetta', data.filosofia_etichetta);
-      setText('cms-filosofia-titolo', data.filosofia_titolo);
-      setText('cms-filosofia-citazione', data.filosofia_citazione);
-      setText('cms-filosofia-testo', data.filosofia_testo);
-      setText('cms-galleria-etichetta', data.galleria_etichetta);
-      setText('cms-galleria-titolo', data.galleria_titolo);
-      setText('cms-galleria-descrizione', data.galleria_descrizione);
-      setText('cms-esperienze-etichetta', data.esperienze_etichetta);
-      setText('cms-esperienze-titolo', data.esperienze_titolo);
-      setText('cms-blog-etichetta', data.blog_etichetta);
-      setText('cms-blog-titolo', data.blog_titolo);
-      setText('cms-blog-descrizione', data.blog_descrizione);
-      setText('cms-servizi-etichetta', data.servizi_etichetta);
-      setText('cms-servizi-titolo', data.servizi_titolo);
-      setText('cms-contatti-etichetta', data.contatti_etichetta);
-      setText('cms-contatti-titolo', data.contatti_titolo);
-      setText('cms-contatti-descrizione', data.contatti_descrizione);
-      setText('cms-email', data.email ? 'Email: ' + data.email : '');
-      setText('cms-footer', data.footer_testo);
-
-      if (data.foto_sfondo) setImage('.hero-bg-img', data.foto_sfondo, 'Livio Cocozza - Coach at poolside');
-      if (data.foto_filosofia) setImage('.philosophy-img', data.foto_filosofia, 'Coaching philosophy');
-
-      const gallery = $('cms-galleria-grid');
-      if (gallery && Array.isArray(data.galleria)) {
-        gallery.replaceChildren();
-        data.galleria.forEach(item => {
-          const card = document.createElement('div'); card.className = 'gallery-card';
-          const img = document.createElement('img'); img.src = item.foto || ''; img.alt = item.alt || item.titolo || '';
-          const overlay = document.createElement('div'); overlay.className = 'gallery-card-overlay';
-          const pill = document.createElement('span'); pill.className = 'gallery-pill'; pill.textContent = item.etichetta || '';
-          const title = document.createElement('h3'); title.className = 'gallery-title'; title.textContent = item.titolo || '';
-          const desc = document.createElement('p'); desc.className = 'gallery-caption'; desc.textContent = item.descrizione || '';
-          overlay.append(pill,title,desc); card.append(img,overlay); gallery.appendChild(card);
-        });
-        const oldGallery = document.querySelectorAll('.gallery-grid:not(#cms-galleria-grid)');
-        oldGallery.forEach(el => { if (el.closest('#gallery')) el.style.display = 'none'; });
-      }
-
-      const exp = $('cms-esperienze-grid');
-      if (exp && Array.isArray(data.esperienze)) {
-        exp.replaceChildren();
-        data.esperienze.forEach(item => exp.appendChild(makeCard(item.titolo,item.sottotitolo,item.descrizione,item.foto,item.alt)));
-        const old = exp.parentElement.querySelectorAll(':scope > div:not(#cms-esperienze-grid)');
-        old.forEach(el => { if (el.querySelector('img')) el.style.display = 'none'; });
-      }
-      const blog = $('cms-articoli-grid');
-      if (blog && Array.isArray(data.articoli)) {
-        blog.replaceChildren();
-        data.articoli.forEach(item => {
-          const card = makeCard(item.titolo, item.data || '', item.riassunto, item.immagine, item.titolo);
-          if (item.link) { const a=document.createElement('a'); a.href=item.link; a.textContent='Read article'; a.target='_blank'; a.rel='noopener'; a.style.color='var(--color-pool-light)'; card.appendChild(a); }
-          else if (item.contenuto) { const p=document.createElement('p'); p.textContent=item.contenuto; p.style.cssText='color:var(--color-text-dim);margin-top:.75rem;white-space:pre-wrap;'; card.appendChild(p); }
-          blog.appendChild(card);
-        });
-      }
-      const services = $('cms-servizi-grid');
-      if (services && Array.isArray(data.servizi)) {
-        services.replaceChildren();
-        data.servizi.forEach(item => services.appendChild(makeCard(item.titolo,'',item.descrizione)));
-        const old = services.parentElement.querySelectorAll(':scope > div:not(#cms-servizi-grid)');
-        old.forEach(el => { if (el.querySelector('h3')) el.style.display='none'; });
-      }
-      if (data.linkedin || data.instagram || data.facebook) {
-        const contact = $('cms-email')?.parentElement;
-        if (contact) {
-          [ ['LinkedIn',data.linkedin], ['Instagram',data.instagram], ['Facebook',data.facebook] ].forEach(([label,url]) => {
-            if (!url) return;
-            const a=document.createElement('a'); a.href=url; a.textContent=label; a.target='_blank'; a.rel='noopener';
-            a.style.cssText='display:inline-block;margin:0 .8rem .5rem 0;color:var(--color-pool-light);'; contact.appendChild(a);
-          });
-        }
-      }
-    })
-    .catch(error => console.warn('CMS content could not be loaded; showing default page.', error));
-})();
-</script>
+  <script src="js/main.js"></script>
 
 </body>
 </html>
