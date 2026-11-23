@@ -559,3 +559,23 @@
    mask-image:linear-gradient(180deg,rgba(0,0,0,.5),#000 40%) !important;
  }
 }
+
+
+/* User feedback: smaller portrait, fully visible below the fixed navigation; non-script wordmark */
+.site-nav .brand-name { display:block !important; width:auto !important; white-space:nowrap !important; font-family:var(--font-heading) !important; font-size:1.8rem !important; font-weight:800 !important; letter-spacing:.045em !important; line-height:1 !important; text-transform:uppercase !important; }
+.site-nav .brand-signature { display:block !important; font-family:var(--font-heading) !important; font-size:1.8rem !important; font-weight:800 !important; letter-spacing:.045em !important; line-height:1 !important; text-transform:uppercase !important; }
+.site-nav .brand-tagline { margin:.35rem 0 0 .1rem !important; font-size:.62rem !important; letter-spacing:.16em !important; }
+.hero-bg-img {
+  top:92px !important;
+  right:3% !important;
+  width:38% !important;
+  height:calc(100% - 92px) !important;
+  object-fit:contain !important;
+  object-position:right bottom !important;
+  opacity:1 !important;
+  mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 12%,#000 34%) !important;
+}
+@media(max-width:900px) {
+ .site-nav .brand-name,.site-nav .brand-signature { font-size:1.5rem !important; }
+ .hero-bg-img { top:85px !important; right:0 !important; width:72% !important; height:calc(100% - 85px) !important; object-fit:contain !important; object-position:right top !important; opacity:.72 !important; }
+}
