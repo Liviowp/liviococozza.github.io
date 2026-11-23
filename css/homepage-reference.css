@@ -1011,3 +1011,16 @@ html body main #hero.hero-section {
     background-size:cover !important;
   }
 }
+
+
+/* DEFINITIVE DESKTOP HERO CROP: align the background to its top edge.
+   This shifts the coach down relative to the centered crop used previously. */
+@media (min-width:901px) {
+  html body main #hero.hero-section {
+    background-position: center top !important;
+    background-size: cover !important;
+  }
+  html body main #hero.hero-section .hero-content {
+    transform: translateY(42px) !important;
+  }
+}
