@@ -751,3 +751,41 @@ html body main #hero.hero-section {
     font-size:.86rem !important; padding:0 14px !important;
   }
 }
+
+
+/* Mobile header refinement: show every navigation item without horizontal clipping */
+@media (max-width:620px) {
+  .site-nav .nav-content {
+    gap:8px !important;
+  }
+  .site-nav nav {
+    overflow:visible !important;
+  }
+  .site-nav .nav-links {
+    display:flex !important;
+    flex-wrap:wrap !important;
+    justify-content:center !important;
+    align-items:center !important;
+    gap:7px 17px !important;
+    overflow:visible !important;
+    white-space:normal !important;
+    padding:6px 0 8px !important;
+  }
+  .site-nav .nav-links li {
+    flex:0 0 auto !important;
+  }
+  .site-nav .nav-link {
+    display:inline-block !important;
+    font-size:.65rem !important;
+    line-height:1.35 !important;
+    letter-spacing:.035em !important;
+  }
+
+  /* Reduce the oversized gap below the navigation */
+  #hero.hero-section {
+    min-height:calc(100svh - 145px) !important;
+    padding-top:28px !important;
+    padding-bottom:105px !important;
+    align-items:center !important;
+  }
+}
