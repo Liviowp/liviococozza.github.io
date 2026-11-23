@@ -1033,3 +1033,20 @@ html body main #hero.hero-section {
     background-size:cover !important;
   }
 }
+
+
+/* Desktop composition adjustment: lower portrait and copy, shift soundtrack control right */
+@media (min-width:901px) {
+  html body main #hero.hero-section {
+    /* A positive pixel offset moves the background image down from the top edge. */
+    background-position:center 72px !important;
+    background-size:cover !important;
+  }
+  html body main #hero.hero-section .hero-content {
+    transform:translateY(72px) !important;
+  }
+  html body main #hero.hero-section .hero-audio-control {
+    margin-left:270px !important;
+    margin-top:1rem !important;
+  }
+}
