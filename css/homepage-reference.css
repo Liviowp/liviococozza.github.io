@@ -252,3 +252,38 @@
   .hero-actions { gap:.85rem !important; }
   .hero-actions .btn { min-height:54px !important; padding:0 1.1rem !important; font-size:.85rem !important; }
 }
+
+/* Uploaded full-bleed aquatic hero artwork and transparent logo */
+.site-nav .brand-logo {
+  display:block !important;
+  width:clamp(220px,22vw,325px) !important;
+  height:auto !important;
+  max-height:112px !important;
+  object-fit:contain !important;
+  object-position:left center !important;
+}
+.site-nav .brand-name { flex:0 0 auto !important; }
+.hero-section {
+  background-image:
+    linear-gradient(90deg,rgba(2,17,29,.20) 0%,rgba(2,17,29,.10) 46%,rgba(2,17,29,.02) 100%),
+    url("../images/Allenatore%20di%20nuoto%20tra%20onde%20turchesi.png") !important;
+  background-size:cover !important;
+  background-position:center center !important;
+  background-repeat:no-repeat !important;
+}
+.hero-section::before {
+  background:linear-gradient(90deg,rgba(2,17,29,.78) 0%,rgba(2,17,29,.64) 42%,rgba(2,17,29,.12) 68%,rgba(2,17,29,.02) 100%) !important;
+}
+.hero-section > img.hero-bg-img { display:none !important; }
+.hero-section > .hero-bg-overlay { background:transparent !important; }
+@media(max-width:900px) {
+  .site-nav .brand-logo { width:clamp(190px,45vw,270px) !important; max-height:82px !important; }
+  .hero-section { background-position:62% center !important; }
+}
+@media(max-width:620px) {
+  .site-nav .brand-logo { width:205px !important; max-height:72px !important; }
+  .hero-section {
+    background-position:65% center !important;
+    background-image:linear-gradient(90deg,rgba(2,17,29,.76),rgba(2,17,29,.42)),url("../images/Allenatore%20di%20nuoto%20tra%20onde%20turchesi.png") !important;
+  }
+}
