@@ -1061,3 +1061,20 @@ html body main #hero.hero-section {
     margin-left:330px !important;
   }
 }
+
+
+/* Precise desktop adjustment: shift the complete hero content right by 1 cm.
+   Place the soundtrack control directly beneath the first (My Experience) button. */
+@media (min-width:901px) {
+  html body main #hero.hero-section .hero-content {
+    position:relative !important;
+    left:38px !important;
+    transform:translateY(72px) !important;
+  }
+  html body main #hero.hero-section .hero-audio-control {
+    margin-left:0 !important;
+    margin-top:1rem !important;
+    width:max-content !important;
+    position:relative !important;
+  }
+}
