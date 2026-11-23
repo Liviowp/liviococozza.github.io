@@ -606,3 +606,48 @@
  .hero-bg-img { top:5% !important; right:0 !important; width:55% !important; height:65% !important; opacity:.8 !important; object-position:right top !important; }
  .hero-title-main,.hero-title-accent { white-space:normal !important; }
 }
+
+
+/* OVERRIDE: enforce clean wordmark and correctly sized hero image */
+header.site-nav a.brand-name,
+header.site-nav a.brand-name * {
+  font-family: 'Outfit', sans-serif !important;
+  font-style: normal !important;
+  text-transform: none !important;
+}
+header.site-nav a.brand-name {
+  display:flex !important; align-items:center !important; gap:12px !important;
+  width:auto !important; max-width:none !important; white-space:nowrap !important;
+}
+header.site-nav .brand-title {
+  display:block !important; font-family:'Outfit',sans-serif !important;
+  font-size:23px !important; font-weight:800 !important; letter-spacing:1px !important;
+  line-height:1.05 !important; color:#fff !important;
+}
+header.site-nav .brand-tagline {
+  display:block !important; font-family:'Inter',sans-serif !important;
+  font-size:9px !important; font-weight:600 !important; letter-spacing:2px !important;
+  line-height:1.4 !important; color:#dce8f2 !important; margin:5px 0 0 !important;
+}
+header.site-nav .brand-copy { display:flex !important; flex-direction:column !important; }
+.hero-section { position:relative !important; }
+.hero-section img.hero-bg-img {
+  top:5% !important; right:2% !important; left:auto !important;
+  width:29% !important; height:88% !important; max-width:460px !important;
+  object-fit:contain !important; object-position:center bottom !important;
+  transform:none !important; opacity:1 !important; z-index:0 !important;
+}
+.hero-section .hero-bg-overlay { display:none !important; }
+.hero-section::before {
+  z-index:1 !important; pointer-events:none !important;
+  background:linear-gradient(90deg,#03111f 0%,rgba(3,17,31,.98) 38%,rgba(3,17,31,.55) 67%,rgba(3,17,31,.08) 100%) !important;
+}
+.hero-section .hero-content { position:relative !important; z-index:2 !important; }
+.hero-title-main { font-size:clamp(2rem,3.7vw,3.5rem) !important; white-space:nowrap !important; }
+.hero-title-accent { font-size:clamp(1.25rem,2.5vw,2.35rem) !important; white-space:nowrap !important; }
+@media(max-width:900px) {
+  header.site-nav .brand-title {font-size:18px !important;}
+  header.site-nav .brand-tagline {font-size:7px !important;letter-spacing:1.3px !important;}
+  .hero-section img.hero-bg-img {width:46% !important;height:68% !important;right:0 !important;top:7% !important;}
+  .hero-title-main,.hero-title-accent {white-space:normal !important;}
+}
