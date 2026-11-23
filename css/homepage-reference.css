@@ -878,3 +878,16 @@ html body main #hero.hero-section {
     color:#159FE8 !important;
   }
 }
+
+
+/* Final mobile hero crop: allow responsive positioning of the original photo */
+@media (max-width:620px) {
+  html body main #hero.hero-section {
+    background-position:62% center !important;
+    background-size:auto 100% !important;
+    background-repeat:no-repeat !important;
+  }
+  html body main #hero.hero-section::before {
+    background:linear-gradient(90deg,rgba(2,17,29,.84) 0%,rgba(2,17,29,.68) 48%,rgba(2,17,29,.24) 100%) !important;
+  }
+}
