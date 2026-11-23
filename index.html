@@ -26,16 +26,19 @@
        ========================================================================== -->
   <header class="site-nav">
     <div class="container nav-content">
-      <!-- Ingrandita la scritta LIVIO COCOZZA, d'impatto e senza sottolineature -->
-      <a href="#hero" class="brand-name">LIVIO COCOZZA</a>
+      <a href="#hero" class="brand-name">
+        <span class="brand-signature">Livio Cocozza</span>
+        <span class="brand-tagline">AQUATIC COACH &amp; EDUCATOR</span>
+      </a>
 
       <nav>
         <ul class="nav-links">
-          <li><a href="#philosophy" class="nav-link">Philosophy</a></li>
-          <li><a href="#gallery" class="nav-link">5 Dimensions</a></li>
-          <li><a href="#journey" class="nav-link">The Journey</a></li>
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#philosophy" class="nav-link">About</a></li>
+          <li><a href="#journey" class="nav-link">Experience</a></li>
+          <li><a href="#gallery" class="nav-link">Education</a></li>
+          <li><a href="#services" class="nav-link">Projects</a></li>
           <li><a href="#blog" class="nav-link">Blog</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
@@ -47,26 +50,19 @@
          Hero Section
          ========================================================================== -->
     <section id="hero" class="hero-section">
-      <img src="images/WhatsApp%20Image%202026-11-17%20at%2019.37.40.jpeg" alt="Livio Cocozza - Coach at poolside" class="hero-bg-img">
+      <img src="images/WhatsApp%20Image%202026-11-17%20at%2019.37.40.jpeg" alt="Livio Cocozza, aquatic coach" class="hero-bg-img">
       <div class="hero-bg-overlay"></div>
-
-      <div class="container">
-        <div class="hero-badge-top">
-          <span>Water Polo &amp; Swimming Coach • Supervisor • Team Manager • PE Teacher</span>
-        </div>
-
-        <!-- Nuova frase d'impatto con gradiente -->
+      <div class="hero-water-detail" aria-hidden="true"></div>
+      <div class="container hero-content">
         <h1 class="hero-headline">
-          <span class="highlight">WATER, MOVEMENT, FUTURE.</span>
+          <span class="hero-title-main">SWIMMING &amp; WATER POLO</span>
+          <span class="hero-title-accent">COACH · EDUCATOR · CONSULTANT</span>
         </h1>
-
-        <p class="hero-subtext">High-performance coaching, athletic development, organizational leadership and physical education built through 20 years of international experience across 7 countries.</p>
-
-        <!-- Pulsanti aggiornati: Work With Livio, Video e Pics -->
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a href="#contact" class="btn btn-primary">Work With Livio</a>
-          <button type="button" class="btn btn-secondary" onclick="openMediaModal('video')">Video</button>
-          <button type="button" class="btn btn-secondary" onclick="openMediaModal('pics')">Pics</button>
+        <div class="hero-rule"></div>
+        <p class="hero-subtext">International experience in high-performance sport,<br class="desktop-break"> athlete development, education and facility management.</p>
+        <div class="hero-actions">
+          <a href="#journey" class="btn btn-primary"><span aria-hidden="true">🏊</span> My Experience</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
         </div>
       </div>
     </section>
