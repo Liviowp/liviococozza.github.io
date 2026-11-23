@@ -921,3 +921,38 @@ html body main #hero.hero-section {
   }
   html body main #hero.hero-section .hero-title-accent { color:#20B8FF !important; }
 }
+
+
+/* Refined hero typography and optional user-controlled background soundtrack */
+.hero-headline { max-width:1100px !important; }
+.hero-title-main {
+  display:block !important;
+  font-size:clamp(2.5rem,4.15vw,4.1rem) !important;
+  line-height:1.06 !important;
+  letter-spacing:-.035em !important;
+}
+.hero-title-accent {
+  display:block !important;
+  margin-top:.45rem !important;
+  font-size:clamp(1.55rem,2.65vw,2.55rem) !important;
+  line-height:1.18 !important;
+}
+.hero-audio-control { margin-top:18px !important; }
+.audio-toggle {
+  display:inline-flex !important; align-items:center !important; gap:10px !important;
+  padding:10px 15px !important; border:1px solid rgba(94,190,235,.55) !important;
+  border-radius:999px !important; color:#d9f3ff !important;
+  background:rgba(3,24,40,.58) !important; font:600 .82rem/1.2 Inter,sans-serif !important;
+  letter-spacing:.035em !important; cursor:pointer !important;
+  transition:background .2s ease,border-color .2s ease,transform .2s ease !important;
+}
+.audio-toggle:hover { background:rgba(0,145,220,.24) !important; border-color:#22b7f2 !important; }
+.audio-toggle:focus-visible { outline:2px solid #22b7f2 !important; outline-offset:3px !important; }
+.audio-toggle-icon { color:#20b9f4 !important; font-size:.9rem !important; }
+.audio-toggle[aria-pressed="true"] { background:rgba(0,145,220,.2) !important; }
+@media(max-width:620px) {
+  .hero-title-main { font-size:clamp(1.8rem,7.2vw,2.25rem) !important; }
+  .hero-title-accent { font-size:clamp(1.05rem,4.8vw,1.35rem) !important; }
+  .hero-audio-control { margin-top:14px !important; }
+  .audio-toggle { font-size:.76rem !important; padding:9px 13px !important; }
+}
