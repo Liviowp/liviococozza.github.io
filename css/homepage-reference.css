@@ -1491,7 +1491,7 @@ html body header.site-nav {
 
 /* Professional Services — distinctive aquatic line icons */
 #services .service-card-icon{
-  display:flex;align-items:center;justify-content:flex-start;
+  display:flex;align-items:center;justify-content:center;align-self:center;
   width:124px;height:100px;margin-bottom:1rem;border:0;border-radius:0;
   background:transparent;box-shadow:none;overflow:visible;
 }
