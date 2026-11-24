@@ -21,8 +21,8 @@ async function go(href, push) {
   const nextPlayer = doc.getElementById('persistentAudioPlayer'); if (!nextPlayer) throw new Error('player');
   nextPlayer.replaceWith(player);
   document.title = doc.title || document.title;
-  document.head.querySelectorAll('link[rel="stylesheet"],style[data-page-style]').forEach(n => n.remove());
-  doc.head.querySelectorAll('link[rel="stylesheet"],style[data-page-style]').forEach(n => document.head.appendChild(n.cloneNode(true)));
+  document.head.querySelectorAll('link[rel="stylesheet"],style').forEach(n => n.remove());
+  doc.head.querySelectorAll('link[rel="stylesheet"],style').forEach(n => document.head.appendChild(n.cloneNode(true)));
   const scripts = Array.from(doc.body.querySelectorAll('script')); scripts.forEach(s => s.remove());
   document.body.replaceChildren(...Array.from(doc.body.childNodes), player);
   if (push) history.pushState({}, '', href);
