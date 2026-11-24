@@ -1098,3 +1098,63 @@ html body main #hero.hero-section {
     clear:both !important;
   }
 }
+
+
+/* Smartphone refinement — country flags and Facilities cards */
+@media (max-width: 620px) {
+  #facilities {
+    padding: 3.4rem 0 3.8rem !important;
+    scroll-margin-top: 18px !important;
+  }
+  #facilities > p {
+    font-size: .88rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 1.15rem !important;
+  }
+  #facilities nav[aria-label="Explore facilities by country"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: .65rem !important;
+    width: 100% !important;
+  }
+  #facilities .country-tile {
+    min-width: 0 !important;
+    min-height: 68px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: .45rem !important;
+    padding: .55rem .58rem !important;
+    border-radius: 12px !important;
+  }
+  #facilities .country-flag-img {
+    flex: 0 0 40px !important;
+    width: 40px !important;
+    height: 28px !important;
+    min-width: 40px !important;
+    object-fit: cover !important;
+    margin-left: 0 !important;
+    border-radius: 4px !important;
+    border: 1px solid rgba(255,255,255,.48) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,.4) !important;
+  }
+  #facilities .country-tile-name {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    font-size: .76rem !important;
+    line-height: 1.2 !important;
+    overflow-wrap: anywhere !important;
+    text-shadow: 0 1px 4px rgba(0,0,0,.7) !important;
+  }
+  #facilities .country-arrow {
+    flex: 0 0 auto !important;
+    font-size: .82rem !important;
+    margin-left: 0 !important;
+  }
+}
+@media (max-width: 370px) {
+  #facilities nav[aria-label="Explore facilities by country"] { gap: .5rem !important; }
+  #facilities .country-tile { padding: .48rem !important; gap: .35rem !important; }
+  #facilities .country-flag-img { flex-basis: 34px !important; width: 34px !important; height: 24px !important; min-width: 34px !important; }
+  #facilities .country-tile-name { font-size: .7rem !important; }
+}
