@@ -13,13 +13,15 @@
   <style>
     .facilities-page{padding:5.5rem 1.5rem 6rem}
     .facilities-page .intro{max-width:760px;margin-bottom:2.5rem}
-    .facilities-page .facility-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}
-    .facilities-page .facility-card{margin:0;overflow:hidden;border:1px solid var(--color-midnight-border);border-radius:16px;background:var(--color-midnight-card);box-shadow:0 12px 30px rgba(0,0,0,.2)}
-    .facilities-page .facility-card img{display:block;width:100%;height:clamp(260px,32vw,440px);object-fit:cover;transition:transform .45s ease}
-    .facilities-page .facility-card:hover img{transform:scale(1.025)}
-    .facilities-page .facility-card figcaption{padding:1rem 1.15rem;color:var(--color-text);font:600 1rem/1.4 Inter,sans-serif}
+    .country-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+    .country-card{min-height:130px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:.55rem;padding:1.25rem;border:1px solid var(--color-midnight-border);border-radius:15px;background:linear-gradient(145deg,rgba(17,55,100,.9),rgba(7,20,38,.96));box-shadow:0 10px 26px rgba(0,0,0,.18);transition:transform .25s ease,border-color .25s ease}
+    .country-card:hover{transform:translateY(-4px);border-color:rgba(91,190,240,.65)}
+    .country-flag{font-size:2rem;line-height:1}
+    .country-name{font:700 1.08rem/1.25 Outfit,sans-serif;color:var(--color-text)}
+    .country-note{font:400 .78rem/1.4 Inter,sans-serif;color:var(--color-text-dim)}
     .facilities-back{display:inline-flex;margin-top:2.5rem}
-    @media(max-width:700px){.facilities-page{padding:4rem 1rem}.facilities-page .facility-gallery{grid-template-columns:1fr;gap:1.1rem}.facilities-page .facility-card img{height:260px}.facilities-page .facility-card figcaption{padding:.85rem 1rem}}
+    @media(max-width:900px){.country-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:520px){.facilities-page{padding:4rem 1rem}.country-grid{gap:.75rem}.country-card{min-height:112px;padding:1rem}.country-name{font-size:1rem}}
   </style>
 </head>
 <body>
@@ -49,15 +51,18 @@
         <span class="section-label">Aquatic Environments</span>
         <h1 class="section-heading">Facilities</h1>
       </div>
-      <div class="facility-gallery">
-        <figure class="facility-card"><img src="images/arena-olimpica.jpg" alt="Olympic aquatic arena" loading="lazy"><figcaption>Aquatic Arena</figcaption></figure>
-        <figure class="facility-card"><img src="images/esperienza-indoor.jpg" alt="Indoor swimming facility" loading="lazy"><figcaption>Indoor Training Facility</figcaption></figure>
-        <figure class="facility-card"><img src="images/esperienza-notte.jpg" alt="Aquatic facility during evening training" loading="lazy"><figcaption>Evening Training</figcaption></figure>
-        <figure class="facility-card"><img src="images/esperienza-pro-recco.jpg" alt="Aquatic sports facility" loading="lazy"><figcaption>Club Aquatic Facility</figcaption></figure>
-        <figure class="facility-card"><img src="images/esperienza-tornei-europei.jpg" alt="Swimming pool used for European competitions" loading="lazy"><figcaption>Competition Venue</figcaption></figure>
-        <figure class="facility-card"><img src="images/allenamento-in-vasca.jpg" alt="Poolside coaching and aquatic training" loading="lazy"><figcaption>Poolside Training</figcaption></figure>
-        <figure class="facility-card"><img src="images/galleria-bordo-vasca.jpg" alt="Swimming pool and poolside coaching environment" loading="lazy"><figcaption>Poolside Environment</figcaption></figure>
-        <figure class="facility-card"><img src="images/WhatsApp%20Image%202026-11-17%20at%2019.37.40.jpeg" alt="Aquatic facility photograph" loading="lazy"><figcaption>Aquatic Facility</figcaption></figure>
+      <div class="country-grid" aria-label="Countries with aquatic facilities">
+        <a class="country-card" href="#italy"><span class="country-flag" aria-hidden="true">🇮🇹</span><span class="country-name">Italy</span><span class="country-note">Explore facilities</span></a>
+        <a class="country-card" href="#united-kingdom"><span class="country-flag" aria-hidden="true">🇬🇧</span><span class="country-name">United Kingdom</span><span class="country-note">Explore facilities</span></a>
+        <a class="country-card" href="#united-states"><span class="country-flag" aria-hidden="true">🇺🇸</span><span class="country-name">United States</span><span class="country-note">Explore facilities</span></a>
+        <a class="country-card" href="#germany"><span class="country-flag" aria-hidden="true">🇩🇪</span><span class="country-name">Germany</span><span class="country-note">Explore facilities</span></a>
+        <a class="country-card" href="#portugal"><span class="country-flag" aria-hidden="true">🇵🇹</span><span class="country-name">Portugal</span><span class="country-note">Explore facilities</span></a>
+        <a class="country-card" href="#belgium"><span class="country-flag" aria-hidden="true">🇧🇪</span><span class="country-name">Belgium</span><span class="country-note">Explore facilities</span></a>
+        <a class="country-card" href="#spain"><span class="country-flag" aria-hidden="true">🇪🇸</span><span class="country-name">Spain</span><span class="country-note">Explore facilities</span></a>
+        <a class="country-card" href="#hungary"><span class="country-flag" aria-hidden="true">🇭🇺</span><span class="country-name">Hungary</span><span class="country-note">Explore facilities</span></a>
+      </div>
+      <div style="margin-top:2rem;color:var(--color-text-dim);font:400 .9rem/1.7 Inter,sans-serif;">
+        <p>Country galleries and pool details will be added as the photographs are matched to each location.</p>
       </div>
       <a href="index.html#facilities" class="btn btn-outline facilities-back">← Back to Home</a>
     </section>
