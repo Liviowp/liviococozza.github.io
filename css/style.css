@@ -1474,3 +1474,28 @@ header.site-nav .brand-copy { display:flex !important; flex-direction:column !im
   .gallery-card--icon .gallery-art svg { width: min(54%,145px) !important; }
   .gallery-card--icon .gallery-card-overlay { min-height: 62% !important; padding: 3rem 1.25rem 1.4rem !important; }
 }
+
+
+/* Education illustrations — varied accent palette, same aquatic identity */
+.gallery-card--icon:nth-child(1) .gallery-art svg {
+  filter: hue-rotate(198deg) saturate(1.18) drop-shadow(0 0 12px rgba(255,190,82,.28)) !important;
+}
+.gallery-card--icon:nth-child(2) .gallery-art svg {
+  filter: hue-rotate(82deg) saturate(1.12) drop-shadow(0 0 12px rgba(181,145,255,.28)) !important;
+}
+.gallery-card--icon:nth-child(3) .gallery-art svg {
+  filter: hue-rotate(318deg) saturate(1.15) drop-shadow(0 0 12px rgba(105,225,177,.25)) !important;
+}
+.gallery-card--icon:nth-child(4) .gallery-art svg {
+  filter: hue-rotate(178deg) saturate(1.18) drop-shadow(0 0 12px rgba(255,133,112,.28)) !important;
+}
+.gallery-card--icon:nth-child(5) .gallery-art svg {
+  filter: hue-rotate(138deg) saturate(1.18) drop-shadow(0 0 12px rgba(255,132,190,.25)) !important;
+}
+.gallery-card--icon:nth-child(1):hover .gallery-art svg,
+.gallery-card--icon:nth-child(2):hover .gallery-art svg,
+.gallery-card--icon:nth-child(3):hover .gallery-art svg,
+.gallery-card--icon:nth-child(4):hover .gallery-art svg,
+.gallery-card--icon:nth-child(5):hover .gallery-art svg {
+  transform: translateY(-5px) scale(1.055);
+}
