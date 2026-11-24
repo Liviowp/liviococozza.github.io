@@ -11,17 +11,33 @@
   <link rel="stylesheet" href="css/style.css?v=hero-layer-fix-20261123">
   <link rel="stylesheet" href="css/homepage-reference.css?v=20261124-facilities-gallery">
   <style>
-    .facilities-page{padding:5.5rem 1.5rem 6rem}
-    .facilities-page .intro{max-width:760px;margin-bottom:2.5rem}
+    .facilities-page{padding:8rem 1.5rem 6rem}
+    .facilities-page .intro{max-width:760px;margin-bottom:2rem}
     .country-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
-    .country-card{min-height:130px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:.55rem;padding:1.25rem;border:1px solid var(--color-midnight-border);border-radius:15px;background:linear-gradient(145deg,rgba(17,55,100,.9),rgba(7,20,38,.96));box-shadow:0 10px 26px rgba(0,0,0,.18);transition:transform .25s ease,border-color .25s ease}
-    .country-card:hover{transform:translateY(-4px);border-color:rgba(91,190,240,.65)}
-    .country-flag{font-size:2rem;line-height:1}
-    .country-name{font:700 1.08rem/1.25 Outfit,sans-serif;color:var(--color-text)}
-    .country-note{font:400 .78rem/1.4 Inter,sans-serif;color:var(--color-text-dim)}
+    .country-card{position:relative;isolation:isolate;overflow:hidden;min-height:88px;display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:.9rem;padding:.9rem 1rem;border:1px solid rgba(75,155,210,.3);border-radius:15px;background:linear-gradient(115deg,rgba(13,36,64,.97),rgba(7,20,38,.99));box-shadow:0 8px 22px rgba(0,0,0,.18);text-decoration:none!important;color:#f8fafc!important;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+    .country-card:link,.country-card:visited,.country-card:hover,.country-card:active{color:#f8fafc!important;text-decoration:none!important}
+    .country-card::before{content:"";position:absolute;z-index:-1;inset:-40% -20% -40% 38%;filter:blur(25px);opacity:.28;pointer-events:none}
+    .country-card:hover{transform:translateY(-3px);border-color:rgba(91,190,240,.8);box-shadow:0 12px 26px rgba(0,0,0,.25)}
+    .country-flag{position:relative;flex:0 0 54px;width:54px;height:38px;display:block;border-radius:6px;overflow:hidden;box-shadow:0 2px 9px rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.22)}
+    .country-flag::before,.country-flag::after{content:"";position:absolute;inset:0}
+    .flag-it{background:linear-gradient(90deg,#009246 0 33.33%,#fff 33.33% 66.66%,#ce2b37 66.66%)}
+    .flag-uk{background:linear-gradient(90deg,#012169,#012169)}
+    .flag-uk::before{background:linear-gradient(33deg,transparent 42%,#fff 42% 48%,#c8102e 48% 52%,#fff 52% 58%,transparent 58%),linear-gradient(-33deg,transparent 42%,#fff 42% 48%,#c8102e 48% 52%,#fff 52% 58%,transparent 58%)}
+    .flag-uk::after{background:linear-gradient(90deg,transparent 40%,#fff 40% 60%,transparent 60%),linear-gradient(transparent 35%,#fff 35% 65%,transparent 65%),linear-gradient(90deg,transparent 46%,#c8102e 46% 54%,transparent 54%),linear-gradient(transparent 43%,#c8102e 43% 57%,transparent 57%)}
+    .flag-us{background:repeating-linear-gradient(180deg,#b22234 0 7.69%,#fff 7.69% 15.38%)}
+    .flag-us::before{inset:0 48% 48% 0;background:#3c3b6e}
+    .flag-de{background:linear-gradient(180deg,#171717 0 33.33%,#dd0000 33.33% 66.66%,#ffce00 66.66%)}
+    .flag-pt{background:linear-gradient(90deg,#006600 0 40%,#ff0000 40%)}
+    .flag-be{background:linear-gradient(90deg,#171717 0 33.33%,#fae042 33.33% 66.66%,#ed2939 66.66%)}
+    .flag-es{background:linear-gradient(180deg,#aa151b 0 25%,#f1bf00 25% 75%,#aa151b 75%)}
+    .flag-hu{background:linear-gradient(180deg,#ce2939 0 33.33%,#fff 33.33% 66.66%,#477050 66.66%)}
+    .country-name{flex:1;min-width:0;font:700 1.02rem/1.25 Outfit,sans-serif;color:#f8fafc!important}
+    .country-note{display:block;margin-top:.22rem;font:400 .76rem/1.35 Inter,sans-serif;color:#a9c6dc}
+    .country-arrow{color:#79c9f2;font-size:1.05rem;margin-left:auto;transition:transform .2s ease}
+    .country-card:hover .country-arrow{transform:translate(2px,-2px)}
     .facilities-back{display:inline-flex;margin-top:2.5rem}
     @media(max-width:900px){.country-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:520px){.facilities-page{padding:4rem 1rem}.country-grid{gap:.75rem}.country-card{min-height:112px;padding:1rem}.country-name{font-size:1rem}}
+    @media(max-width:520px){.facilities-page{padding:7rem 1rem 4rem}.country-grid{gap:.7rem}.country-card{min-height:76px;padding:.7rem;gap:.65rem}.country-flag{flex-basis:44px;width:44px;height:32px}.country-name{font-size:.9rem}.country-note{font-size:.68rem}}
   </style>
 </head>
 <body>
@@ -52,14 +68,14 @@
         <h1 class="section-heading">Facilities</h1>
       </div>
       <div class="country-grid" aria-label="Countries with aquatic facilities">
-        <a class="country-card" href="#italy"><span class="country-flag" aria-hidden="true">🇮🇹</span><span class="country-name">Italy</span><span class="country-note">Explore facilities</span></a>
-        <a class="country-card" href="#united-kingdom"><span class="country-flag" aria-hidden="true">🇬🇧</span><span class="country-name">United Kingdom</span><span class="country-note">Explore facilities</span></a>
-        <a class="country-card" href="#united-states"><span class="country-flag" aria-hidden="true">🇺🇸</span><span class="country-name">United States</span><span class="country-note">Explore facilities</span></a>
-        <a class="country-card" href="#germany"><span class="country-flag" aria-hidden="true">🇩🇪</span><span class="country-name">Germany</span><span class="country-note">Explore facilities</span></a>
-        <a class="country-card" href="#portugal"><span class="country-flag" aria-hidden="true">🇵🇹</span><span class="country-name">Portugal</span><span class="country-note">Explore facilities</span></a>
-        <a class="country-card" href="#belgium"><span class="country-flag" aria-hidden="true">🇧🇪</span><span class="country-name">Belgium</span><span class="country-note">Explore facilities</span></a>
-        <a class="country-card" href="#spain"><span class="country-flag" aria-hidden="true">🇪🇸</span><span class="country-name">Spain</span><span class="country-note">Explore facilities</span></a>
-        <a class="country-card" href="#hungary"><span class="country-flag" aria-hidden="true">🇭🇺</span><span class="country-name">Hungary</span><span class="country-note">Explore facilities</span></a>
+        <a class="country-card" href="#italy"><span class="country-flag flag-it" aria-hidden="true"></span><span class="country-name">Italy<span class="country-note">Explore facilities</span></span><span class="country-arrow" aria-hidden="true">↗</span></a>
+        <a class="country-card" href="#united-kingdom"><span class="country-flag flag-uk" aria-hidden="true"></span><span class="country-name">United Kingdom<span class="country-note">Explore facilities</span></span><span class="country-arrow" aria-hidden="true">↗</span></a>
+        <a class="country-card" href="#united-states"><span class="country-flag flag-us" aria-hidden="true"></span><span class="country-name">United States<span class="country-note">Explore facilities</span></span><span class="country-arrow" aria-hidden="true">↗</span></a>
+        <a class="country-card" href="#germany"><span class="country-flag flag-de" aria-hidden="true"></span><span class="country-name">Germany<span class="country-note">Explore facilities</span></span><span class="country-arrow" aria-hidden="true">↗</span></a>
+        <a class="country-card" href="#portugal"><span class="country-flag flag-pt" aria-hidden="true"></span><span class="country-name">Portugal<span class="country-note">Explore facilities</span></span><span class="country-arrow" aria-hidden="true">↗</span></a>
+        <a class="country-card" href="#belgium"><span class="country-flag flag-be" aria-hidden="true"></span><span class="country-name">Belgium<span class="country-note">Explore facilities</span></span><span class="country-arrow" aria-hidden="true">↗</span></a>
+        <a class="country-card" href="#spain"><span class="country-flag flag-es" aria-hidden="true"></span><span class="country-name">Spain<span class="country-note">Explore facilities</span></span><span class="country-arrow" aria-hidden="true">↗</span></a>
+        <a class="country-card" href="#hungary"><span class="country-flag flag-hu" aria-hidden="true"></span><span class="country-name">Hungary<span class="country-note">Explore facilities</span></span><span class="country-arrow" aria-hidden="true">↗</span></a>
       </div>
       <div style="margin-top:2rem;color:var(--color-text-dim);font:400 .9rem/1.7 Inter,sans-serif;">
         <p>Country galleries and pool details will be added as the photographs are matched to each location.</p>
