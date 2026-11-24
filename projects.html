@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Livio Cocozza</title>
+  <meta name="description" content="Selected coaching, swimming, water polo, physical education and aquatic management projects by Livio Cocozza.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=hero-layer-fix-20261123">
+  <link rel="stylesheet" href="css/homepage-reference.css?v=20261124-services-cards">
+  <style>
+    .projects-page{padding:9rem 1.5rem 5rem}
+    .projects-intro{max-width:800px;margin-bottom:3rem}
+    .projects-intro p{color:var(--color-text-dim);font-size:1.04rem;max-width:720px}
+    .projects-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.35rem}
+    .project-item{position:relative;overflow:hidden;border:1px solid rgba(75,155,210,.25);border-radius:16px;background:linear-gradient(150deg,rgba(15,32,58,.96),rgba(5,15,31,.98));box-shadow:0 12px 28px rgba(0,0,0,.22);scroll-margin-top:115px}
+    .project-item img{display:block;width:100%;height:290px;object-fit:cover;transition:transform .5s ease}
+    .project-item:hover img{transform:scale(1.045)}
+    .project-item figcaption{padding:1.1rem 1.25rem 1.25rem}
+    .project-category{display:block;color:#7dd3fc;font:700 .72rem Outfit,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.35rem}
+    .project-item h2{font:700 1.22rem/1.3 Outfit,sans-serif;color:#fff;margin-bottom:.35rem}
+    .project-item p{font-size:.88rem;color:var(--color-text-dim);line-height:1.55}
+    .projects-back{margin-top:2.5rem}
+    @media(max-width:700px){.projects-page{padding:7.5rem 1rem 4rem}.projects-grid{grid-template-columns:1fr;gap:1rem}.project-item img{height:235px}}
+  </style>
+</head>
+<body>
+  <canvas id="bubblesCanvas"></canvas>
+  <header class="site-nav">
+    <div class="container nav-content">
+      <a href="index.html#hero" class="brand-name" aria-label="Livio Cocozza — Home">
+        <img src="images/livio-cocozza-logo-trasparente.png" alt="" class="brand-logo">
+        <span class="brand-name-text">Livio Cocozza</span>
+      </a>
+      <nav><ul class="nav-links">
+        <li><a href="index.html#hero" class="nav-link">Home</a></li>
+        <li><a href="index.html#philosophy" class="nav-link">About</a></li>
+        <li><a href="index.html#gallery" class="nav-link">Education</a></li>
+        <li><a href="index.html#journey" class="nav-link">Experience</a></li>
+        <li><a href="facilities.html" class="nav-link">Facilities</a></li>
+        <li><a href="index.html#blog" class="nav-link">Blog</a></li>
+        <li><a href="index.html#services" class="nav-link active">Projects</a></li>
+        <li><a href="https://www.youtube.com/@wpsmethodology" class="nav-link" target="_blank" rel="noopener noreferrer">Video</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul></nav>
+    </div>
+  </header>
+  <main class="container projects-page">
+    <div class="projects-intro">
+      <span class="section-label">Selected Work &amp; Initiatives</span>
+      <h1 class="section-heading">Projects</h1>
+      <p>A selection of coaching, performance, education and aquatic development experiences. This portfolio will grow with project photographs, key outcomes and practical insights.</p>
+    </div>
+    <div class="projects-grid">
+      <figure class="project-item" id="water-polo">
+        <img src="images/esperienza-pro-recco.jpg" alt="Water polo coaching experience" loading="lazy">
+        <figcaption><span class="project-category">Water Polo</span><h2>Coaching &amp; Player Development</h2><p>Training methodology, tactical development and the work behind building competitive teams.</p></figcaption>
+      </figure>
+      <figure class="project-item" id="swimming">
+        <img src="images/allenamento-in-vasca.jpg" alt="Swimming training session" loading="lazy">
+        <figcaption><span class="project-category">Swimming</span><h2>Performance &amp; Technique</h2><p>Technical refinement, training design and performance development in the pool.</p></figcaption>
+      </figure>
+      <figure class="project-item" id="aquatic-supervision">
+        <img src="images/galleria-bordo-vasca.jpg" alt="Poolside coaching and supervision" loading="lazy">
+        <figcaption><span class="project-category">Aquatic Supervision</span><h2>Programme &amp; Facility Development</h2><p>Supporting aquatic programmes through technical direction, organisation and quality standards.</p></figcaption>
+      </figure>
+      <figure class="project-item" id="team-management">
+        <img src="images/esperienza-tornei-europei.jpg" alt="International tournament experience" loading="lazy">
+        <figcaption><span class="project-category">Team Management</span><h2>Teams &amp; Competitions</h2><p>Season planning, team coordination and the organisation of competitive experiences.</p></figcaption>
+      </figure>
+      <figure class="project-item" id="physical-education">
+        <img src="images/galleria-mentorship.jpg" alt="Education and athlete mentorship" loading="lazy">
+        <figcaption><span class="project-category">Physical Education</span><h2>Education &amp; Mentorship</h2><p>Learning experiences that develop movement skills, confidence, responsibility and teamwork.</p></figcaption>
+      </figure>
+    </div>
+    <div class="projects-back"><a href="index.html#services" class="btn btn-secondary">← Back to Professional Services</a></div>
+  </main>
+  <footer class="site-footer"><div class="container">© 2026 Livio Cocozza. All rights reserved.</div></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
