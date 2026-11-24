@@ -1595,3 +1595,67 @@ header.site-nav .brand-copy { display:flex !important; flex-direction:column !im
   .experience-card-heading { padding-left:1rem; padding-right:1rem; }
   .experience-card .card-sub,.experience-card .card-desc { margin-left:1rem; margin-right:1rem; }
 }
+
+
+/* Experience cards — closer to the supplied visual reference */
+.experience-grid {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:1.1rem;
+}
+.experience-card {
+  overflow:hidden;
+  padding-bottom:1.35rem !important;
+  border:1px solid rgba(50,190,230,.58) !important;
+  border-radius:17px !important;
+  background:linear-gradient(180deg,#0b2340 0%,#07172d 100%) !important;
+}
+.experience-image-wrap {
+  height:245px !important;
+  border-radius:15px 15px 0 0 !important;
+  background:#06172a;
+}
+.experience-image-wrap::after {
+  inset:58% 0 0 !important;
+  background:linear-gradient(180deg,transparent 0%,rgba(5,18,35,.72) 72%,#0b203a 100%) !important;
+}
+.experience-image-wrap img {
+  object-fit:cover !important;
+  object-position:center !important;
+}
+.experience-card-heading {
+  gap:.65rem !important;
+  padding:1rem 1.15rem .1rem !important;
+}
+.experience-number {
+  width:43px !important;
+  height:43px !important;
+  flex-basis:43px !important;
+  border:0 !important;
+  border-radius:11px !important;
+  font-size:1.65rem !important;
+  font-weight:700 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+.experience-number--gold { color:#ffc34f !important; text-shadow:0 0 16px rgba(255,195,79,.3); }
+.experience-number--mint { color:#55ddb0 !important; text-shadow:0 0 16px rgba(85,221,176,.3); }
+.experience-number--violet { color:#bd91ff !important; text-shadow:0 0 16px rgba(189,145,255,.3); }
+.experience-number--coral { color:#ff8f83 !important; text-shadow:0 0 16px rgba(255,143,131,.3); }
+.experience-card-heading h3 { font-size:1.12rem !important; line-height:1.28 !important; }
+.experience-card .card-sub {
+  margin-top:.75rem !important;
+  color:#39c8f1 !important;
+  font-weight:750 !important;
+}
+.experience-card .card-desc {
+  font-size:.96rem;
+  line-height:1.55 !important;
+}
+@media(max-width:1000px) {
+  .experience-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:600px) {
+  .experience-grid { grid-template-columns:1fr; }
+  .experience-image-wrap { height:225px !important; }
+}
