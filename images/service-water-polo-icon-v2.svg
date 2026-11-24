@@ -1,7 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160" role="img">
-<rect x="10" y="8" width="180" height="144" rx="27" fill="#08213d" stroke="#00cfff" stroke-width="5"/>
-<g fill="none" stroke="#f4fbff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="76" r="32"/><path d="M75 57 Q101 77 127 54 M68 78 Q99 97 132 76 M84 105 Q101 91 117 105 M94 45 Q84 70 103 80 T103 108 M118 49 Q104 69 119 84"/></g>
-<g fill="none" stroke="#00e5f5" stroke-width="6" stroke-linecap="round">
-<path d="M28 119 Q42 107 56 119 T84 119 T112 119 T140 119 T172 119"/>
-<path d="M28 137 Q42 125 56 137 T84 137 T112 137 T140 137 T172 137"/>
-</g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160"><rect x="10" y="8" width="180" height="144" rx="26" fill="#08213d" stroke="#00cfff" stroke-width="5"/><g fill="none" stroke="#f5fbff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="76" r="31"/><path d="M76 56 Q100 76 126 55 M69 77 Q99 96 131 76 M84 104 Q100 91 116 104 M94 45 Q84 69 102 80 T102 107 M117 49 Q104 68 118 83"/></g><g fill="none" stroke="#00e5f5" stroke-width="6" stroke-linecap="round"><path d="M28 119 Q42 107 56 119 T84 119 T112 119 T140 119 T172 119"/><path d="M28 137 Q42 125 56 137 T84 137 T112 137 T140 137 T172 137"/></g></svg>
