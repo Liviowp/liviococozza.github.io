@@ -365,6 +365,35 @@
       object-fit: cover;
     }
 
+    
+/* Soft fades around the Contact section */
+.contact-section{
+  position:relative;
+  isolation:isolate;
+}
+.contact-section::before,
+.contact-section::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  height:120px;
+  pointer-events:none;
+  z-index:0;
+}
+.contact-section::before{
+  top:-120px;
+  background:linear-gradient(to bottom,rgba(2,8,20,0),rgba(15,26,54,.40));
+}
+.contact-section::after{
+  bottom:-120px;
+  background:linear-gradient(to bottom,rgba(15,26,54,.40),rgba(2,8,20,0));
+}
+.contact-section > .container{
+  position:relative;
+  z-index:1;
+}
+
     /* Contact & Form Section */
     .contact-section {
       padding: 5rem 0;
