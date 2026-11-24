@@ -24,7 +24,9 @@ async function go(href, push) {
   document.head.querySelectorAll('link[rel="stylesheet"],style').forEach(n => n.remove());
   doc.head.querySelectorAll('link[rel="stylesheet"],style').forEach(n => document.head.appendChild(n.cloneNode(true)));
   const scripts = Array.from(doc.body.querySelectorAll('script')); scripts.forEach(s => s.remove());
-  const incomingNodes = Array.from(doc.body.childNodes);\n  Array.from(document.body.childNodes).forEach(node => { if (node !== player) node.remove(); });\n  incomingNodes.forEach(node => document.body.insertBefore(node, player));
+  const incomingNodes = Array.from(doc.body.childNodes);
+  Array.from(document.body.childNodes).forEach(node => { if (node !== player) node.remove(); });
+  incomingNodes.forEach(node => document.body.insertBefore(node, player));
   if (push) history.pushState({}, '', href);
   for (const old of scripts) {
    const src = old.getAttribute('src');
