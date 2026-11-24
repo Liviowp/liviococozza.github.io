@@ -4,13 +4,19 @@ window.__persistentAudioNavigation = true;
 const player = document.getElementById('persistentAudioPlayer');
 if (!player) return;
 const audio = player.querySelector('audio');
-const toggle = player.querySelector('button');
-const label = player.querySelector('#siteAudioLabel');
-const volume = player.querySelector('input');
-const paint = () => { toggle.textContent = audio.paused ? '▶' : 'Ⅱ'; label.textContent = audio.paused ? 'PLAY MUSIC' : 'MUSIC ON'; };
-toggle.addEventListener('click', async () => { if (audio.paused) { try { await audio.play(); } catch(e) { label.textContent = 'PRESS PLAY'; } } else audio.pause(); paint(); });
-audio.addEventListener('play', paint); audio.addEventListener('pause', paint); audio.addEventListener('ended', paint);
-volume.addEventListener('input', () => audio.volume = Number(volume.value)); audio.volume = Number(volume.value); paint();
+const paint = () => {
+ const toggle = document.getElementById('heroMusicToggle');
+ if (!toggle) return;
+ toggle.setAttribute('aria-pressed', String(!audio.paused));
+ toggle.querySelector('.hero-music-icon').textContent = audio.paused ? '▶' : 'Ⅱ';
+ toggle.querySelector('.hero-music-label').textContent = audio.paused ? 'Play background music' : 'Pause background music';
+};
+document.addEventListener('click', async e => {
+ const toggle = e.target.closest('#heroMusicToggle'); if (!toggle) return;
+ if (audio.paused) { try { await audio.play(); } catch(err) { toggle.querySelector('.hero-music-label').textContent = 'Audio unavailable — try again'; } }
+ else audio.pause(); paint();
+});
+audio.addEventListener('play', paint); audio.addEventListener('pause', paint); audio.addEventListener('ended', paint); paint();
 const loaded = new Set(Array.from(document.scripts).map(s => s.src).filter(Boolean));
 let busy = false;
 async function go(href, push) {
