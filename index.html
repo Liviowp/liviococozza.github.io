@@ -66,6 +66,7 @@
           <a href="#journey" class="btn btn-primary"><span aria-hidden="true">🏊</span> My Experience</a>
           <a href="#contact" class="btn btn-outline">Get in Touch</a>
         </div>
+        <button id="heroMusicToggle" type="button" aria-pressed="false" style="display:inline-flex;align-items:center;gap:10px;margin-top:14px;padding:10px 16px;border:1px solid rgba(65,205,245,.4);border-radius:24px;background:rgba(3,18,37,.48);color:#9bc7df;font:600 14px Inter,Arial,sans-serif;cursor:pointer"><span class="hero-music-icon" aria-hidden="true">▶</span><span class="hero-music-label">Play background music</span></button>
 
 
       </div>
@@ -550,40 +551,9 @@
     </div>
   </div>
 
-  <div id="persistentAudioPlayer" style="position:fixed;right:22px;bottom:20px;z-index:9999;display:flex;align-items:center;gap:10px;padding:10px 13px;border:1px solid rgba(65,205,245,.55);border-radius:14px;background:rgba(3,18,37,.94);box-shadow:0 8px 28px rgba(0,0,0,.35);backdrop-filter:blur(12px);color:#eafaff;font:700 11px Inter,Arial,sans-serif;letter-spacing:.08em"><audio preload="none" loop><source src="audio/paulyudin-inspirational-490406.mp3.mpeg" type="audio/mpeg"></audio><button type="button" aria-label="Play background music" style="width:34px;height:34px;border:0;border-radius:50%;background:linear-gradient(135deg,#20c9ed,#0876b9);color:#03172b;font-size:15px;font-weight:900;cursor:pointer">▶</button><span id="siteAudioLabel">PLAY MUSIC</span><input type="range" min="0" max="1" step=".05" value=".35" aria-label="Music volume" style="width:72px;accent-color:#27c9ed;cursor:pointer"></div>
+  <div id="persistentAudioPlayer" style="display:none" aria-hidden="true"><audio preload="none" loop><source src="audio/paulyudin-inspirational-490406.mp3.mpeg" type="audio/mpeg"></audio></div>
   <script src="js/main.js"></script>
   <script src="js/persistent-audio.js"></script>
-  <script>
-    (() => {
-      const audio = document.getElementById('heroBackgroundAudio');
-      const button = document.getElementById('heroAudioToggle');
-      if (!audio || !button) return;
-      const icon = button.querySelector('.audio-toggle-icon');
-      const label = button.querySelector('.audio-toggle-label');
-      button.addEventListener('click', async () => {
-        if (audio.paused) {
-          try {
-            await audio.play();
-            button.setAttribute('aria-pressed', 'true');
-            icon.textContent = 'Ⅱ';
-            label.textContent = 'Pause background music';
-          } catch (error) {
-            label.textContent = 'Audio unavailable — try again';
-          }
-        } else {
-          audio.pause();
-          button.setAttribute('aria-pressed', 'false');
-          icon.textContent = '▶';
-          label.textContent = 'Play background music';
-        }
-      });
-      audio.addEventListener('ended', () => {
-        button.setAttribute('aria-pressed', 'false');
-        icon.textContent = '▶';
-        label.textContent = 'Play background music';
-      });
-    })();
-  </script>
 
 
 </body>
