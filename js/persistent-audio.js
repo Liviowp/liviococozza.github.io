@@ -19,12 +19,12 @@ async function go(href, push) {
   const res = await fetch(href); if (!res.ok) throw new Error('fetch');
   const doc = new DOMParser().parseFromString(await res.text(), 'text/html');
   const nextPlayer = doc.getElementById('persistentAudioPlayer'); if (!nextPlayer) throw new Error('player');
-  nextPlayer.replaceWith(player);
+  nextPlayer.remove();
   document.title = doc.title || document.title;
   document.head.querySelectorAll('link[rel="stylesheet"],style').forEach(n => n.remove());
   doc.head.querySelectorAll('link[rel="stylesheet"],style').forEach(n => document.head.appendChild(n.cloneNode(true)));
   const scripts = Array.from(doc.body.querySelectorAll('script')); scripts.forEach(s => s.remove());
-  document.body.replaceChildren(...Array.from(doc.body.childNodes), player);
+  const incomingNodes = Array.from(doc.body.childNodes);\n  Array.from(document.body.childNodes).forEach(node => { if (node !== player) node.remove(); });\n  incomingNodes.forEach(node => document.body.insertBefore(node, player));
   if (push) history.pushState({}, '', href);
   for (const old of scripts) {
    const src = old.getAttribute('src');
