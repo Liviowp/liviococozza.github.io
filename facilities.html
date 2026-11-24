@@ -13,7 +13,7 @@
   <style>
     .facilities-page{padding:8rem 1.5rem 6rem}
     .facilities-page .intro{max-width:760px;margin-bottom:2rem}
-    .country-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+    .country-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem}.country-grid>.country-card{flex:0 1 calc((100% - 3rem)/4)}
     .country-card{position:relative;isolation:isolate;overflow:hidden;min-height:88px;display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:.9rem;padding:.9rem 1rem;border:1px solid rgba(75,155,210,.3);border-radius:15px;background:linear-gradient(115deg,rgba(13,36,64,.97),rgba(7,20,38,.99));box-shadow:0 8px 22px rgba(0,0,0,.18);text-decoration:none!important;color:#f8fafc!important;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
     .country-card:link,.country-card:visited,.country-card:hover,.country-card:active{color:#f8fafc!important;text-decoration:none!important}
     .country-card::before{content:"";position:absolute;z-index:-1;inset:-40% -20% -40% 38%;filter:blur(25px);opacity:.28;pointer-events:none}
@@ -24,7 +24,7 @@
     .country-arrow{color:#79c9f2;font-size:1.05rem;margin-left:auto;transition:transform .2s ease}
     .country-card:hover .country-arrow{transform:translate(2px,-2px)}
     .facilities-back{display:inline-flex;margin-top:2.5rem}
-    @media(max-width:900px){.country-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:900px){.country-grid>.country-card{flex-basis:calc((100% - 1rem)/2)}}
     @media(max-width:520px){.facilities-page{padding:7rem 1rem 4rem}.country-grid{gap:.7rem}.country-card{min-height:76px;padding:.7rem;gap:.65rem}.country-flag-img{flex-basis:48px;width:48px;height:34px}.country-name{font-size:.9rem}.country-note{font-size:.68rem}}
 
     .country-gallery{margin-top:3rem;padding-top:2.5rem;border-top:1px solid rgba(75,155,210,.22);scroll-margin-top:110px}
