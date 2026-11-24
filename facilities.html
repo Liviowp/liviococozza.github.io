@@ -26,6 +26,18 @@
     .facilities-back{display:inline-flex;margin-top:2.5rem}
     @media(max-width:900px){.country-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:520px){.facilities-page{padding:7rem 1rem 4rem}.country-grid{gap:.7rem}.country-card{min-height:76px;padding:.7rem;gap:.65rem}.country-flag-img{flex-basis:48px;width:48px;height:34px}.country-name{font-size:.9rem}.country-note{font-size:.68rem}}
+
+    .country-gallery{margin-top:3rem;padding-top:2.5rem;border-top:1px solid rgba(75,155,210,.22);scroll-margin-top:110px}
+    .country-gallery-heading{margin-bottom:1.5rem}
+    .country-gallery-heading p{max-width:680px;color:var(--color-text-dim);margin-top:.4rem}
+    .facility-photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem}
+    .facility-photo{margin:0;overflow:hidden;border:1px solid rgba(75,155,210,.22);border-radius:14px;background:rgba(7,20,38,.8);box-shadow:0 8px 22px rgba(0,0,0,.16)}
+    .facility-photo img{display:block;width:100%;height:245px;object-fit:cover;transition:transform .35s ease}
+    .facility-photo:hover img{transform:scale(1.035)}
+    .facility-photo figcaption{padding:.8rem 1rem;color:#a9c6dc;font:500 .84rem/1.4 Inter,sans-serif}
+    @media(max-width:900px){.facility-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:520px){.facility-photo-grid{grid-template-columns:1fr}.facility-photo img{height:225px}}
+
   </style>
 </head>
 <body>
@@ -65,9 +77,21 @@
         <a class="country-card" href="#spain"><span class="country-name">Spain<span class="country-note">Explore facilities</span></span><img class="country-flag-img" src="https://flagcdn.com/w80/es.png" alt="" loading="lazy"><span class="country-arrow" aria-hidden="true">↗</span></a>
         <a class="country-card" href="#hungary"><span class="country-name">Hungary<span class="country-note">Explore facilities</span></span><img class="country-flag-img" src="https://flagcdn.com/w80/hu.png" alt="" loading="lazy"><span class="country-arrow" aria-hidden="true">↗</span></a>
       </div>
-      <div style="margin-top:2rem;color:var(--color-text-dim);font:400 .9rem/1.7 Inter,sans-serif;">
-        <p>Country galleries and pool details will be added as the photographs are matched to each location.</p>
-      </div>
+      <section id="italy" class="country-gallery" aria-labelledby="italy-heading">
+        <div class="country-gallery-heading">
+          <span class="section-label">My Coaching Journey</span>
+          <h2 id="italy-heading" class="section-heading">Italy</h2>
+          <p>Swimming and water polo venues from my experience in Italy.</p>
+        </div>
+        <div class="facility-photo-grid">
+          <figure class="facility-photo"><img src="images/DSCN0084%20(4).JPG" alt="Outdoor competition swimming pool in Italy" loading="lazy"><figcaption>Outdoor competition venue</figcaption></figure>
+          <figure class="facility-photo"><img src="images/DSCN0115%20(2).JPG" alt="Water polo arena during an evening event" loading="lazy"><figcaption>Water polo competition arena</figcaption></figure>
+          <figure class="facility-photo"><img src="images/IMG-20190227-WA0027.jpeg" alt="Water polo players beside the pool" loading="lazy"><figcaption>Poolside team environment</figcaption></figure>
+          <figure class="facility-photo"><img src="images/P_20190227_194546_PN.jpg" alt="Indoor aquatic arena" loading="lazy"><figcaption>Indoor aquatic facility</figcaption></figure>
+          <figure class="facility-photo"><img src="images/P_20190227_202451.jpg" alt="Teams and players gathered beside an indoor pool" loading="lazy"><figcaption>Teams and athletes</figcaption></figure>
+          <figure class="facility-photo"><img src="images/20180225_122755A_preview.jpeg" alt="Indoor swimming pool facility" loading="lazy"><figcaption>Swimming facility</figcaption></figure>
+        </div>
+      </section>
       <a href="index.html#facilities" class="btn btn-outline facilities-back">← Back to Home</a>
     </section>
   </main>
