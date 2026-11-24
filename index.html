@@ -327,4 +327,142 @@
       </div>
     </section>
 
-    
+<!-- ==========================================================================
+         Contact & Form
+         ========================================================================== -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-layout">
+          <div>
+            <span class="section-label">Direct Communication</span>
+            <h2 class="section-heading">Initiate Dialogue</h2>
+            <p style="color: var(--color-text-dim); margin-bottom: 1.5rem;">Whether representing a sporting club, national federation, academic institution, or elite athlete, reach out directly to discuss potential engagements.</p>
+            <p style="color: var(--color-pool-light); font-weight: 700;">Email: doriamondo@gmail.com</p>
+            <div aria-label="Professional and social profiles" style="display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.25rem;">
+              <a href="https://www.linkedin.com/in/livio-cocozza-710257a2" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.5rem;padding:.65rem .9rem;border:1px solid rgba(125,205,240,.28);border-radius:10px;color:var(--color-pool-light);text-decoration:none;font-weight:700;"><span aria-hidden="true">in</span> LinkedIn Profile</a>
+              <a href="https://www.facebook.com/profile.php?id=61595436191128" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.5rem;padding:.65rem .9rem;border:1px solid rgba(125,205,240,.28);border-radius:10px;color:var(--color-pool-light);text-decoration:none;font-weight:700;"><span aria-hidden="true">f</span> WPS Methodology</a>
+            </div>
+          </div>
+
+          <div>
+            <form id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Your Name</label>
+                  <input type="text" class="form-input" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Official Email</label>
+                  <input type="email" class="form-input" placeholder="name@organization.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">I am representing a...</label>
+                <select class="form-select">
+                  <option>Water Polo Club / Senior Division</option>
+                  <option>Swimming Academy / Federation</option>
+                  <option>School / University (PE Department)</option>
+                  <option>Sports Camp / Clinic Committee</option>
+                  <option>Individual Elite Athlete</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Primary Objective</label>
+                <select class="form-select">
+                  <option>Head Coach Engagement (Water Polo / Swimming)</option>
+                  <option>Program Supervisor &amp; Technical Director</option>
+                  <option>Team Manager &amp; Strategic Operations</option>
+                  <option>PE Curriculum &amp; Sports Instruction</option>
+                  <option>Technical Clinic / Masterclass</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Details &amp; Objectives</label>
+                <textarea class="form-textarea" rows="4" placeholder="Timeline, location, and project details..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Transmit Inquiry</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+      <div>© 2026 Livio Cocozza. All rights reserved. Water Polo &amp; Swimming Coach • Supervisor • Team Manager • PE Teacher.</div>
+      <nav aria-label="Social media" style="display:flex;align-items:center;flex-wrap:wrap;gap:.9rem;">
+        <a href="https://www.youtube.com/@wpsmethodology" target="_blank" rel="noopener noreferrer" aria-label="WPS Methodology on YouTube" style="color:var(--color-pool-light);text-decoration:none;font-weight:600;">▶ YouTube</a>
+        <a href="https://www.linkedin.com/in/livio-cocozza-710257a2" target="_blank" rel="noopener noreferrer" aria-label="Livio Cocozza on LinkedIn" style="color:var(--color-pool-light);text-decoration:none;font-weight:600;">in LinkedIn</a>
+        <a href="https://www.facebook.com/profile.php?id=61595436191128" target="_blank" rel="noopener noreferrer" aria-label="WPS Methodology on Facebook" style="color:var(--color-pool-light);text-decoration:none;font-weight:600;">f Facebook</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Media Gallery Modal / Overlay Component -->
+  <div id="mediaModal" style="display: none; position: fixed; inset: 0; background: rgba(5, 8, 20, 0.92); backdrop-filter: blur(16px); z-index: 1000; align-items: center; justify-content: center; padding: 2rem;">
+    <div style="background: var(--color-midnight-card); border: 1px solid var(--color-midnight-border); border-radius: 16px; width: 100%; max-width: 900px; max-height: 90vh; overflow-y: auto; padding: 2rem; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.8);">
+      
+      <!-- Close Button -->
+      <button onclick="closeMediaModal()" style="position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: var(--color-white); font-size: 1.8rem; cursor: pointer; line-height: 1;">&times;</button>
+
+      <!-- Modal Header & Filter Tabs -->
+      <div style="margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="section-label">Media Collection</span>
+          <h2 id="modalTitle" class="section-heading" style="font-size: 1.8rem; margin: 0;">Media Archive</h2>
+        </div>
+        <div style="display: flex; gap: 0.5rem;">
+          <button id="tabVideoBtn" onclick="switchTab('video')" class="btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Video</button>
+          <button id="tabPicsBtn" onclick="switchTab('pics')" class="btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Pics</button>
+        </div>
+      </div>
+
+      <!-- Modal Content Grid -->
+      <div id="modalGridContent" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+        <!-- Injected dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    (() => {
+      const audio = document.getElementById('heroBackgroundAudio');
+      const button = document.getElementById('heroAudioToggle');
+      if (!audio || !button) return;
+      const icon = button.querySelector('.audio-toggle-icon');
+      const label = button.querySelector('.audio-toggle-label');
+      button.addEventListener('click', async () => {
+        if (audio.paused) {
+          try {
+            await audio.play();
+            button.setAttribute('aria-pressed', 'true');
+            icon.textContent = 'Ⅱ';
+            label.textContent = 'Pause background music';
+          } catch (error) {
+            label.textContent = 'Audio unavailable — try again';
+          }
+        } else {
+          audio.pause();
+          button.setAttribute('aria-pressed', 'false');
+          icon.textContent = '▶';
+          label.textContent = 'Play background music';
+        }
+      });
+      audio.addEventListener('ended', () => {
+        button.setAttribute('aria-pressed', 'false');
+        icon.textContent = '▶';
+        label.textContent = 'Play background music';
+      });
+    })();
+  </script>
+
+
+</body>
+</html>
