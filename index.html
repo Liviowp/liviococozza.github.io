@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css?v=hero-layer-fix-20261123">
-  <link rel="stylesheet" href="css/homepage-reference.css?v=20261124-blog-preview">
+  <link rel="stylesheet" href="css/homepage-reference.css?v=20261124-facilities-gallery">
 </head>
 <body>
 
@@ -202,8 +202,43 @@
     <!-- ==========================================================================
          Facilities & Aquatic Venues
          ========================================================================== -->
-    <section id="facilities" class="container" style="padding: 5rem 1.5rem;">
+    <section id="facilities" class="container" style="padding:5rem 1.5rem;">
       <h2 class="section-heading">Facilities</h2>
+      <div class="facilities-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin-top:2.5rem;">
+        <figure class="facility-card" style="margin:0;background:var(--color-midnight-card);border:1px solid var(--color-midnight-border);border-radius:14px;overflow:hidden;">
+          <img src="images/arena-olimpica.jpg" alt="Olympic aquatic arena" loading="lazy" style="display:block;width:100%;height:210px;object-fit:cover;">
+          <figcaption style="padding:1rem;color:var(--color-text);font-weight:600;">Aquatic Arena</figcaption>
+        </figure>
+        <figure class="facility-card" style="margin:0;background:var(--color-midnight-card);border:1px solid var(--color-midnight-border);border-radius:14px;overflow:hidden;">
+          <img src="images/esperienza-indoor.jpg" alt="Indoor swimming facility" loading="lazy" style="display:block;width:100%;height:210px;object-fit:cover;">
+          <figcaption style="padding:1rem;color:var(--color-text);font-weight:600;">Indoor Training Facility</figcaption>
+        </figure>
+        <figure class="facility-card" style="margin:0;background:var(--color-midnight-card);border:1px solid var(--color-midnight-border);border-radius:14px;overflow:hidden;">
+          <img src="images/esperienza-notte.jpg" alt="Aquatic facility during an evening training session" loading="lazy" style="display:block;width:100%;height:210px;object-fit:cover;">
+          <figcaption style="padding:1rem;color:var(--color-text);font-weight:600;">Evening Training</figcaption>
+        </figure>
+        <figure class="facility-card" style="margin:0;background:var(--color-midnight-card);border:1px solid var(--color-midnight-border);border-radius:14px;overflow:hidden;">
+          <img src="images/esperienza-pro-recco.jpg" alt="Aquatic sports facility" loading="lazy" style="display:block;width:100%;height:210px;object-fit:cover;">
+          <figcaption style="padding:1rem;color:var(--color-text);font-weight:600;">Club Aquatic Facility</figcaption>
+        </figure>
+        <figure class="facility-card" style="margin:0;background:var(--color-midnight-card);border:1px solid var(--color-midnight-border);border-radius:14px;overflow:hidden;">
+          <img src="images/esperienza-tornei-europei.jpg" alt="Swimming pool used for European competitions" loading="lazy" style="display:block;width:100%;height:210px;object-fit:cover;">
+          <figcaption style="padding:1rem;color:var(--color-text);font-weight:600;">Competition Venue</figcaption>
+        </figure>
+        <figure class="facility-card" style="margin:0;background:var(--color-midnight-card);border:1px solid var(--color-midnight-border);border-radius:14px;overflow:hidden;">
+          <img src="images/allenamento-in-vasca.jpg" alt="Poolside coaching and aquatic training" loading="lazy" style="display:block;width:100%;height:210px;object-fit:cover;">
+          <figcaption style="padding:1rem;color:var(--color-text);font-weight:600;">Poolside Training</figcaption>
+        </figure>
+        <figure class="facility-card" style="margin:0;background:var(--color-midnight-card);border:1px solid var(--color-midnight-border);border-radius:14px;overflow:hidden;">
+          <img src="images/galleria-bordo-vasca.jpg" alt="Swimming pool and poolside coaching environment" loading="lazy" style="display:block;width:100%;height:210px;object-fit:cover;">
+          <figcaption style="padding:1rem;color:var(--color-text);font-weight:600;">Poolside Environment</figcaption>
+        </figure>
+        <figure class="facility-card" style="margin:0;background:var(--color-midnight-card);border:1px solid var(--color-midnight-border);border-radius:14px;overflow:hidden;">
+          <img src="images/WhatsApp%20Image%202026-11-17%20at%2019.37.40.jpeg" alt="Aquatic facility photograph" loading="lazy" style="display:block;width:100%;height:210px;object-fit:cover;">
+          <figcaption style="padding:1rem;color:var(--color-text);font-weight:600;">Aquatic Facility</figcaption>
+        </figure>
+      </div>
+      <style>@media(max-width:600px){#facilities .facilities-grid{grid-template-columns:1fr 1fr !important;gap:.75rem !important;}#facilities .facility-card img{height:145px !important;}#facilities .facility-card figcaption{padding:.7rem !important;font-size:.85rem;}}</style>
     </section>
 
     <!-- ==========================================================================
