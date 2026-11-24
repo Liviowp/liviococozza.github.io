@@ -66,15 +66,7 @@
           <a href="#journey" class="btn btn-primary"><span aria-hidden="true">🏊</span> My Experience</a>
           <a href="#contact" class="btn btn-outline">Get in Touch</a>
         </div>
-        <div class="hero-audio-control">
-          <button type="button" id="heroAudioToggle" class="audio-toggle" aria-pressed="false">
-            <span class="audio-toggle-icon" aria-hidden="true">▶</span>
-            <span class="audio-toggle-label">Play background music</span>
-          </button>
-          <audio id="heroBackgroundAudio" preload="none" loop>
-            <source src="audio/paulyudin-inspirational-490406.mp3.mpeg" type="audio/mpeg">
-          </audio>
-        </div>
+
 
       </div>
     </section>
@@ -558,7 +550,9 @@
     </div>
   </div>
 
+  <div id="persistentAudioPlayer" style="position:fixed;right:22px;bottom:20px;z-index:9999;display:flex;align-items:center;gap:10px;padding:10px 13px;border:1px solid rgba(65,205,245,.55);border-radius:14px;background:rgba(3,18,37,.94);box-shadow:0 8px 28px rgba(0,0,0,.35);backdrop-filter:blur(12px);color:#eafaff;font:700 11px Inter,Arial,sans-serif;letter-spacing:.08em"><audio preload="none" loop><source src="audio/paulyudin-inspirational-490406.mp3.mpeg" type="audio/mpeg"></audio><button type="button" aria-label="Play background music" style="width:34px;height:34px;border:0;border-radius:50%;background:linear-gradient(135deg,#20c9ed,#0876b9);color:#03172b;font-size:15px;font-weight:900;cursor:pointer">▶</button><span id="siteAudioLabel">PLAY MUSIC</span><input type="range" min="0" max="1" step=".05" value=".35" aria-label="Music volume" style="width:72px;accent-color:#27c9ed;cursor:pointer"></div>
   <script src="js/main.js"></script>
+  <script src="js/persistent-audio.js"></script>
   <script>
     (() => {
       const audio = document.getElementById('heroBackgroundAudio');
