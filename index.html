@@ -470,18 +470,18 @@
               <input type="checkbox" name="botcheck" style="display: none;" tabindex="-1" autocomplete="off">
               <div class="form-row">
                 <div class="form-group">
-                  <label class="form-label">Your Name</label>
-                  <input type="text" name="name" class="form-input" placeholder="Full Name" required>
+                  <label class="form-label" for="contact-name">Your Name</label>
+                  <input id="contact-name" type="text" name="name" class="form-input" placeholder="Full Name" autocomplete="name" required>
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Official Email</label>
-                  <input type="email" name="email" class="form-input" placeholder="name@organization.com" required>
+                  <label class="form-label" for="contact-email">Official Email</label>
+                  <input id="contact-email" type="email" name="email" class="form-input" placeholder="name@organization.com" autocomplete="email" required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="form-label">I am representing a...</label>
-                <select class="form-select" name="representing">
+                <label class="form-label" for="contact-representing">I am representing a...</label>
+                <select id="contact-representing" class="form-select" name="representing">
                   <option>Water Polo Club / Senior Division</option>
                   <option>Swimming Academy / Federation</option>
                   <option>School / University (PE Department)</option>
@@ -491,8 +491,8 @@
               </div>
 
               <div class="form-group">
-                <label class="form-label">Primary Objective</label>
-                <select class="form-select" name="primary_objective">
+                <label class="form-label" for="contact-objective">Primary Objective</label>
+                <select id="contact-objective" class="form-select" name="primary_objective">
                   <option>Head Coach Engagement (Water Polo / Swimming)</option>
                   <option>Program Supervisor &amp; Technical Director</option>
                   <option>Team Manager &amp; Strategic Operations</option>
@@ -502,8 +502,8 @@
               </div>
 
               <div class="form-group">
-                <label class="form-label">Details &amp; Objectives</label>
-                <textarea class="form-textarea" name="message" rows="4" placeholder="Timeline, location, and project details..." required></textarea>
+                <label class="form-label" for="contact-message">Details &amp; Objectives</label>
+                <textarea id="contact-message" class="form-textarea" name="message" rows="4" placeholder="Timeline, location, and project details..." autocomplete="off" required></textarea>
               </div>
 
               <p class="form-privacy-note" style="font-size:.82rem;line-height:1.5;color:#b8c9dc;margin:.75rem 0;">By submitting this form, you ask me to use the details provided to respond to your enquiry. For information about how your data is handled, please read the <a href="privacy-policy.html" style="color:#48d9f2;text-decoration:underline;">Privacy Policy</a>.</p>
