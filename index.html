@@ -279,7 +279,6 @@
       </nav>
       <style>
         #facilities .country-globe-grid{position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1.25rem;max-width:980px;margin:2rem auto 0;padding:1.5rem 1rem}
-        #facilities .country-globe-grid::before{content:"";position:absolute;z-index:-1;width:min(88%,720px);aspect-ratio:1;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(56,189,248,.16);background:radial-gradient(circle at 38% 32%,rgba(24,100,145,.2),rgba(7,20,38,.08) 62%,transparent 70%);box-shadow:inset 0 0 45px rgba(15,110,160,.08),0 0 45px rgba(15,110,160,.06);pointer-events:none}
         #facilities .country-orb{min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.65rem;padding:.45rem .2rem;text-decoration:none;color:#f8fafc;transition:transform .22s ease}
         #facilities .country-orb-flag{position:relative;display:grid;place-items:center;width:88px;aspect-ratio:1;border-radius:50%;padding:7px;background:linear-gradient(145deg,rgba(27,68,101,.96),rgba(5,18,34,.98));border:1px solid rgba(86,190,235,.5);box-shadow:0 8px 22px rgba(0,0,0,.28),inset 0 0 18px rgba(60,180,225,.12);overflow:hidden}
         #facilities .country-orb-flag::after{content:"";position:absolute;inset:5px;border-radius:50%;border:1px solid rgba(255,255,255,.14);pointer-events:none}
@@ -288,7 +287,7 @@
         #facilities .country-orb:hover{transform:translateY(-5px)}
         #facilities .country-orb:hover .country-orb-flag{border-color:#38bdf8;box-shadow:0 0 0 4px rgba(56,189,248,.1),0 12px 28px rgba(0,0,0,.32),0 0 24px rgba(56,189,248,.18)}
         @media(max-width:900px){#facilities .country-globe-grid{grid-template-columns:repeat(3,minmax(0,1fr));max-width:620px}#facilities .country-orb-flag{width:82px}}
-        @media(max-width:520px){#facilities .country-globe-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:.9rem .35rem;padding:1rem .2rem}#facilities .country-globe-grid::before{width:100%;}#facilities .country-orb-flag{width:66px;padding:5px}#facilities .country-orb .country-tile-name{font-size:.78rem}}
+        @media(max-width:520px){#facilities .country-globe-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:.9rem .35rem;padding:1rem .2rem}#facilities .country-orb-flag{width:66px;padding:5px}#facilities .country-orb .country-tile-name{font-size:.78rem}}
       </style>
     </section>
 
