@@ -1293,3 +1293,19 @@ header.site-nav .brand-copy { display:flex !important; flex-direction:column !im
   .hero-actions { gap:.85rem !important; }
   .hero-actions .btn { min-height:54px !important; padding:0 1.1rem !important; font-size:.85rem !important; }
 }
+
+/* About photos fill the same vertical space as the accompanying text on desktop */
+@media (min-width: 901px) {
+  .philosophy-grid {
+    align-items: stretch;
+  }
+  .about-photo-stack {
+    height: 100% !important;
+    min-height: 0;
+  }
+  .about-photo-stack .philosophy-img {
+    height: auto !important;
+    min-height: 0;
+    flex: 1 1 0;
+  }
+}
