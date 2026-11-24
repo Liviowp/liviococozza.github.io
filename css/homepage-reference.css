@@ -1433,3 +1433,57 @@ html body header.site-nav {
     font-size:9.5px !important;
   }
 }
+
+
+/* Professional Services — aligned interactive project cards */
+#services .card-grid--services{
+  display:grid !important;
+  grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+  align-items:stretch;
+  gap:1rem !important;
+  margin-top:2rem;
+}
+#services .info-card{
+  min-width:0;
+  min-height:245px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  padding:1.35rem 1.2rem 1.25rem !important;
+  border:1px solid rgba(75,155,210,.27);
+  border-radius:16px;
+  background:linear-gradient(155deg,rgba(17,42,70,.96),rgba(7,18,37,.98));
+  box-shadow:0 10px 28px rgba(0,0,0,.2);
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+}
+#services .info-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(56,189,248,.72);
+  box-shadow:0 16px 34px rgba(0,0,0,.3),0 0 22px rgba(56,189,248,.09);
+}
+#services .service-card-number{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:36px;height:36px;margin-bottom:1.1rem;border-radius:11px;
+  color:#8edcff;font:800 .82rem Outfit,sans-serif;
+  background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.25);
+}
+#services .info-card h3{font-size:1.02rem;line-height:1.3;margin-bottom:.65rem}
+#services .info-card .card-desc{font-size:.84rem;line-height:1.6;flex:1}
+#services .service-card-link{
+  display:inline-flex;align-items:center;gap:.45rem;margin-top:1.1rem;
+  color:#7dd3fc;text-decoration:none;font:700 .76rem Outfit,sans-serif;
+  text-transform:uppercase;letter-spacing:.07em;
+}
+#services .service-card-link:hover{color:#fff}
+#services .services-projects-cta{margin-top:1.8rem}
+@media(max-width:1050px){
+  #services .card-grid--services{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+}
+@media(max-width:700px){
+  #services .card-grid--services{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:.8rem !important}
+  #services .info-card{min-height:235px;padding:1.1rem !important}
+}
+@media(max-width:460px){
+  #services .card-grid--services{grid-template-columns:1fr !important}
+  #services .info-card{min-height:0}
+}
