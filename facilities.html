@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facilities | Livio Cocozza</title>
+  <meta name="description" content="Aquatic facilities, swimming pools and training environments from Livio Cocozza's international coaching experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=hero-layer-fix-20261123">
+  <link rel="stylesheet" href="css/homepage-reference.css?v=20261124-facilities-gallery">
+  <style>
+    .facilities-page{padding:5.5rem 1.5rem 6rem}
+    .facilities-page .intro{max-width:760px;margin-bottom:2.5rem}
+    .facilities-page .facility-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}
+    .facilities-page .facility-card{margin:0;overflow:hidden;border:1px solid var(--color-midnight-border);border-radius:16px;background:var(--color-midnight-card);box-shadow:0 12px 30px rgba(0,0,0,.2)}
+    .facilities-page .facility-card img{display:block;width:100%;height:clamp(260px,32vw,440px);object-fit:cover;transition:transform .45s ease}
+    .facilities-page .facility-card:hover img{transform:scale(1.025)}
+    .facilities-page .facility-card figcaption{padding:1rem 1.15rem;color:var(--color-text);font:600 1rem/1.4 Inter,sans-serif}
+    .facilities-back{display:inline-flex;margin-top:2.5rem}
+    @media(max-width:700px){.facilities-page{padding:4rem 1rem}.facilities-page .facility-gallery{grid-template-columns:1fr;gap:1.1rem}.facilities-page .facility-card img{height:260px}.facilities-page .facility-card figcaption{padding:.85rem 1rem}}
+  </style>
+</head>
+<body>
+  <canvas id="bubblesCanvas"></canvas>
+  <header class="site-nav">
+    <div class="container nav-content">
+      <a href="index.html#hero" class="brand-name" aria-label="Livio Cocozza — Home">
+        <img src="images/livio-cocozza-logo-trasparente.png" alt="" class="brand-logo">
+        <span class="brand-name-text">Livio Cocozza</span>
+      </a>
+      <nav><ul class="nav-links">
+        <li><a href="index.html#hero" class="nav-link">Home</a></li>
+        <li><a href="index.html#philosophy" class="nav-link">About</a></li>
+        <li><a href="index.html#journey" class="nav-link">Experience</a></li>
+        <li><a href="index.html#gallery" class="nav-link">Education</a></li>
+        <li><a href="facilities.html" class="nav-link active">Facilities</a></li>
+        <li><a href="index.html#services" class="nav-link">Projects</a></li>
+        <li><a href="index.html#blog" class="nav-link">Blog</a></li>
+        <li><a href="https://www.youtube.com/@wpsmethodology" class="nav-link" target="_blank" rel="noopener noreferrer">Video</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul></nav>
+    </div>
+  </header>
+  <main>
+    <section class="container facilities-page">
+      <div class="intro">
+        <span class="section-label">Aquatic Environments</span>
+        <h1 class="section-heading">Facilities</h1>
+      </div>
+      <div class="facility-gallery">
+        <figure class="facility-card"><img src="images/arena-olimpica.jpg" alt="Olympic aquatic arena" loading="lazy"><figcaption>Aquatic Arena</figcaption></figure>
+        <figure class="facility-card"><img src="images/esperienza-indoor.jpg" alt="Indoor swimming facility" loading="lazy"><figcaption>Indoor Training Facility</figcaption></figure>
+        <figure class="facility-card"><img src="images/esperienza-notte.jpg" alt="Aquatic facility during evening training" loading="lazy"><figcaption>Evening Training</figcaption></figure>
+        <figure class="facility-card"><img src="images/esperienza-pro-recco.jpg" alt="Aquatic sports facility" loading="lazy"><figcaption>Club Aquatic Facility</figcaption></figure>
+        <figure class="facility-card"><img src="images/esperienza-tornei-europei.jpg" alt="Swimming pool used for European competitions" loading="lazy"><figcaption>Competition Venue</figcaption></figure>
+        <figure class="facility-card"><img src="images/allenamento-in-vasca.jpg" alt="Poolside coaching and aquatic training" loading="lazy"><figcaption>Poolside Training</figcaption></figure>
+        <figure class="facility-card"><img src="images/galleria-bordo-vasca.jpg" alt="Swimming pool and poolside coaching environment" loading="lazy"><figcaption>Poolside Environment</figcaption></figure>
+        <figure class="facility-card"><img src="images/WhatsApp%20Image%202026-11-17%20at%2019.37.40.jpeg" alt="Aquatic facility photograph" loading="lazy"><figcaption>Aquatic Facility</figcaption></figure>
+      </div>
+      <a href="index.html#facilities" class="btn btn-outline facilities-back">← Back to Home</a>
+    </section>
+  </main>
+</body>
+</html>
