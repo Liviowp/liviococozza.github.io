@@ -206,30 +206,32 @@
       <h2 class="section-heading">Facilities</h2>
       <p style="max-width:680px;margin:.35rem 0 1.6rem;color:var(--color-text-dim);">Explore aquatic facilities across my international coaching journey.</p>
       <nav aria-label="Explore facilities by country" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;">
-        <a class="country-tile flag-italy" href="facilities.html#italy" title="Italy" aria-label="Explore facilities in Italy"><span class="country-tile-name">Italy</span></a>
-        <a class="country-tile flag-united-kingdom" href="facilities.html#united-kingdom" title="United Kingdom" aria-label="Explore facilities in United Kingdom"><span class="country-tile-name">United Kingdom</span></a>
-        <a class="country-tile flag-united-states" href="facilities.html#united-states" title="United States" aria-label="Explore facilities in United States"><span class="country-tile-name">United States</span></a>
-        <a class="country-tile flag-germany" href="facilities.html#germany" title="Germany" aria-label="Explore facilities in Germany"><span class="country-tile-name">Germany</span></a>
-        <a class="country-tile flag-portugal" href="facilities.html#portugal" title="Portugal" aria-label="Explore facilities in Portugal"><span class="country-tile-name">Portugal</span></a>
-        <a class="country-tile flag-belgium" href="facilities.html#belgium" title="Belgium" aria-label="Explore facilities in Belgium"><span class="country-tile-name">Belgium</span></a>
-        <a class="country-tile flag-spain" href="facilities.html#spain" title="Spain" aria-label="Explore facilities in Spain"><span class="country-tile-name">Spain</span></a>
-        <a class="country-tile flag-hungary" href="facilities.html#hungary" title="Hungary" aria-label="Explore facilities in Hungary"><span class="country-tile-name">Hungary</span></a>
+        <a class="country-tile flag-italy" href="facilities.html#italy" title="Italy" aria-label="Explore facilities in Italy"><span class="country-flag-icon" aria-hidden="true">🇮🇹</span><span class="country-tile-name">Italy</span><span class="country-arrow" aria-hidden="true">↗</span></a>
+        <a class="country-tile flag-united-kingdom" href="facilities.html#united-kingdom" title="United Kingdom" aria-label="Explore facilities in United Kingdom"><span class="country-flag-icon" aria-hidden="true">🇬🇧</span><span class="country-tile-name">United Kingdom</span><span class="country-arrow" aria-hidden="true">↗</span></a>
+        <a class="country-tile flag-united-states" href="facilities.html#united-states" title="United States" aria-label="Explore facilities in United States"><span class="country-flag-icon" aria-hidden="true">🇺🇸</span><span class="country-tile-name">United States</span><span class="country-arrow" aria-hidden="true">↗</span></a>
+        <a class="country-tile flag-germany" href="facilities.html#germany" title="Germany" aria-label="Explore facilities in Germany"><span class="country-flag-icon" aria-hidden="true">🇩🇪</span><span class="country-tile-name">Germany</span><span class="country-arrow" aria-hidden="true">↗</span></a>
+        <a class="country-tile flag-portugal" href="facilities.html#portugal" title="Portugal" aria-label="Explore facilities in Portugal"><span class="country-flag-icon" aria-hidden="true">🇵🇹</span><span class="country-tile-name">Portugal</span><span class="country-arrow" aria-hidden="true">↗</span></a>
+        <a class="country-tile flag-belgium" href="facilities.html#belgium" title="Belgium" aria-label="Explore facilities in Belgium"><span class="country-flag-icon" aria-hidden="true">🇧🇪</span><span class="country-tile-name">Belgium</span><span class="country-arrow" aria-hidden="true">↗</span></a>
+        <a class="country-tile flag-spain" href="facilities.html#spain" title="Spain" aria-label="Explore facilities in Spain"><span class="country-flag-icon" aria-hidden="true">🇪🇸</span><span class="country-tile-name">Spain</span><span class="country-arrow" aria-hidden="true">↗</span></a>
+        <a class="country-tile flag-hungary" href="facilities.html#hungary" title="Hungary" aria-label="Explore facilities in Hungary"><span class="country-flag-icon" aria-hidden="true">🇭🇺</span><span class="country-tile-name">Hungary</span><span class="country-arrow" aria-hidden="true">↗</span></a>
       </nav>
       <style>
-        #facilities .country-tile{position:relative;isolation:isolate;overflow:hidden;min-height:112px;display:flex;align-items:center;justify-content:center;padding:1rem;border:1px solid rgba(75,155,210,.35);border-radius:14px;background:#0b1d35;color:var(--color-text);text-decoration:none;font-weight:700;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
-        #facilities .country-tile::before{content:"";position:absolute;z-index:-1;inset:-22%;filter:blur(19px);opacity:.62;transform:scale(1.12);pointer-events:none}
-        #facilities .flag-italy::before{background:linear-gradient(90deg,#009246 0 33.33%,#f7f7f2 33.33% 66.66%,#ce2b37 66.66%)}
-        #facilities .flag-united-kingdom::before{background:linear-gradient(135deg,transparent 37%,#fff 37% 43%,#c8102e 43% 48%,transparent 48%),linear-gradient(45deg,transparent 37%,#fff 37% 43%,#c8102e 43% 48%,transparent 48%),linear-gradient(90deg,#012169,#17418b)}
-        #facilities .flag-united-states::before{background:repeating-linear-gradient(180deg,#b22234 0 12%,#f7f4ed 12% 24%);box-shadow:inset 0 0 0 999px rgba(8,42,94,.18)}
-        #facilities .flag-germany::before{background:linear-gradient(180deg,#171717 0 33.33%,#dd0000 33.33% 66.66%,#ffce00 66.66%)}
-        #facilities .flag-portugal::before{background:linear-gradient(90deg,#006600 0 40%,#ff0000 40%)}
-        #facilities .flag-belgium::before{background:linear-gradient(90deg,#171717 0 33.33%,#fae042 33.33% 66.66%,#ed2939 66.66%)}
-        #facilities .flag-spain::before{background:linear-gradient(180deg,#aa151b 0 25%,#f1bf00 25% 75%,#aa151b 75%)}
-        #facilities .flag-hungary::before{background:linear-gradient(180deg,#ce2939 0 33.33%,#f5f5f0 33.33% 66.66%,#477050 66.66%)}
-        #facilities .country-tile::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(135deg,rgba(5,12,28,.32),rgba(5,12,28,.48));pointer-events:none}
-        #facilities .country-tile-name{position:relative;z-index:1;text-shadow:0 2px 9px rgba(0,0,0,.85);letter-spacing:.02em}
-        #facilities .country-tile:hover{transform:translateY(-4px);border-color:rgba(91,190,240,.8);box-shadow:0 10px 24px rgba(0,0,0,.22)}
-        @media(max-width:700px){#facilities nav{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:.75rem!important}#facilities .country-tile{min-height:96px;padding:.75rem;font-size:.92rem}#facilities .country-tile::before{font-size:5rem}}
+        #facilities .country-tile{position:relative;isolation:isolate;overflow:hidden;min-height:82px;display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:.9rem;padding:.85rem 1rem;border:1px solid rgba(75,155,210,.28);border-radius:15px;background:linear-gradient(115deg,rgba(13,36,64,.96),rgba(7,20,38,.98));color:var(--color-text);text-decoration:none;font-weight:700;box-shadow:0 7px 20px rgba(0,0,0,.14);transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+        #facilities .country-tile::before{content:"";position:absolute;z-index:-1;inset:-45% -15% -45% 35%;filter:blur(24px);opacity:.28;pointer-events:none}
+        #facilities .flag-italy::before{background:linear-gradient(90deg,#009246,#f7f7f2,#ce2b37)}
+        #facilities .flag-united-kingdom::before{background:linear-gradient(135deg,#012169,#fff 48%,#c8102e)}
+        #facilities .flag-united-states::before{background:linear-gradient(135deg,#17418b,#fff 48%,#b22234)}
+        #facilities .flag-germany::before{background:linear-gradient(180deg,#171717,#dd0000,#ffce00)}
+        #facilities .flag-portugal::before{background:linear-gradient(90deg,#006600,#ff0000)}
+        #facilities .flag-belgium::before{background:linear-gradient(90deg,#171717,#fae042,#ed2939)}
+        #facilities .flag-spain::before{background:linear-gradient(180deg,#aa151b,#f1bf00,#aa151b)}
+        #facilities .flag-hungary::before{background:linear-gradient(180deg,#ce2939,#f5f5f0,#477050)}
+        #facilities .country-flag-icon{flex:0 0 48px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.13);font-size:2rem;line-height:1;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+        #facilities .country-tile-name{position:relative;z-index:1;flex:1;min-width:0;font-size:1rem;letter-spacing:.01em;text-shadow:0 1px 5px rgba(0,0,0,.35)}
+        #facilities .country-arrow{font-size:1.05rem;color:#79c9f2;opacity:.75;transition:transform .22s ease,opacity .22s ease}
+        #facilities .country-tile:hover{transform:translateY(-3px);border-color:rgba(91,190,240,.72);box-shadow:0 12px 26px rgba(0,0,0,.24)}
+        #facilities .country-tile:hover .country-arrow{transform:translate(2px,-2px);opacity:1}
+        @media(max-width:700px){#facilities nav{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:.7rem!important}#facilities .country-tile{min-height:72px;padding:.65rem;gap:.6rem}#facilities .country-flag-icon{flex-basis:40px;width:40px;height:40px;font-size:1.7rem;border-radius:10px}#facilities .country-tile-name{font-size:.88rem}#facilities .country-arrow{font-size:.9rem}}
       </style>
     </section>
 
