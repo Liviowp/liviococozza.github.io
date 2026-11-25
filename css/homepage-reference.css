@@ -1603,8 +1603,8 @@ html body footer.site-footer { background: linear-gradient(to bottom, #0f1a36 0%
 .site-nav .nav-stack{display:flex!important;flex-direction:column!important;align-items:center!important;gap:8px!important;}
 .site-nav nav{display:block!important;}
 .site-nav .nav-links{margin:0!important;padding:0!important;}
-.aquatic-shortcuts{display:flex;justify-content:center;align-items:center;gap:16px;width:100%;}
-.aquatic-shortcut{display:flex;align-items:center;gap:4px;color:#7dd3fc;text-decoration:none;font-size:.72rem;font-weight:700;letter-spacing:normal;text-transform:uppercase;line-height:1;opacity:.9;transition:transform .2s ease,color .2s ease,opacity .2s ease;}
-.aquatic-shortcut svg{width:16px;height:16px;display:block;}
+.aquatic-shortcuts{display:flex;justify-content:center;align-items:center;gap:10px;width:100%;}
+.aquatic-shortcut{display:flex;align-items:center;gap:3px;color:#7dd3fc;text-decoration:none;font-size:.64rem;font-weight:700;letter-spacing:normal;text-transform:uppercase;line-height:1;opacity:.9;transition:transform .2s ease,color .2s ease,opacity .2s ease;padding:5px 8px;border:1px solid rgba(56,189,248,.25);border-radius:8px;background:rgba(2,132,199,.08);}
+.aquatic-shortcut svg{width:14px;height:14px;display:block;}
 .aquatic-shortcut:hover{color:#fff;opacity:1;transform:translateY(-2px);}
-@media(max-width:900px){.aquatic-shortcut{font-size:.68rem}.aquatic-shortcut svg{width:15px;height:15px}.aquatic-shortcuts{gap:12px}}
+@media(max-width:900px){.aquatic-shortcut{font-size:.6rem;padding:4px 6px}.aquatic-shortcut svg{width:13px;height:13px}.aquatic-shortcuts{gap:8px}}
