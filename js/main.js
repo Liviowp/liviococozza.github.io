@@ -4,13 +4,14 @@
     if (!ctx) return;
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const motionScale = prefersReducedMotion ? 0.45 : 1;
     let width = canvas.width = window.innerWidth;
     let height = canvas.height = window.innerHeight;
+    let animationRunning = false;
 
     window.addEventListener('resize', () => {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
-      if (prefersReducedMotion) drawBubbles(false);
     });
 
     class Bubble {
@@ -22,20 +23,17 @@
         this.x = Math.random() * width;
         this.y = height + Math.random() * 100;
         this.radius = Math.random() * 4 + 1;
-        this.speed = Math.random() * 1.2 + 0.4;
+        this.speed = (Math.random() * 1.2 + 0.4) * motionScale;
         this.opacity = Math.random() * 0.5 + 0.1;
-        this.oscillation = Math.random() * 0.02;
+        this.oscillation = Math.random() * 0.02 * motionScale;
         this.angle = Math.random() * Math.PI * 2;
       }
 
       update() {
         this.y -= this.speed;
         this.angle += this.oscillation;
-        this.x += Math.sin(this.angle) * 0.5;
-
-        if (this.y < -10) {
-          this.reset();
-        }
+        this.x += Math.sin(this.angle) * 0.5 * motionScale;
+        if (this.y < -10) this.reset();
       }
 
       draw() {
@@ -60,19 +58,27 @@
     }
 
     function animate() {
-      if (document.hidden || prefersReducedMotion) return;
+      if (document.hidden) {
+        animationRunning = false;
+        return;
+      }
       drawBubbles(true);
       requestAnimationFrame(animate);
     }
 
-    if (prefersReducedMotion) {
-      drawBubbles(false);
-    } else {
-      animate();
-      document.addEventListener('visibilitychange', () => {
-        if (!document.hidden) animate();
-      });
+    function startAnimation() {
+      if (animationRunning || document.hidden) return;
+      animationRunning = true;
+      requestAnimationFrame(animate);
     }
+
+    // Bubbles remain animated; reduced-motion preference slows them down.
+    drawBubbles(false);
+    startAnimation();
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) animationRunning = false;
+      else startAnimation();
+    });
 
     // Media Modal Database & Logic
     const mediaData = {
