@@ -1544,3 +1544,13 @@ html body main section .section-label {
   margin-right:auto !important;
 }
 #blog .lc-blog-intro { text-align:center !important; margin-left:auto !important; margin-right:auto !important; }
+
+
+/* Center section introductory descriptions beneath their headings */
+#facilities > p,
+#services > .section-subheading,
+#journey > .experience-intro {
+  text-align:center !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
