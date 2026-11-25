@@ -1525,3 +1525,22 @@ html body header.site-nav {
 }
 #services .service-card-icon{transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
 @media(max-width:700px){#services .service-card-icon{width:106px;height:86px}}
+
+
+/* Unified section-heading alignment: center all major section titles */
+html body main section h2.section-heading {
+  text-align:center !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+html body main section .section-label {
+  display:block !important;
+  text-align:center !important;
+}
+#blog .lc-blog-heading,
+#blog .lc-blog-heading > div {
+  text-align:center !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+#blog .lc-blog-intro { text-align:center !important; margin-left:auto !important; margin-right:auto !important; }
