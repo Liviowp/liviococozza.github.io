@@ -1615,10 +1615,10 @@ html body footer.site-footer { background: linear-gradient(to bottom, #0f1a36 0%
 /* Mobile fix: keep the three Philosophy photos visually equal in size */
 @media(max-width:620px){#philosophy .philosophy-image-frame img.philosophy-img,.philosophy-image-frame img.philosophy-img{width:100%!important;height:230px!important;max-height:230px!important;object-fit:cover!important;display:block!important;}}
 
-#facilities .country-globe-grid .country-orb.flag-spain{order:6!important;}#facilities .country-globe-grid .country-orb.flag-hungary{order:7!important;grid-column:2!important;}}
 
-/* Mobile country layout: 3 columns, Belgium centered with Spain and Hungary on its row */
-@media(max-width:520px){
+
+/* MOBILE ONLY: 3-column country arrangement. Desktop/tablet untouched. */
+@media screen and (max-width:520px){
  #facilities .country-globe-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;}
  #facilities .country-globe-grid .country-orb.flag-italy{order:1!important;}
  #facilities .country-globe-grid .country-orb.flag-united-kingdom{order:2!important;}
