@@ -1612,3 +1612,8 @@ html body footer.site-footer { background: linear-gradient(to bottom, #0f1a36 0%
 
 /* Mobile: center the Belgium orb on the last row of the country grid */
 @media(max-width:520px){#facilities .country-globe-grid .country-orb.flag-belgium{grid-column:2;}}
+
+/* Mobile fix: keep the three Philosophy photos visually equal in size */
+@media(max-width:620px){#philosophy .philosophy-image-frame img.philosophy-img,.philosophy-image-frame img.philosophy-img{width:100%!important;height:230px!important;max-height:230px!important;object-fit:cover!important;display:block!important;}}
+/* Belgium centered in final row */
+@media(max-width:520px){#facilities .country-globe-grid .country-orb.flag-belgium{grid-column:2!important;}}
