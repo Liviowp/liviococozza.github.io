@@ -1610,18 +1610,5 @@ html body footer.site-footer { background: linear-gradient(to bottom, #0f1a36 0%
 @media(max-width:900px){.aquatic-shortcut{font-size:.6rem;padding:4px 6px}.aquatic-shortcut svg{width:13px;height:13px}.aquatic-shortcuts{gap:8px}}
 
 
-/* Smartphone only (max 620px): show the hero photo above the text card instead of hiding it behind it.
-   Desktop and tablet layouts are not affected. */
-@media (max-width:620px) {
-  html body main #hero.hero-section {
-    background-color:#03111f !important;
-    background-image:
-      linear-gradient(180deg,rgba(3,17,31,0) 0%,#03111f 100%),
-      url("/images/Allenatore%20di%20nuoto%20tra%20onde%20turchesi.webp") !important;
-    background-repeat:no-repeat !important;
-    background-size:100% 90px, auto 300px !important;
-    background-position:0 385px, 72% 175px !important;
-    padding-top:495px !important;
-  }
-  html body main #hero.hero-section::before { background:none !important; }
-}
+/* Mobile: center the Belgium orb on the last row of the country grid */
+@media(max-width:520px){#facilities .country-globe-grid .country-orb.flag-belgium{grid-column:2;}}
