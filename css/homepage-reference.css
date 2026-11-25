@@ -1561,6 +1561,7 @@ html body main section .section-label {
 /* Contact fade: keep sections in normal flow; fade only the background layer */
 html body main section#contact.contact-section {
   margin-top: 0 !important;
+  z-index: 5 !important;
   position: relative !important;
   background: transparent !important;
   border-top: 0 !important;
@@ -1571,7 +1572,7 @@ html body main section#contact.contact-section::after {
   position: absolute !important;
   left: 0 !important; right: 0 !important;
   top: -320px !important; bottom: 0 !important;
-  z-index: -1 !important;
+  z-index: 0 !important;
   pointer-events: none !important;
   background: linear-gradient(to bottom,
     rgba(15,26,54,0) 0%,
