@@ -384,6 +384,11 @@
 
     
 /* Soft fades around the Contact section */
+/* Ensure the decorative contact transition wave sits visibly in the foreground */
+.contact-section { position:relative; isolation:isolate; overflow:visible !important; }
+.contact-section::before { z-index:10 !important; }
+.contact-section > .container { position:relative; z-index:1; }
+
 .contact-section{
   position:relative;
   isolation:isolate;
