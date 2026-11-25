@@ -1625,6 +1625,6 @@ html body footer.site-footer { background: linear-gradient(to bottom, #0f1a36 0%
  #facilities .country-globe-grid .country-orb.flag-united-states{order:3!important;}
  #facilities .country-globe-grid .country-orb.flag-germany{order:4!important;}
  #facilities .country-globe-grid .country-orb.flag-spain{order:5!important;}
- #facilities .country-globe-grid .country-orb.flag-belgium{order:6!important;grid-column:2!important;}
- #facilities .country-globe-grid .country-orb.flag-hungary{order:7!important;grid-column:3!important;}
+ #facilities .country-globe-grid .country-orb.flag-hungary{order:6!important;grid-column:auto!important;}
+ #facilities .country-globe-grid .country-orb.flag-belgium{order:7!important;grid-column:2!important;}
 }
