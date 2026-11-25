@@ -1,7 +1,6 @@
     const canvas = document.getElementById('bubblesCanvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+    const ctx = canvas ? canvas.getContext('2d') : null;
+    if (canvas && ctx) {
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const motionScale = prefersReducedMotion ? 0.45 : 1;
@@ -79,6 +78,8 @@
       if (document.hidden) animationRunning = false;
       else startAnimation();
     });
+
+    }
 
     // Media Modal Database & Logic
     const mediaData = {
