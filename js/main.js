@@ -1,12 +1,16 @@
     const canvas = document.getElementById('bubblesCanvas');
+    if (!canvas) return;
     const ctx = canvas.getContext('2d');
+    if (!ctx) return;
 
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let width = canvas.width = window.innerWidth;
     let height = canvas.height = window.innerHeight;
 
     window.addEventListener('resize', () => {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
+      if (prefersReducedMotion) drawBubbles(false);
     });
 
     class Bubble {
@@ -47,16 +51,28 @@
 
     const bubbles = Array.from({ length: 45 }, () => new Bubble());
 
-    function animate() {
+    function drawBubbles(update) {
       ctx.clearRect(0, 0, width, height);
       bubbles.forEach(bubble => {
-        bubble.update();
+        if (update) bubble.update();
         bubble.draw();
       });
+    }
+
+    function animate() {
+      if (document.hidden || prefersReducedMotion) return;
+      drawBubbles(true);
       requestAnimationFrame(animate);
     }
 
-    animate();
+    if (prefersReducedMotion) {
+      drawBubbles(false);
+    } else {
+      animate();
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) animate();
+      });
+    }
 
     // Media Modal Database & Logic
     const mediaData = {
