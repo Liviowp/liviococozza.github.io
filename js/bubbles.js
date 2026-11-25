@@ -55,14 +55,16 @@
   }
   // Defer the decorative canvas work until after the initial page rendering.
   // This keeps the hero content as the priority for mobile LCP.
-  window.addEventListener('load', () => {
+  const initializeBubbles = () => {
     window.setTimeout(() => {
       if (document.hidden) return;
       ctx.clearRect(0, 0, width, height);
       bubbles.forEach(b => b.draw());
       start();
     }, 1200);
-  }, { once: true });
+  };
+  if (document.readyState === 'complete') initializeBubbles();
+  else window.addEventListener('load', initializeBubbles, { once: true });
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) running = false;
     else start();
