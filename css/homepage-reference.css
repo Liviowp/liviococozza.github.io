@@ -1598,13 +1598,13 @@ html body footer.site-footer { background: linear-gradient(to bottom, #0f1a36 0%
   #services .service-mobile-card:last-child{grid-column:auto;max-width:none;}
 }
 
-/* Aquatic sport shortcuts stacked below the main navigation */
+/* Aquatic shortcuts centered under the main navigation, using matching menu typography */
 .site-nav .nav-content{align-items:center!important;}
-.site-nav .nav-stack{display:flex!important;flex-direction:column!important;align-items:flex-end!important;gap:8px!important;}
+.site-nav .nav-stack{display:flex!important;flex-direction:column!important;align-items:center!important;gap:8px!important;}
 .site-nav nav{display:block!important;}
 .site-nav .nav-links{margin:0!important;padding:0!important;}
-.aquatic-shortcuts{display:flex;justify-content:flex-end;align-items:center;gap:15px;}
-.aquatic-shortcut{display:flex;align-items:center;gap:5px;color:#7dd3fc;text-decoration:none;font-size:.57rem;font-weight:700;letter-spacing:.09em;line-height:1;opacity:.9;transition:transform .2s ease,color .2s ease,opacity .2s ease;}
-.aquatic-shortcut svg{width:22px;height:22px;display:block;}
+.aquatic-shortcuts{display:flex;justify-content:center;align-items:center;gap:24px;width:100%;}
+.aquatic-shortcut{display:flex;align-items:center;gap:6px;color:#7dd3fc;text-decoration:none;font-size:.86rem;font-weight:700;letter-spacing:normal;text-transform:uppercase;line-height:1;opacity:.9;transition:transform .2s ease,color .2s ease,opacity .2s ease;}
+.aquatic-shortcut svg{width:20px;height:20px;display:block;}
 .aquatic-shortcut:hover{color:#fff;opacity:1;transform:translateY(-2px);}
-@media(max-width:900px){.aquatic-shortcut span{font-size:.52rem}.aquatic-shortcut svg{width:19px;height:19px}.aquatic-shortcuts{gap:11px}}
+@media(max-width:900px){.aquatic-shortcut{font-size:.86rem}.aquatic-shortcut svg{width:18px;height:18px}.aquatic-shortcuts{gap:16px}}
