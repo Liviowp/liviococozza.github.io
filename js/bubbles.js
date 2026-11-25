@@ -19,9 +19,9 @@
     reset(initial = false) {
       this.x = Math.random() * width;
       this.y = initial ? Math.random() * height : height + Math.random() * 80;
-      this.r = Math.random() * 3.5 + 1;
+      this.r = Math.random() * 5 + 1.8;
       this.speed = (Math.random() * 0.9 + 0.35) * speedScale;
-      this.alpha = Math.random() * 0.35 + 0.12;
+      this.alpha = Math.random() * 0.38 + 0.14;
       this.phase = Math.random() * Math.PI * 2;
       this.swing = Math.random() * 0.012 * speedScale;
     }
