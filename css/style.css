@@ -1712,3 +1712,15 @@ header.site-nav .brand-copy { display:flex !important; flex-direction:column !im
   .experience-grid { grid-template-columns:1fr; }
   .experience-image-wrap { height:225px !important; }
 }
+
+/* Shared, lightweight bubbles background across all pages */
+#bubblesCanvas {
+  display:block !important;
+  position:fixed !important;
+  inset:0 !important;
+  width:100vw !important;
+  height:100vh !important;
+  z-index:1 !important;
+  pointer-events:none !important;
+  opacity:.48 !important;
+}
