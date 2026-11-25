@@ -1557,3 +1557,23 @@ html body main section .section-label {
 
 /* Tighter Home-to-About transition: bring About closer to the wave */
 #philosophy .philosophy-grid { padding-top:2.5rem !important; }
+
+
+/* Smoothly blend the wave into Direct Communication and fade the lower panel */
+html body main section#contact.contact-section {
+  background: linear-gradient(to bottom,
+    rgba(2,8,20,0) 0%,
+    rgba(2,8,20,.18) 10%,
+    rgba(8,17,39,.58) 24%,
+    rgba(15,26,54,.88) 42%,
+    rgba(15,26,54,1) 68%,
+    rgba(15,26,54,1) 100%) !important;
+  border-top:0 !important;
+}
+html body footer.site-footer {
+  background: linear-gradient(to bottom,
+    rgba(15,26,54,1) 0%,
+    rgba(8,17,39,.88) 35%,
+    rgba(2,8,20,1) 100%) !important;
+  border-top:0 !important;
+}
