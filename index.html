@@ -107,7 +107,17 @@
 </div>
     </section>
 
-    <!-- ==========================================================================
+        <!-- Aquatic wave transition between Home and About Me -->
+    <div class="home-about-wave" aria-hidden="true" style="position:relative;width:100%;height:110px;margin:-8px 0 0;overflow:hidden;pointer-events:none;line-height:0;">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" style="display:block;width:100%;height:100%;" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="homeAboutWaveGradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#008bd8"/><stop offset="48%" stop-color="#19e2ff"/><stop offset="100%" stop-color="#087fd2"/></linearGradient><filter id="homeAboutWaveGlow" x="-20%" y="-80%" width="140%" height="260%"><feGaussianBlur stdDeviation="7" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+        <path d="M-20 62 C140 115 260 112 390 82 S650 20 810 38 S1030 105 1190 78 S1370 45 1460 25" fill="none" stroke="url(#homeAboutWaveGradient)" stroke-width="5" opacity=".95" filter="url(#homeAboutWaveGlow)"/>
+        <path d="M-20 62 C140 115 260 112 390 82 S650 20 810 38 S1030 105 1190 78 S1370 45 1460 25" fill="none" stroke="url(#homeAboutWaveGradient)" stroke-width="2.5"/>
+        <path d="M-20 72 C140 125 260 122 390 92 S650 30 810 48 S1030 115 1190 88 S1370 55 1460 35" fill="none" stroke="#0b6aa5" stroke-width="1.3" opacity=".65"/>
+      </svg>
+    </div>
+
+<!-- ==========================================================================
          Coaching Philosophy
          ========================================================================== -->
     <section id="philosophy" class="container">
