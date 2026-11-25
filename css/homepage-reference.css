@@ -1598,10 +1598,11 @@ html body footer.site-footer { background: linear-gradient(to bottom, #0f1a36 0%
   #services .service-mobile-card:last-child{grid-column:auto;max-width:none;}
 }
 
-/* Aquatic sport shortcuts below the main navigation */
-.site-nav .nav-content{align-items:flex-start!important;}
-.site-nav nav{display:flex!important;flex-direction:column!important;align-items:flex-end!important;gap:9px!important;}
-.site-nav .nav-links{margin:0!important;padding-top:3px!important;}
+/* Aquatic sport shortcuts stacked below the main navigation */
+.site-nav .nav-content{align-items:center!important;}
+.site-nav .nav-stack{display:flex!important;flex-direction:column!important;align-items:flex-end!important;gap:8px!important;}
+.site-nav nav{display:block!important;}
+.site-nav .nav-links{margin:0!important;padding:0!important;}
 .aquatic-shortcuts{display:flex;justify-content:flex-end;align-items:center;gap:15px;}
 .aquatic-shortcut{display:flex;align-items:center;gap:5px;color:#7dd3fc;text-decoration:none;font-size:.57rem;font-weight:700;letter-spacing:.09em;line-height:1;opacity:.9;transition:transform .2s ease,color .2s ease,opacity .2s ease;}
 .aquatic-shortcut svg{width:22px;height:22px;display:block;}
