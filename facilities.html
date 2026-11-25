@@ -50,7 +50,13 @@
     @media(max-width:900px){.facility-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:520px){.facility-photo-grid{grid-template-columns:1fr}.facility-photo img{height:225px!important;min-height:225px;max-height:225px}#spain .facility-photo:nth-last-child(-n+2) img{height:225px!important;min-height:225px;max-height:225px}}
 
-  </style>
+  
+    .site-nav .nav-stack{display:flex;flex-direction:column;align-items:center;gap:7px;}
+    .site-nav .aquatic-shortcuts{display:flex;justify-content:center;align-items:center;gap:10px;width:100%;}
+    .site-nav .aquatic-shortcut{display:flex;align-items:center;gap:4px;color:#7dd3fc;text-decoration:none;font-size:.64rem;font-weight:700;text-transform:uppercase;line-height:1;opacity:.95;padding:5px 8px;border:1px solid rgba(56,189,248,.25);border-radius:8px;background:rgba(2,132,199,.08);}
+    .site-nav .aquatic-shortcut:hover{color:#fff;opacity:1;}
+    @media(max-width:900px){.site-nav .aquatic-shortcut{font-size:.6rem;padding:4px 6px;}}
+</style>
 </head>
 <body>
   <canvas id="bubblesCanvas"></canvas>
@@ -60,17 +66,23 @@
         <img src="images/livio-cocozza-logo-trasparente.webp" alt="" class="brand-logo">
         <span class="brand-name-text">Livio Cocozza</span>
       </a>
-      <nav><ul class="nav-links">
-        <li><a href="index.html#hero" class="nav-link">Home</a></li>
-        <li><a href="index.html#philosophy" class="nav-link">About</a></li>
-        <li><a href="index.html#gallery" class="nav-link">Education</a></li>
-        <li><a href="index.html#journey" class="nav-link">Experience</a></li>
-        <li><a href="facilities.html" class="nav-link active">Facilities</a></li>
-        <li><a href="index.html#blog" class="nav-link">Blog</a></li>
-        <li><a href="index.html#services" class="nav-link">Projects</a></li>
-        <li><a href="https://www.youtube.com/@wpsmethodology" class="nav-link" target="_blank" rel="noopener noreferrer">Video</a></li>
-        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-      </ul></nav>
+      <div class="nav-stack">
+        <nav><ul class="nav-links">
+          <li><a href="index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="index.html#philosophy" class="nav-link">About</a></li>
+          <li><a href="index.html#gallery" class="nav-link">Education</a></li>
+          <li><a href="index.html#journey" class="nav-link">Experience</a></li>
+          <li><a href="facilities.html" class="nav-link active">Facilities</a></li>
+          <li><a href="index.html#blog" class="nav-link">Blog</a></li>
+          <li><a href="index.html#services" class="nav-link">Projects</a></li>
+          <li><a href="https://www.youtube.com/@wpsmethodology" class="nav-link" target="_blank" rel="noopener noreferrer">Video</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul></nav>
+        <div class="aquatic-shortcuts" aria-label="Aquatic sport pages">
+          <a href="water-polo.html" class="aquatic-shortcut" title="Water Polo"><span>🏐</span><span>WATER POLO</span></a>
+          <a href="swimming.html" class="aquatic-shortcut" title="Swimming"><span>🏊</span><span>SWIMMING</span></a>
+        </div>
+      </div>
     </div>
   </header>
   <main>
