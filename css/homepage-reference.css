@@ -1554,3 +1554,6 @@ html body main section .section-label {
   margin-left:auto !important;
   margin-right:auto !important;
 }
+
+/* Tighter Home-to-About transition: bring About closer to the wave */
+#philosophy .philosophy-grid { padding-top:2.5rem !important; }
