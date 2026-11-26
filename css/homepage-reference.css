@@ -1699,3 +1699,26 @@ html body footer.site-footer { background: linear-gradient(to bottom, #0f1a36 0%
   header.site-nav .brand-name .brand-name-text { font-size:1.35rem !important; }
   header.site-nav .aquatic-shortcut { font-size:8px !important; padding:3px 4px !important; }
 }
+
+
+/* Increase navigation text readability across desktop, tablet and mobile */
+header.site-nav nav ul.nav-links .nav-link {
+  font-size:0.88rem !important;
+  font-weight:700 !important;
+}
+header.site-nav .aquatic-shortcut {
+  font-size:0.78rem !important;
+  font-weight:700 !important;
+}
+@media (min-width:621px) and (max-width:900px) {
+  header.site-nav nav ul.nav-links .nav-link { font-size:clamp(12px,1.8vw,14px) !important; padding:6px 3px !important; }
+  header.site-nav .aquatic-shortcut { font-size:clamp(11px,1.5vw,12.5px) !important; padding:5px 8px !important; }
+}
+@media (max-width:620px) {
+  header.site-nav nav ul.nav-links .nav-link { font-size:clamp(10.5px,3.15vw,12px) !important; padding:5px 2px !important; }
+  header.site-nav .aquatic-shortcut { font-size:clamp(9px,2.7vw,10.5px) !important; padding:5px 6px !important; }
+}
+@media (max-width:380px) {
+  header.site-nav nav ul.nav-links .nav-link { font-size:10px !important; }
+  header.site-nav .aquatic-shortcut { font-size:8.8px !important; padding:4px 5px !important; }
+}
