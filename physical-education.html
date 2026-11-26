@@ -72,9 +72,10 @@
 .pe-blog-cta{box-shadow:0 0 18px rgba(0,190,255,.35),0 0 34px rgba(0,190,255,.18);border:1px solid rgba(125,230,255,.65);transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
 .pe-blog-cta:hover{transform:translateY(-2px);filter:brightness(1.16);box-shadow:0 0 24px rgba(0,210,255,.55),0 0 44px rgba(0,190,255,.28)}
 
-.pe-philosophy-message{margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid rgba(56,189,248,.25)}
-.pe-philosophy-message h3{font:800 clamp(1.35rem,2.6vw,1.8rem) Outfit;color:#fff;margin:0 0 .65rem}
-.pe-philosophy-message p{margin:0;color:#cbd5e1;line-height:1.7}
+.pe-philosophy-message{margin-top:1.6rem;padding:1.25rem 1.4rem;border:1px solid rgba(56,189,248,.22);border-radius:14px;background:linear-gradient(110deg,rgba(2,132,199,.13),rgba(8,20,42,.42));display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:1.25rem;align-items:center;text-align:left}
+.pe-philosophy-message h3{font:800 clamp(1.15rem,2vw,1.55rem)/1.25 Outfit;color:#fff;margin:0;padding-left:1rem;border-left:3px solid #38bdf8}
+.pe-philosophy-message p{margin:0;color:#cbd5e1;line-height:1.65;font-size:1rem}
+@media(max-width:700px){.pe-philosophy-message{grid-template-columns:1fr;gap:.8rem;padding:1rem;text-align:left}.pe-philosophy-message h3{font-size:1.15rem}.pe-philosophy-message p{font-size:.95rem}}
 </style>
 </head>
 <body><canvas id="bubblesCanvas"></canvas>
