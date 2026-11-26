@@ -1641,3 +1641,61 @@ html body footer.site-footer { background: linear-gradient(to bottom, #0f1a36 0%
   header.site-nav .nav-link { font-size:.72rem !important; white-space:nowrap !important; }
   header.site-nav .aquatic-shortcuts { justify-content:center !important; }
 }
+
+
+/* FINAL RESPONSIVE HEADER + HERO FIX (tablet and mobile) */
+@media (min-width:621px) and (max-width:900px) {
+  html { scroll-padding-top:190px !important; }
+  header.site-nav {
+    position:fixed !important; top:0; left:0; right:0; z-index:10000 !important;
+    padding:8px 0 10px !important;
+    background:rgba(3,13,25,.96) !important;
+    backdrop-filter:blur(12px) !important;
+  }
+  header.site-nav .nav-content {
+    width:94% !important; max-width:94% !important; min-height:0 !important;
+    display:flex !important; flex-direction:column !important; align-items:center !important;
+    justify-content:center !important; gap:5px !important;
+  }
+  header.site-nav .brand-name { justify-content:center !important; gap:0 !important; margin:0 auto !important; }
+  header.site-nav .brand-logo { width:90px !important; max-width:90px !important; max-height:70px !important; }
+  header.site-nav .brand-name-text { font-size:2rem !important; margin-left:-18px !important; }
+  header.site-nav .nav-stack { width:100% !important; display:flex !important; flex-direction:column !important; align-items:center !important; gap:5px !important; }
+  header.site-nav nav { width:100% !important; margin:0 !important; }
+  header.site-nav nav ul.nav-links {
+    display:grid !important; grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    gap:2px 5px !important; width:100% !important; margin:0 !important; padding:2px 0 !important;
+    justify-items:center !important; align-items:center !important; overflow:visible !important;
+  }
+  header.site-nav nav ul.nav-links li { width:100% !important; min-width:0 !important; text-align:center !important; }
+  header.site-nav .nav-link { display:inline-block !important; padding:5px 2px !important; font-size:clamp(10px,1.55vw,12px) !important; white-space:nowrap !important; }
+  header.site-nav .aquatic-shortcuts { width:100% !important; display:flex !important; justify-content:center !important; flex-wrap:wrap !important; gap:6px !important; }
+  header.site-nav .aquatic-shortcut { font-size:clamp(9px,1.35vw,11px) !important; padding:4px 7px !important; }
+  html body main #hero.hero-section { min-height:100svh !important; height:auto !important; padding:210px 6% 65px !important; }
+  html body main section[id] { scroll-margin-top:190px !important; }
+}
+@media (max-width:620px) {
+  html { scroll-padding-top:150px !important; }
+  header.site-nav { padding:5px 0 8px !important; }
+  header.site-nav .nav-content { gap:3px !important; }
+  header.site-nav .brand-name .brand-logo { width:58px !important; min-width:58px !important; max-width:58px !important; height:44px !important; max-height:44px !important; flex-basis:58px !important; }
+  header.site-nav .brand-name .brand-name-text { font-size:1.5rem !important; margin-left:-10px !important; }
+  header.site-nav .nav-stack { width:100% !important; display:flex !important; flex-direction:column !important; align-items:center !important; gap:4px !important; }
+  header.site-nav nav { width:100% !important; }
+  header.site-nav nav ul.nav-links { grid-template-columns:repeat(3,minmax(0,1fr)) !important; gap:1px 3px !important; padding:0 !important; }
+  header.site-nav nav ul.nav-links .nav-link { font-size:clamp(9px,2.8vw,10.5px) !important; padding:4px 1px !important; }
+  header.site-nav .aquatic-shortcuts { display:flex !important; width:100% !important; justify-content:center !important; flex-wrap:nowrap !important; gap:4px !important; }
+  header.site-nav .aquatic-shortcut { font-size:clamp(8px,2.35vw,9.5px) !important; padding:4px 5px !important; gap:2px !important; white-space:nowrap !important; }
+  header.site-nav .aquatic-shortcut svg { width:11px !important; height:11px !important; }
+  html body main #hero.hero-section { min-height:100svh !important; height:auto !important; padding:165px 6% 56px !important; }
+  html body main #hero .hero-title-main { font-size:clamp(1.8rem,8.1vw,2.35rem) !important; line-height:1.08 !important; }
+  html body main #hero .hero-title-accent { font-size:clamp(1.15rem,5.4vw,1.55rem) !important; line-height:1.2 !important; }
+  html body main #hero .hero-subtext { max-width:100% !important; font-size:.96rem !important; }
+  html body main #hero .hero-actions .btn { min-height:48px !important; padding:.65rem .9rem !important; font-size:.8rem !important; }
+  html body main section[id] { scroll-margin-top:150px !important; }
+}
+@media (max-width:380px) {
+  header.site-nav .brand-name .brand-logo { width:50px !important; min-width:50px !important; max-width:50px !important; flex-basis:50px !important; }
+  header.site-nav .brand-name .brand-name-text { font-size:1.35rem !important; }
+  header.site-nav .aquatic-shortcut { font-size:8px !important; padding:3px 4px !important; }
+}
