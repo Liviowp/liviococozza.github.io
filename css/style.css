@@ -1750,3 +1750,9 @@ header.site-nav .brand-copy { display:flex !important; flex-direction:column !im
   background: linear-gradient(to bottom, rgba(15,26,54,1) 0%, rgba(2,8,20,.92) 45%, rgba(2,8,20,1) 100%) !important;
   border-top: 0 !important;
 }
+
+
+/* HOME NAV SPACING — lift main navigation slightly above aquatic shortcuts */
+@media (min-width: 901px) {
+  .site-nav .nav-stack nav { transform: translateY(-8px) !important; }
+}
