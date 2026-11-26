@@ -1752,7 +1752,9 @@ header.site-nav .brand-copy { display:flex !important; flex-direction:column !im
 }
 
 
-/* HOME NAV SPACING — lift main navigation slightly above aquatic shortcuts */
+/* HOME NAV SPACING — lift header text and shortcuts for clearer separation */
 @media (min-width: 901px) {
-  .site-nav .nav-stack nav { transform: translateY(-8px) !important; }
+  .site-nav .nav-content { transform: translateY(-6px) !important; }
+  .site-nav .nav-stack nav { transform: translateY(-14px) !important; }
+  .site-nav .aquatic-shortcuts { transform: translateY(-6px) !important; }
 }
