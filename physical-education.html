@@ -72,10 +72,13 @@
 .pe-blog-cta{box-shadow:0 0 18px rgba(0,190,255,.35),0 0 34px rgba(0,190,255,.18);border:1px solid rgba(125,230,255,.65);transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
 .pe-blog-cta:hover{transform:translateY(-2px);filter:brightness(1.16);box-shadow:0 0 24px rgba(0,210,255,.55),0 0 44px rgba(0,190,255,.28)}
 
-.pe-philosophy-message{margin-top:1.6rem;padding:1.25rem 1.4rem;border:1px solid rgba(56,189,248,.22);border-radius:14px;background:linear-gradient(110deg,rgba(2,132,199,.13),rgba(8,20,42,.42));display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:1.25rem;align-items:center;text-align:left}
-.pe-philosophy-message h3{font:800 clamp(1.15rem,2vw,1.55rem)/1.25 Outfit;color:#fff;margin:0;padding-left:1rem;border-left:3px solid #38bdf8}
-.pe-philosophy-message p{margin:0;color:#cbd5e1;line-height:1.65;font-size:1rem}
-@media(max-width:700px){.pe-philosophy-message{grid-template-columns:1fr;gap:.8rem;padding:1rem;text-align:left}.pe-philosophy-message h3{font-size:1.15rem}.pe-philosophy-message p{font-size:.95rem}}
+.pe-philosophy-content{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.85fr);gap:1.5rem;align-items:stretch;margin-top:1.4rem;text-align:left}
+.pe-philosophy-main{margin:0!important;max-width:none!important;padding:1.25rem 1.4rem;border-left:3px solid rgba(56,189,248,.55);background:rgba(2,12,28,.22);border-radius:0 12px 12px 0;line-height:1.8!important;display:flex;align-items:center}
+.pe-philosophy-message{padding:1.35rem 1.5rem;border:1px solid rgba(56,189,248,.3);border-radius:14px;background:linear-gradient(120deg,rgba(2,132,199,.18),rgba(8,20,42,.5));display:flex;flex-direction:column;justify-content:center;gap:.85rem;text-align:left;box-shadow:inset 0 0 18px rgba(0,160,225,.04)}
+.pe-philosophy-message h3{font:800 clamp(1.2rem,2vw,1.6rem)/1.3 Outfit;color:#fff;margin:0;padding-left:1rem;border-left:3px solid #38bdf8}
+.pe-philosophy-message h3 span{color:#38bdf8}
+.pe-philosophy-message p{margin:0;color:#cbd5e1;line-height:1.65;font-size:.98rem}
+@media(max-width:700px){.pe-philosophy-content{grid-template-columns:1fr;gap:1rem;margin-top:1.1rem}.pe-philosophy-main{padding:1rem;line-height:1.7!important}.pe-philosophy-message{padding:1.1rem;gap:.65rem}.pe-philosophy-message h3{font-size:1.15rem}.pe-philosophy-message p{font-size:.95rem}}
 </style>
 </head>
 <body><canvas id="bubblesCanvas"></canvas>
@@ -111,7 +114,7 @@
 <div class="pe-real"><div class="pe-real-icon">💚</div><div><h3>Movement → Wellbeing</h3><p>Building awareness of our bodies and healthy habits.</p></div></div>
 <div class="pe-real"><div class="pe-real-icon">🚦</div><div><h3>Awareness → Safety</h3><p>Practising observation, responsibility and safe behaviour.</p></div></div>
 </div></div></div></section>
-<section class="pe-section" id="philosophy"><div class="pe-philosophy"><span class="section-label">My Educational Philosophy</span><h2>Sport Develops More Than Athletes.<br><span class="accent">It Develops People.</span></h2><p>My goal is not simply to teach students how to perform a physical activity, but to create meaningful learning experiences. Through movement, students can develop physical competence, confidence, resilience, respect, critical thinking, social skills, emotional awareness, independence and a lifelong positive attitude towards activity.</p><div class="pe-philosophy-message"><h3>Learning Through Movement.<br>Preparing for Life.</h3><p>Physical Education can be the beginning of learning that continues far beyond the gym, playground or sports field.</p></div></div></section>
+<section class="pe-section" id="philosophy"><div class="pe-philosophy"><span class="section-label">My Educational Philosophy</span><h2>Sport Develops More Than Athletes.<br><span class="accent">It Develops People.</span></h2><div class="pe-philosophy-content"><p class="pe-philosophy-main">My goal is not simply to teach students how to perform a physical activity, but to create meaningful learning experiences. Through movement, students can develop physical competence, confidence, resilience, respect, critical thinking, social skills, emotional awareness, independence and a lifelong positive attitude towards activity.</p><div class="pe-philosophy-message"><h3>Learning Through Movement.<br><span>Preparing for Life.</span></h3><p>Physical Education can be the beginning of learning that continues far beyond the gym, playground or sports field.</p></div></div></div></section>
 <section class="pe-section" id="reflections"><div class="pe-head"><span class="section-label">Ideas &amp; Reflections</span><h2>Thinking Beyond the Game</h2><p>Future reflections connecting Physical Education, sport, values and everyday life.</p></div><div class="pe-blog-grid">
 <article class="pe-blog"><span class="tag">EDUCATION</span><h3>Why Physical Education Is More Important Than We Think</h3><p>Exploring the educational value of movement beyond physical skills.</p></article>
 <article class="pe-blog"><span class="tag">VALUES</span><h3>Teaching Fair Play Beyond the Game</h3><p>How sporting rules and behaviours connect with integrity and respect.</p></article>
