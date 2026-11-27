@@ -56,6 +56,33 @@ document.getElementById("searchInput").addEventListener("input",e=>{searchTerm=e
 document.getElementById('allBtn').addEventListener('click',()=>{mode="home";active="All";document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x.dataset.filter==="All"));render();});
 document.querySelectorAll('.navbtn').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.navbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');const page=b.dataset.page;if(page==="saved"){mode="saved";render();document.querySelector('#feed').scrollIntoView({behavior:'smooth'});}else if(page==="topics"){mode="home";document.querySelector('.chips').scrollIntoView({behavior:'smooth'});}else if(page==="updates"){mode="home";render();document.querySelector('#feed').scrollIntoView({behavior:'smooth'});}else if(page==="home"){mode="home";render();window.scrollTo({top:0,behavior:'smooth'});}}));
 feed.addEventListener('click',e=>{const btn=e.target.closest('[data-save]');if(!btn)return;e.preventDefault();e.stopPropagation();const url=btn.dataset.save;saved=saved.includes(url)?saved.filter(x=>x!==url):saved.concat(url);localStorage.setItem("scm_saved",JSON.stringify(saved));render();});
+
+async function syncBlogPosts(){
+ try{
+  const response=await fetch('/sitemap.xml',{cache:'no-store'});
+  if(!response.ok)return;
+  const xml=new DOMParser().parseFromString(await response.text(),'application/xml');
+  const urls=[...xml.querySelectorAll('loc')].map(x=>x.textContent.trim()).filter(u=>u.includes('/blog/'));
+  const latest=urls.slice(0,25);
+  const dynamicPosts=await Promise.all(latest.map(async url=>{
+   try{
+    const page=await fetch(url,{cache:'no-store'});if(!page.ok)return null;
+    const doc=new DOMParser().parseFromString(await page.text(),'text/html');
+    const title=doc.querySelector('h1')?.textContent?.trim()||doc.querySelector('title')?.textContent?.trim()||'Article';
+    const desc=doc.querySelector('meta[name="description"]')?.content||doc.querySelector('meta[property="og:description"]')?.content||'Read the latest article.';
+    const image=doc.querySelector('meta[property="og:image"]')?.content||doc.querySelector('img')?.src||'';
+    const txt=(title+' '+desc+' '+url).toLowerCase();
+    let category='Methodology';
+    if(/swim|freestyle|stroke|pool/.test(txt))category='Swimming';
+    else if(/water.?polo|polo/.test(txt))category='Water Polo';
+    else if(/physical education|pe teacher|school|student|acrobatics/.test(txt))category='PE';
+    return {category,title,desc,date:'From blog',url,image};
+   }catch(e){return null;}
+  }));
+  const valid=dynamicPosts.filter(Boolean);
+  if(valid.length){posts.splice(0,posts.length,...valid);render();}
+ }catch(e){console.warn('Blog sync unavailable; using built-in posts.',e);}
+}
 const notice=document.getElementById('notice');document.getElementById('notifyBtn').addEventListener('click',async()=>{if(!('Notification'in window)){notice.textContent='Notifications are not supported by this browser.';notice.classList.add('show');return;}if(Notification.permission==='granted'){notice.textContent='Notifications are enabled for this browser. Full automatic push alerts will be connected in a later development step.';notice.classList.add('show');return;}if(Notification.permission==='denied'){notice.textContent='Notifications are blocked in browser settings. You can change the permission there.';notice.classList.add('show');return;}const permission=await Notification.requestPermission();notice.textContent=permission==='granted'?'Permission granted. This prototype is ready for the next step: connecting a real push-notification service.':'Notification permission was not granted.';notice.classList.add('show');});
 render();
 if('serviceWorker'in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
