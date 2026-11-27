@@ -216,6 +216,13 @@ body:after{content:none!important}
 .hero h1{max-width:100%!important}.hero p{max-width:420px!important;color:#e8f5ff!important}
 .hero .cta{display:flex!important;width:max-content!important;margin:18px auto 0!important;justify-content:center!important}
 @keyframes colorFlow{0%{opacity:.4;transform:translate(-2%,0) scale(1)}100%{opacity:1;transform:translate(2%,1%) scale(1.06)}}
+
+/* v28: faster aquatic beams; scale photo down to reveal more of the water-polo field */
+body:before{animation:colorFlow 3.8s ease-in-out infinite alternate!important}
+.global-atmosphere .lightbeam{animation-duration:3.6s!important;opacity:.34!important}
+.gbeam1{animation-duration:3.4s!important}.gbeam2{animation-duration:4.1s!important;animation-delay:-2s!important}
+.hero{background-size:auto 100%!important;background-position:center center!important;background-repeat:no-repeat!important;background-color:#0b2344!important}
+.hero:before{background:linear-gradient(180deg,rgba(3,15,33,.58),rgba(3,20,42,.42))!important}
 </style>
 </head>
 <body>
