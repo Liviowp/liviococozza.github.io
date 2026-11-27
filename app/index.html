@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#061a35">
+<meta name="description" content="Swimming Coach & Methodology — coaching insights, swimming, water polo, methodology and PE.">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<title>Swimming Coach & Methodology</title>
+<style>
+:root{--navy:#061a35;--navy2:#0b2850;--cyan:#24c5e8;--white:#f7fbff;--muted:#9db4ce;--line:rgba(255,255,255,.1);--card:#0d2545}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#061a35 0%,#081f3d 45%,#061a35 100%);color:var(--white);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+.app{max-width:720px;margin:0 auto;padding:0 16px 105px}.top{padding:22px 2px 14px;display:flex;justify-content:space-between;align-items:center}.brand{display:flex;align-items:center;gap:10px}.logo{width:40px;height:40px;border-radius:14px;background:linear-gradient(135deg,#19bce4,#1276d5);display:grid;place-items:center;font-weight:900;font-size:18px;box-shadow:0 8px 22px #0b8bb44d}.brandtext{font-weight:800;line-height:1.12;letter-spacing:.2px}.brandtext small{display:block;color:var(--cyan);font-size:10px;letter-spacing:1.5px;margin-top:3px}.iconbtn{border:1px solid var(--line);background:#0c2442;color:white;width:42px;height:42px;border-radius:14px;font-size:18px;cursor:pointer}
+.hero{border:1px solid rgba(36,197,232,.24);border-radius:24px;overflow:hidden;background:linear-gradient(130deg,#0d2c52 0%,#0b2344 60%,#09213d 100%);position:relative;padding:24px 21px;min-height:180px}.hero:after{content:"";position:absolute;right:-48px;bottom:-90px;width:240px;height:240px;border-radius:50%;border:1px solid rgba(36,197,232,.14);box-shadow:0 0 0 28px rgba(36,197,232,.035),0 0 0 56px rgba(36,197,232,.025)}.eyebrow{font-size:10px;font-weight:800;letter-spacing:2px;color:var(--cyan)}h1{font-size:27px;line-height:1.08;margin:10px 0 9px;max-width:360px} .hero p{margin:0;color:#c1d2e6;font-size:13px;line-height:1.5;max-width:330px}.hero .cta{display:inline-flex;margin-top:17px;padding:9px 13px;background:var(--cyan);color:#05203d;border-radius:10px;text-decoration:none;font-size:12px;font-weight:800;position:relative;z-index:1}
+.sectionhead{display:flex;align-items:end;justify-content:space-between;margin:24px 2px 13px}.sectionhead h2{margin:0;font-size:18px}.sectionhead button{background:none;border:0;color:var(--cyan);font-size:12px;font-weight:700}
+.chips{display:flex;gap:8px;overflow:auto;padding:1px 0 6px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}.chip{white-space:nowrap;border:1px solid var(--line);border-radius:999px;background:#0c2340;color:#d5e2f1;padding:9px 13px;font-size:11px;font-weight:700;cursor:pointer}.chip.active{background:var(--cyan);color:#06213d;border-color:var(--cyan)}
+.feature{display:grid;grid-template-columns:110px 1fr;gap:13px;border:1px solid var(--line);background:var(--card);border-radius:18px;padding:11px;margin-bottom:11px;text-decoration:none;color:inherit}.thumb{width:110px;min-height:100px;border-radius:12px;background:#10365b center/cover no-repeat}.tag{display:inline-block;color:var(--cyan);font-size:9px;letter-spacing:1.2px;font-weight:800;margin:4px 0 6px}.feature h3{font-size:14px;line-height:1.25;margin:0 0 6px}.feature p{margin:0;color:var(--muted);font-size:11px;line-height:1.45}.meta{margin-top:9px;color:#7e9bb9;font-size:10px}
+.quickgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.quick{border:1px solid var(--line);background:linear-gradient(140deg,#102e50,#0b2441);border-radius:16px;padding:14px;text-decoration:none;color:inherit;min-height:100px}.quick .emoji{font-size:22px}.quick strong{display:block;margin:8px 0 4px;font-size:13px}.quick small{color:var(--muted);font-size:10px;line-height:1.4}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:rgba(4,18,37,.93);backdrop-filter:blur(16px);border-top:1px solid var(--line);padding:10px 10px calc(10px + env(safe-area-inset-bottom));z-index:10}.nav{max-width:720px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr)}.navbtn{background:none;border:0;color:#8fa9c4;display:flex;flex-direction:column;align-items:center;gap:5px;font-size:10px;cursor:pointer;padding:4px}.navbtn .symbol{font-size:19px}.navbtn.active{color:var(--cyan)}
+.notice{display:none;margin:12px 0 0;border:1px solid rgba(36,197,232,.2);background:#0b2948;border-radius:13px;padding:12px;color:#c9deef;font-size:12px;line-height:1.45}.notice.show{display:block}
+footer{text-align:center;color:#6f8ba9;font-size:10px;padding:24px 0 10px}
+@media(min-width:600px){.hero{padding:30px;min-height:215px}h1{font-size:35px}.feature{grid-template-columns:140px 1fr}.thumb{width:140px;min-height:120px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top"><div class="brand"><div class="logo">SC</div><div class="brandtext">SWIMMING COACH<small>& METHODOLOGY</small></div></div><button class="iconbtn" id="notifyBtn" aria-label="Notifications">♧</button></header>
+<section class="hero"><div class="eyebrow">COACHING • SCIENCE • SPORT</div><h1>Ideas that shape<br>the water.</h1><p>Knowledge, experiences and practical insights for coaches, swimmers and sports educators.</p><a class="cta" href="https://liviococozza.com" target="_blank" rel="noopener">Explore the website ↗</a></section>
+<div class="sectionhead"><h2>Explore topics</h2></div>
+<div class="chips" id="filters"><button class="chip active" data-filter="All">All</button><button class="chip" data-filter="Swimming">Swimming</button><button class="chip" data-filter="Water Polo">Water Polo</button><button class="chip" data-filter="Methodology">Methodology</button><button class="chip" data-filter="PE">PE & Education</button></div>
+<div class="sectionhead"><h2>Latest updates</h2><button id="allBtn">View all</button></div>
+<div id="feed"></div>
+<div class="sectionhead"><h2>Quick access</h2></div>
+<div class="quickgrid">
+<a class="quick" href="https://liviococozza.com/swimming.html"><span class="emoji">🏊</span><strong>Swimming</strong><small>Technique & training</small></a>
+<a class="quick" href="https://liviococozza.com/water-polo.html"><span class="emoji">🤽</span><strong>Water Polo</strong><small>Tactics & fundamentals</small></a>
+<a class="quick" href="https://liviococozza.com/physical-education.html"><span class="emoji">🎓</span><strong>PE & Education</strong><small>Teaching & movement</small></a>
+<a class="quick" href="https://liviococozza.com/projects.html"><span class="emoji">🌍</span><strong>Projects</strong><small>Experience & initiatives</small></a>
+</div>
+<div id="notice" class="notice"></div>
+<footer>Swimming Coach & Methodology<br><a style="color:#24c5e8" href="https://liviococozza.com">liviococozza.com</a></footer>
+</div>
+<nav class="bottom"><div class="nav"><button class="navbtn active" data-page="home"><span class="symbol">⌂</span>Home</button><button class="navbtn" data-page="updates"><span class="symbol">▤</span>Updates</button><button class="navbtn" data-page="topics"><span class="symbol">◈</span>Topics</button><button class="navbtn" data-page="website"><span class="symbol">↗</span>Website</button></div></nav>
+<script>
+const posts=[
+{category:"PE",title:"Acrobatics in Physical Education: Balance, Trust and Cooperation",desc:"A learning experience built around movement, balance, teamwork and mutual trust.",date:"Latest blog",url:"https://liviococozza.com/blog/acrobatics-physical-education-balance-trust-cooperation.html",image:"https://liviococozza.com/images/Allenamento%20di%20rugby%20sotto%20il%20sole.webp"},
+{category:"Methodology",title:"Action and Reaction: Every Choice Has a Consequence",desc:"A reflection on choices, responsibility and how actions shape our sporting and everyday lives.",date:"Blog",url:"https://liviococozza.com/blog/action-and-reaction-every-choice-has-a-consequence.html",image:"https://liviococozza.com/images/Azione%20e%20reazione_%20sport%20e%20vita%20quotidiana.png"},
+{category:"Methodology",title:"Empathy Is Built Through Experience",desc:"Why experience, observation and shared moments can develop empathy in sport and education.",date:"Blog",url:"https://liviococozza.com/blog/empathy-is-built-through-experience.html",image:"https://liviococozza.com/images/Allenatore%20di%20nuoto%20tra%20onde%20turchesi.webp"},
+{category:"Water Polo",title:"Sport Tactics: A Visual and Basic System",desc:"Making tactical concepts easier to understand through simple visual structures.",date:"Blog",url:"https://liviococozza.com/blog/sport-tactics-visual-basic-system.html",image:"https://liviococozza.com/images/1791353336106.jpg"},
+{category:"Swimming",title:"Swimming: Coaching, Technique and Training",desc:"Explore the swimming section for technique, coaching concepts and training ideas.",date:"Website section",url:"https://liviococozza.com/swimming.html",image:"https://liviococozza.com/images/Allenatore%20di%20nuoto%20tra%20onde%20turchesi.webp"}
+];
+const feed=document.getElementById('feed');let active="All";
+function render(){const filtered=posts.filter(p=>active==="All"||p.category===active);feed.innerHTML=filtered.map(p=>'<a class="feature" href="'+p.url+'"><div class="thumb" style="background-image:url(\''+p.image+'\')"></div><div><span class="tag">'+p.category.toUpperCase()+'</span><h3>'+p.title+'</h3><p>'+p.desc+'</p><div class="meta">'+p.date+' · Read more ↗</div></div></a>').join('');}
+document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');active=b.dataset.filter;render();}));
+document.getElementById('allBtn').addEventListener('click',()=>{active="All";document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x.dataset.filter==="All"));render();});
+document.querySelectorAll('.navbtn').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.navbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');const page=b.dataset.page;if(page==="website")location.href="https://liviococozza.com";if(page==="topics")document.querySelector('.chips').scrollIntoView({behavior:'smooth'});if(page==="updates")document.querySelector('#feed').scrollIntoView({behavior:'smooth'});if(page==="home")window.scrollTo({top:0,behavior:'smooth'});}));
+const notice=document.getElementById('notice');document.getElementById('notifyBtn').addEventListener('click',async()=>{if(!('Notification'in window)){notice.textContent='Notifications are not supported by this browser.';notice.classList.add('show');return;}if(Notification.permission==='granted'){notice.textContent='Notifications are enabled for this browser. Full automatic push alerts will be connected in a later development step.';notice.classList.add('show');return;}if(Notification.permission==='denied'){notice.textContent='Notifications are blocked in browser settings. You can change the permission there.';notice.classList.add('show');return;}const permission=await Notification.requestPermission();notice.textContent=permission==='granted'?'Permission granted. This prototype is ready for the next step: connecting a real push-notification service.':'Notification permission was not granted.';notice.classList.add('show');});
+render();
+if('serviceWorker'in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
+let deferredPrompt;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;const cta=document.querySelector('.cta');cta.textContent='Install the app';cta.onclick=async ev=>{ev.preventDefault();if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;}else location.href='https://liviococozza.com';};});
+</script>
+</body></html>
