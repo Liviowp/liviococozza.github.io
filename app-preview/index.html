@@ -205,6 +205,17 @@ body{background:#03101f!important;background-image:url('./WhatsApp%20Image%20202
 .hero h1{font-size:clamp(26px,7vw,36px)!important;text-shadow:0 2px 12px rgba(0,0,0,.5)!important}
 .hero p{color:#e0edf9!important;max-width:420px!important;font-size:14px!important}
 .hero .cta{display:flex!important;width:max-content!important;max-width:100%;margin:18px auto 0!important;justify-content:center!important}
+
+/* v27: supplied photo inside hero; restore animated color beams on light navy page background */
+body{background-color:#173b63!important;background-image:radial-gradient(ellipse at 10% 18%,rgba(20,190,255,.38),transparent 40%),radial-gradient(ellipse at 88% 28%,rgba(75,115,255,.32),transparent 43%),radial-gradient(ellipse at 55% 82%,rgba(0,225,180,.18),transparent 44%),linear-gradient(145deg,#254b73 0%,#173b63 45%,#102e50 100%)!important;background-attachment:fixed!important}
+body:before{background:linear-gradient(120deg,transparent 8%,rgba(0,224,255,.14) 26%,transparent 43%),linear-gradient(35deg,transparent 35%,rgba(44,107,255,.15) 52%,transparent 70%),radial-gradient(ellipse at 75% 40%,rgba(31,217,255,.13),transparent 42%)!important;animation:colorFlow 8s ease-in-out infinite alternate!important}
+body:after{content:none!important}
+.hero{background-image:url('./WhatsApp%20Image%202026-11-27%20at%2018.47.42.jpeg')!important;background-position:center center!important;background-size:cover!important;background-repeat:no-repeat!important;background-color:#0b2344!important;text-align:center!important;filter:none!important;min-height:230px!important}
+.hero:before{background:linear-gradient(180deg,rgba(3,15,33,.68),rgba(3,20,42,.58))!important}
+.hero .eyebrow,.hero h1,.hero p{margin-left:auto!important;margin-right:auto!important;text-align:center!important}
+.hero h1{max-width:100%!important}.hero p{max-width:420px!important;color:#e8f5ff!important}
+.hero .cta{display:flex!important;width:max-content!important;margin:18px auto 0!important;justify-content:center!important}
+@keyframes colorFlow{0%{opacity:.4;transform:translate(-2%,0) scale(1)}100%{opacity:1;transform:translate(2%,1%) scale(1.06)}}
 </style>
 </head>
 <body>
