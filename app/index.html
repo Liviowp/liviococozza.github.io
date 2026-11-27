@@ -25,7 +25,7 @@ footer{text-align:center;color:#6f8ba9;font-size:10px;padding:24px 0 10px}
 </head>
 <body>
 <div class="app">
-<header class="top"><div class="brand"><div class="logo">SC</div><div class="brandtext">SWIMMING COACH<small>& METHODOLOGY</small></div></div><button class="iconbtn" id="notifyBtn" aria-label="Notifications">♧</button></header>
+<header class="top"><div class="brand"><div class="logo">SC</div><div class="brandtext">SWIMMING COACH<small>& METHODOLOGY</small></div></div><button class="iconbtn" id="notifyBtn" aria-label="Notifications">🔔</button></header>
 <section class="hero"><div class="eyebrow">COACHING • SCIENCE • SPORT</div><h1>Ideas that shape<br>the water.</h1><p>Knowledge, experiences and practical insights for coaches, swimmers and sports educators.</p><a class="cta" href="https://liviococozza.com" target="_blank" rel="noopener">Explore the website ↗</a></section>
 <div class="sectionhead"><h2>Explore topics</h2></div>
 <div class="searchbox"><input id="searchInput" type="search" placeholder="Search articles and topics…" /></div><div class="chips" id="filters"><button class="chip active" data-filter="All">All</button><button class="chip" data-filter="Swimming">Swimming</button><button class="chip" data-filter="Water Polo">Water Polo</button><button class="chip" data-filter="Methodology">Methodology</button><button class="chip" data-filter="PE">PE & Education</button></div>
@@ -44,7 +44,7 @@ footer{text-align:center;color:#6f8ba9;font-size:10px;padding:24px 0 10px}
 <nav class="bottom"><div class="nav"><button class="navbtn active" data-page="home"><span class="symbol">⌂</span>Home</button><button class="navbtn" data-page="updates"><span class="symbol">▤</span>Updates</button><button class="navbtn" data-page="topics"><span class="symbol">◈</span>Topics</button><button class="navbtn" data-page="saved"><span class="symbol">♡</span>Saved</button></div></nav>
 <script>
 const posts=[
-{category:"PE",title:"Acrobatics in Physical Education: Balance, Trust and Cooperation",desc:"A learning experience built around movement, balance, teamwork and mutual trust.",date:"Latest blog",url:"https://liviococozza.com/blog/acrobatics-physical-education-balance-trust-cooperation.html",image:"https://liviococozza.com/images/Allenamento%20di%20rugby%20sotto%20il%20sole.webp"},
+{category:"PE",title:"Acrobatics in Physical Education: Balance, Trust and Cooperation",desc:"A learning experience built around movement, balance, teamwork and mutual trust.",date:"Latest blog",url:"https://liviococozza.com/blog/acrobatics-physical-education-balance-trust-cooperation.html",image:""},
 {category:"Methodology",title:"Action and Reaction: Every Choice Has a Consequence",desc:"A reflection on choices, responsibility and how actions shape our sporting and everyday lives.",date:"Blog",url:"https://liviococozza.com/blog/action-and-reaction-every-choice-has-a-consequence.html",image:"https://liviococozza.com/images/Azione%20e%20reazione_%20sport%20e%20vita%20quotidiana.png"},
 {category:"Methodology",title:"Empathy Is Built Through Experience",desc:"Why experience, observation and shared moments can develop empathy in sport and education.",date:"Blog",url:"https://liviococozza.com/blog/empathy-is-built-through-experience.html",image:"https://liviococozza.com/images/Allenatore%20di%20nuoto%20tra%20onde%20turchesi.webp"},
 {category:"Water Polo",title:"Sport Tactics: A Visual and Basic System",desc:"Making tactical concepts easier to understand through simple visual structures.",date:"Blog",url:"https://liviococozza.com/blog/sport-tactics-visual-basic-system.html",image:"https://liviococozza.com/images/1791353336106.jpg"},
@@ -73,9 +73,9 @@ async function syncBlogPosts(){
     const image=doc.querySelector('meta[property="og:image"]')?.content||doc.querySelector('img')?.src||'';
     const txt=(title+' '+desc+' '+url).toLowerCase();
     let category='Methodology';
-    if(/swim|freestyle|stroke|pool/.test(txt))category='Swimming';
-    else if(/water.?polo|polo/.test(txt))category='Water Polo';
+    if(/water.?polo|polo/.test(txt))category='Water Polo';
     else if(/physical education|pe teacher|school|student|acrobatics/.test(txt))category='PE';
+    else if(/swim|freestyle|stroke|pool/.test(txt))category='Swimming';
     return {category,title,desc,date:'From blog',url,image};
    }catch(e){return null;}
   }));
