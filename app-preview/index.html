@@ -189,14 +189,14 @@ animation:colorFlow 8s ease-in-out infinite alternate}
 </head>
 <body>
 <div class="global-atmosphere" aria-hidden="true"><span class="bubble gb1"></span><span class="bubble gb2"></span><span class="bubble gb3"></span><span class="bubble gb4"></span><span class="bubble gb5"></span><span class="bubble gb6"></span><span class="bubble gb7"></span><span class="bubble gb8"></span><span class="lightbeam gbeam1"></span><span class="lightbeam gbeam2"></span></div><div class="app">
-<header class="top"><div class="brand"><div class="logo"><img src="../images/livio-cocozza-logo-trasparente.webp" alt="Livio Cocozza logo"></div><div class="brandtext">LIVIO COCOZZA<small>SWIMMING • WATER POLO • PE</small></div></div><div class="top-actions"><button class="music-toggle" id="musicToggle" aria-label="Toggle background music">🎵 <span id="musicLabel">Play music</span></button><button class="iconbtn" id="notifyBtn" aria-label="Notifications">🔔</button></div></header>
+<header class="top"><div class="brand"><div class="logo"><img src="../images/livio-cocozza-logo-trasparente.webp" alt="Livio Cocozza logo"></div><div class="brandtext">LIVIO COCOZZA<small>SWIMMING • WATER POLO • PE</small></div></div><button class="iconbtn" id="notifyBtn" aria-label="Notifications">🔔</button></header>
 <section class="hero"><div class="eyebrow">COACHING • SCIENCE • SPORT</div><h1>The Wave Is in You.</h1><p>Knowledge, experiences and practical insights for coaches, swimmers and sports educators.</p><a class="cta" href="https://liviococozza.com" target="_blank" rel="noopener">Explore the website ↗</a></section>
 <div class="sectionhead"><h2>Explore topics</h2></div>
 <div class="topic-icons" aria-label="Explore sections"><a href="https://liviococozza.com/swimming.html"><span>🏊</span><b>Swimming</b></a><a href="https://liviococozza.com/water-polo.html"><span>🤽</span><b>Water Polo</b></a><a href="https://liviococozza.com/projects.html"><span>📘</span><b>Methodology</b></a><a href="https://liviococozza.com/physical-education.html"><span>🎓</span><b>PE & Education</b></a></div>
 <div class="sectionhead"><h2>Latest updates</h2><button id="allBtn">View all</button></div>
 <div id="feed"></div>
 <div class="sectionhead"><h2>Media & resources</h2></div><div class="quickgrid"><a class="quick" href="https://liviococozza.com/facilities.html"><span class="emoji">🏊‍♂️</span><strong>Facilities</strong><small>Explore swimming pools and aquatic facilities</small></a><a class="quick" href="https://liviococozza.com/projects.html"><span class="emoji">📚</span><strong>Resources</strong><small>Projects, practical materials & useful links</small></a></div><div id="notice" class="notice"></div>
-<footer>Swimming Coach & Methodology<br><a style="color:#24c5e8" href="https://liviococozza.com">liviococozza.com</a></footer>
+<footer>Swimming Coach & Methodology<br><a style="color:#24c5e8" href="https://liviococozza.com">liviococozza.com</a><br><button class="music-toggle" id="musicToggle" aria-label="Toggle background music">🎵 <span id="musicLabel">Music on</span></button></footer>
 </div>
 <nav class="bottom social-bottom"><div class="social-nav"><a class="bottom-action contact" href="https://liviococozza.com/#contact" aria-label="Contact"><span class="brandicon">✉</span><small>Contact</small></a>
 <a class="bottom-action facebook" href="https://www.facebook.com/profile.php?id=61595436191128" target="_blank" rel="noopener" aria-label="Facebook"><span class="brandicon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.8-.1-1.7-.2-2.5-.2-2.5 0-4.2 1.5-4.2 4.3V10H7.5v3h2.6v8z"/></svg></span><small>Facebook</small><em>wpsmethodology</em></a>
@@ -266,3 +266,8 @@ body:after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;backg
 .topic-icons a,.quick,.feature{background:linear-gradient(145deg,rgba(12,39,66,.72),rgba(4,22,42,.7))!important;backdrop-filter:blur(9px);border-color:rgba(120,225,255,.22)!important;box-shadow:0 8px 24px rgba(0,0,0,.18)}
 .bottom{background:rgba(3,14,28,.78)!important;backdrop-filter:blur(18px)}
 .global-atmosphere{z-index:0}
+
+/* v22: keep header clean, discreet music control in footer, strengthen exact sea-waterpolo background */
+body{background-image:url('../images/Pallanuoto%20tra%20le%20onde%20blu-1.webp')!important;background-position:center center!important;background-size:cover!important;background-repeat:no-repeat!important;background-attachment:fixed!important}
+body:after{background:linear-gradient(180deg,rgba(2,12,26,.28) 0%,rgba(2,12,26,.40) 48%,rgba(2,12,26,.60) 100%),linear-gradient(90deg,rgba(2,12,26,.16),rgba(2,12,26,.04),rgba(2,12,26,.20))!important}
+.music-toggle{margin:12px auto 0;display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(130,230,255,.38);background:rgba(5,27,48,.65);color:#eafaff;border-radius:12px;padding:8px 10px;font-size:10px;font-weight:800;cursor:pointer;backdrop-filter:blur(10px)}.music-toggle.playing{border-color:#24c5e8;background:rgba(10,75,100,.72)}
