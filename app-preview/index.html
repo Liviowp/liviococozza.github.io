@@ -243,22 +243,29 @@ async function syncBlogPosts(){
 const notice=document.getElementById('notice');document.getElementById('notifyBtn').addEventListener('click',async()=>{if(!('Notification'in window)){notice.textContent='Notifications are not supported by this browser.';notice.classList.add('show');return;}if(Notification.permission==='granted'){notice.textContent='Notifications are enabled for this browser. Full automatic push alerts will be connected in a later development step.';notice.classList.add('show');return;}if(Notification.permission==='denied'){notice.textContent='Notifications are blocked in browser settings. You can change the permission there.';notice.classList.add('show');return;}const permission=await Notification.requestPermission();notice.textContent=permission==='granted'?'Permission granted. This prototype is ready for the next step: connecting a real push-notification service.':'Notification permission was not granted.';notice.classList.add('show');});
 
 /* Original synthesized ambient soundtrack: no external audio file; starts only after user taps */
-let ambientAudio=null, ambientOn=false, ambientNodes=[];
+let ambientAudio=null, ambientOn=false, ambientNodes=[], melodyTimer=null, melodyIndex=0;
 function startAmbient(){
  if(ambientAudio){try{ambientAudio.resume();}catch(e){}return;}
  const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;
- ambientAudio=new AC();const master=ambientAudio.createGain();master.gain.value=.045;master.connect(ambientAudio.destination);
- const pad=ambientAudio.createGain();pad.gain.value=.24;pad.connect(master);
- [110,164.81,220].forEach((freq,i)=>{const o=ambientAudio.createOscillator(),g=ambientAudio.createGain();o.type='sine';o.frequency.value=freq;o.detune.value=(i-1)*4;g.gain.value=.18/(i+1);o.connect(g);g.connect(pad);o.start();ambientNodes.push(o,g);});
- const shimmer=ambientAudio.createOscillator(),sg=ambientAudio.createGain(),filter=ambientAudio.createBiquadFilter();shimmer.type='triangle';shimmer.frequency.value=329.63;filter.type='lowpass';filter.frequency.value=900;sg.gain.value=.035;shimmer.connect(filter);filter.connect(sg);sg.connect(master);shimmer.start();ambientNodes.push(shimmer,sg,filter,master,pad);
+ ambientAudio=new AC();const master=ambientAudio.createGain();master.gain.value=.055;master.connect(ambientAudio.destination);
+ const pad=ambientAudio.createGain();pad.gain.value=.22;pad.connect(master);
+ [110,164.81,220,261.63].forEach((freq,i)=>{const o=ambientAudio.createOscillator(),g=ambientAudio.createGain();o.type='sine';o.frequency.value=freq;o.detune.value=(i-1.5)*3;g.gain.value=.13/(i+1);o.connect(g);g.connect(pad);o.start();ambientNodes.push(o,g);});
+ const shimmer=ambientAudio.createOscillator(),sg=ambientAudio.createGain(),filter=ambientAudio.createBiquadFilter();shimmer.type='triangle';shimmer.frequency.value=329.63;filter.type='lowpass';filter.frequency.value=900;sg.gain.value=.025;shimmer.connect(filter);filter.connect(sg);sg.connect(master);shimmer.start();ambientNodes.push(shimmer,sg,filter,master,pad);
 }
-function stopAmbient(){if(ambientAudio){ambientAudio.suspend();}}
+function playSoftNote(freq){
+ if(!ambientAudio||!ambientOn)return;const now=ambientAudio.currentTime;
+ const osc=ambientAudio.createOscillator(),gain=ambientAudio.createGain();
+ osc.type='sine';osc.frequency.value=freq;gain.gain.setValueAtTime(.0001,now);gain.gain.exponentialRampToValueAtTime(.055,now+.08);gain.gain.exponentialRampToValueAtTime(.0001,now+1.6);
+ osc.connect(gain);gain.connect(ambientAudio.destination);osc.start(now);osc.stop(now+1.7);
+}
+function beginMelody(){const notes=[440,523.25,659.25,523.25,392,493.88,587.33,493.88,349.23,440,523.25,440];melodyIndex=0;melodyTimer=setInterval(()=>{playSoftNote(notes[melodyIndex%notes.length]);melodyIndex++;},1800);playSoftNote(notes[0]);}
+function stopAmbient(){if(ambientAudio){ambientAudio.suspend();}if(melodyTimer){clearInterval(melodyTimer);melodyTimer=null;}}
 const musicBtn=document.getElementById('musicBtn');
 musicBtn?.addEventListener('click',async()=>{
  if(!ambientAudio)startAmbient();
  if(!ambientAudio)return;
  if(ambientOn){stopAmbient();ambientOn=false;musicBtn.textContent='♫ Ambient sound';musicBtn.classList.remove('active');musicBtn.setAttribute('aria-pressed','false');}
- else{await ambientAudio.resume();ambientOn=true;musicBtn.textContent='♫ Sound ON';musicBtn.classList.add('active');musicBtn.setAttribute('aria-pressed','true');}
+ else{await ambientAudio.resume();ambientOn=true;beginMelody();musicBtn.textContent='♫ Sound ON';musicBtn.classList.add('active');musicBtn.setAttribute('aria-pressed','true');}
 });
 
 render();syncBlogPosts();
