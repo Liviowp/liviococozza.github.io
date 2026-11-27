@@ -84,7 +84,7 @@ async function syncBlogPosts(){
  }catch(e){console.warn('Blog sync unavailable; using built-in posts.',e);}
 }
 const notice=document.getElementById('notice');document.getElementById('notifyBtn').addEventListener('click',async()=>{if(!('Notification'in window)){notice.textContent='Notifications are not supported by this browser.';notice.classList.add('show');return;}if(Notification.permission==='granted'){notice.textContent='Notifications are enabled for this browser. Full automatic push alerts will be connected in a later development step.';notice.classList.add('show');return;}if(Notification.permission==='denied'){notice.textContent='Notifications are blocked in browser settings. You can change the permission there.';notice.classList.add('show');return;}const permission=await Notification.requestPermission();notice.textContent=permission==='granted'?'Permission granted. This prototype is ready for the next step: connecting a real push-notification service.':'Notification permission was not granted.';notice.classList.add('show');});
-render();
+render();syncBlogPosts();
 if('serviceWorker'in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
 let deferredPrompt;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;const cta=document.querySelector('.cta');cta.textContent='Install the app';cta.onclick=async ev=>{ev.preventDefault();if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;}else location.href='https://liviococozza.com';};});
 </script>
