@@ -175,12 +175,19 @@ animation:colorFlow 8s ease-in-out infinite alternate}
 .brandtext small{font-size:12.5px!important;letter-spacing:1.25px!important}
 .logo{width:64px!important;height:74px!important;flex-basis:64px!important}
 @media(max-width:390px){.brandtext{font-size:21px!important}.brandtext small{font-size:11.5px!important}}
+
+/* Crisp hero illustration and accessible music control */
+.hero{background-image:url('./hero-waterpolo.svg')!important;background-position:center center!important;background-size:cover!important}
+.hero:before{background:linear-gradient(90deg,rgba(3,17,38,.5) 0%,rgba(3,17,38,.23) 50%,rgba(3,17,38,.04) 100%),linear-gradient(0deg,rgba(4,18,37,.16),transparent 60%)!important}
+.musicbtn{display:inline-flex;align-items:center;gap:7px;margin:12px 0 0 8px;padding:8px 11px;border:1px solid rgba(180,240,255,.38);border-radius:10px;background:rgba(4,24,47,.62);color:#e5f9ff;font-size:11px;font-weight:800;cursor:pointer;position:relative;z-index:2;backdrop-filter:blur(8px);transition:background .2s,transform .2s}
+.musicbtn:active{transform:scale(.94)}
+.musicbtn.active{border-color:#24c5e8;background:rgba(14,75,100,.78);box-shadow:0 0 15px rgba(36,197,232,.22)}
 </style>
 </head>
 <body>
 <div class="global-atmosphere" aria-hidden="true"><span class="bubble gb1"></span><span class="bubble gb2"></span><span class="bubble gb3"></span><span class="bubble gb4"></span><span class="bubble gb5"></span><span class="bubble gb6"></span><span class="bubble gb7"></span><span class="bubble gb8"></span><span class="lightbeam gbeam1"></span><span class="lightbeam gbeam2"></span></div><div class="app">
 <header class="top"><div class="brand"><div class="logo"><img src="../images/livio-cocozza-logo-trasparente.webp" alt="Livio Cocozza logo"></div><div class="brandtext">LIVIO COCOZZA<small>SWIMMING • WATER POLO • PE</small></div></div><button class="iconbtn" id="notifyBtn" aria-label="Notifications">🔔</button></header>
-<section class="hero"><div class="eyebrow">COACHING • SCIENCE • SPORT</div><h1>The Wave Is in You.</h1><p>Knowledge, experiences and practical insights for coaches, swimmers and sports educators.</p><a class="cta" href="https://liviococozza.com" target="_blank" rel="noopener">Explore the website ↗</a></section>
+<section class="hero"><div class="eyebrow">COACHING • SCIENCE • SPORT</div><h1>The Wave Is in You.</h1><p>Knowledge, experiences and practical insights for coaches, swimmers and sports educators.</p><a class="cta" href="https://liviococozza.com" target="_blank" rel="noopener">Explore the website ↗</a><button class="musicbtn" id="musicBtn" type="button" aria-pressed="false">♫ Ambient sound</button></section>
 <div class="sectionhead"><h2>Explore topics</h2></div>
 <div class="topic-icons" aria-label="Explore sections"><a href="https://liviococozza.com/swimming.html"><span>🏊</span><b>Swimming</b></a><a href="https://liviococozza.com/water-polo.html"><span>🤽</span><b>Water Polo</b></a><a href="https://liviococozza.com/projects.html"><span>📘</span><b>Methodology</b></a><a href="https://liviococozza.com/physical-education.html"><span>🎓</span><b>PE & Education</b></a></div>
 <div class="sectionhead"><h2>Latest updates</h2><button id="allBtn">View all</button></div>
@@ -234,6 +241,26 @@ async function syncBlogPosts(){
  }catch(e){console.warn('Blog sync unavailable; using built-in posts.',e);}
 }
 const notice=document.getElementById('notice');document.getElementById('notifyBtn').addEventListener('click',async()=>{if(!('Notification'in window)){notice.textContent='Notifications are not supported by this browser.';notice.classList.add('show');return;}if(Notification.permission==='granted'){notice.textContent='Notifications are enabled for this browser. Full automatic push alerts will be connected in a later development step.';notice.classList.add('show');return;}if(Notification.permission==='denied'){notice.textContent='Notifications are blocked in browser settings. You can change the permission there.';notice.classList.add('show');return;}const permission=await Notification.requestPermission();notice.textContent=permission==='granted'?'Permission granted. This prototype is ready for the next step: connecting a real push-notification service.':'Notification permission was not granted.';notice.classList.add('show');});
+
+/* Original synthesized ambient soundtrack: no external audio file; starts only after user taps */
+let ambientAudio=null, ambientOn=false, ambientNodes=[];
+function startAmbient(){
+ if(ambientAudio){try{ambientAudio.resume();}catch(e){}return;}
+ const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;
+ ambientAudio=new AC();const master=ambientAudio.createGain();master.gain.value=.045;master.connect(ambientAudio.destination);
+ const pad=ambientAudio.createGain();pad.gain.value=.24;pad.connect(master);
+ [110,164.81,220].forEach((freq,i)=>{const o=ambientAudio.createOscillator(),g=ambientAudio.createGain();o.type='sine';o.frequency.value=freq;o.detune.value=(i-1)*4;g.gain.value=.18/(i+1);o.connect(g);g.connect(pad);o.start();ambientNodes.push(o,g);});
+ const shimmer=ambientAudio.createOscillator(),sg=ambientAudio.createGain(),filter=ambientAudio.createBiquadFilter();shimmer.type='triangle';shimmer.frequency.value=329.63;filter.type='lowpass';filter.frequency.value=900;sg.gain.value=.035;shimmer.connect(filter);filter.connect(sg);sg.connect(master);shimmer.start();ambientNodes.push(shimmer,sg,filter,master,pad);
+}
+function stopAmbient(){if(ambientAudio){ambientAudio.suspend();}}
+const musicBtn=document.getElementById('musicBtn');
+musicBtn?.addEventListener('click',async()=>{
+ if(!ambientAudio)startAmbient();
+ if(!ambientAudio)return;
+ if(ambientOn){stopAmbient();ambientOn=false;musicBtn.textContent='♫ Ambient sound';musicBtn.classList.remove('active');musicBtn.setAttribute('aria-pressed','false');}
+ else{await ambientAudio.resume();ambientOn=true;musicBtn.textContent='♫ Sound ON';musicBtn.classList.add('active');musicBtn.setAttribute('aria-pressed','true');}
+});
+
 render();syncBlogPosts();
 if('serviceWorker'in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
 let deferredPrompt;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;const cta=document.querySelector('.cta');cta.textContent='Install the app';cta.onclick=async ev=>{ev.preventDefault();if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;}else location.href='https://liviococozza.com';};});
