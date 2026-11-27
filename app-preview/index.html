@@ -165,6 +165,16 @@ animation:colorFlow 8s ease-in-out infinite alternate}
 .bottom-action.contact em{display:none}
 @media(min-width:420px){.bottom-action em{font-size:8px}}
 @media(prefers-reduced-motion:reduce){body:before{animation:none!important}}
+
+/* More bubbles and larger brand title */
+.global-atmosphere .bubble{filter:brightness(1.12);box-shadow:inset 0 0 15px rgba(112,229,255,.3),0 0 22px rgba(36,197,232,.22)}
+.gb1{width:105px;height:105px}.gb2{width:50px;height:50px}.gb3{width:145px;height:145px}.gb4{width:65px;height:65px}.gb5{width:35px;height:35px}.gb6{width:90px;height:90px}.gb7{width:55px;height:55px}.gb8{width:125px;height:125px}
+.global-atmosphere:after{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(210,250,255,.5) 0 1px,transparent 2px),radial-gradient(circle,rgba(36,197,232,.35) 0 1px,transparent 2px);background-size:170px 230px,240px 290px;background-position:35px 60px,90px 120px;opacity:.35;animation:particleDrift 7s linear infinite}
+@keyframes particleDrift{from{background-position:35px 60px,90px 120px}to{background-position:35px -170px,90px -170px}}
+.brandtext{font-size:23px!important;letter-spacing:.45px!important}
+.brandtext small{font-size:12.5px!important;letter-spacing:1.25px!important}
+.logo{width:64px!important;height:74px!important;flex-basis:64px!important}
+@media(max-width:390px){.brandtext{font-size:21px!important}.brandtext small{font-size:11.5px!important}}
 </style>
 </head>
 <body>
