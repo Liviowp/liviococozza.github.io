@@ -104,6 +104,41 @@ footer{text-align:center;color:#6f8ba9;font-size:10px;padding:24px 0 10px}
 .bottom-action.contact small{color:#06213d}
 .bottom-action:active{transform:scale(.94);border-color:rgba(36,197,232,.8)}
 @media(prefers-reduced-motion:reduce){.global-atmosphere .bubble,.global-atmosphere .lightbeam{animation:none!important;display:none!important}}
+
+/* Full-page immersive aquatic background, no simple flat blue */
+body{background:#041326!important;background-image:
+radial-gradient(ellipse at 12% 12%,rgba(16,120,166,.34),transparent 42%),
+radial-gradient(ellipse at 88% 26%,rgba(16,63,112,.4),transparent 48%),
+radial-gradient(ellipse at 50% 80%,rgba(5,91,119,.25),transparent 48%),
+linear-gradient(160deg,#03101f 0%,#071b31 28%,#07162b 58%,#03101f 100%)!important;
+background-attachment:fixed!important}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:
+linear-gradient(125deg,transparent 0 36%,rgba(87,215,255,.035) 37%,transparent 48%),
+radial-gradient(ellipse at 70% 60%,rgba(37,177,221,.08),transparent 50%);
+}
+.global-atmosphere{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:visible;mix-blend-mode:screen}
+.global-atmosphere .bubble{position:fixed;opacity:0;animation-name:globalBubbleDrift;animation-timing-function:ease-in-out;animation-iteration-count:infinite}
+.gb1{left:3%;bottom:-10vh;width:72px;height:72px;animation-duration:19s;animation-delay:-6s}
+.gb2{left:18%;bottom:-8vh;width:34px;height:34px;animation-duration:14s;animation-delay:-3s}
+.gb3{right:6%;bottom:-15vh;width:118px;height:118px;animation-duration:23s;animation-delay:-12s}
+.gb4{right:29%;bottom:-8vh;width:48px;height:48px;animation-duration:17s;animation-delay:-5s}
+.gb5{right:13%;bottom:-5vh;width:22px;height:22px;animation-duration:12s;animation-delay:-1s}
+.gb6{left:54%;bottom:-12vh;width:62px;height:62px;animation-duration:21s;animation-delay:-9s}
+.gb7{left:72%;bottom:-9vh;width:40px;height:40px;animation-duration:16s;animation-delay:-7s}
+.gb8{left:34%;bottom:-14vh;width:94px;height:94px;animation-duration:22s;animation-delay:-15s}
+.global-atmosphere .lightbeam{position:fixed;top:-30vh;height:160vh;filter:blur(15px);opacity:.16}
+.gbeam1{left:10%;width:26%;animation-duration:17s}
+.gbeam2{left:65%;width:20%;animation-duration:21s;animation-delay:-9s}
+@keyframes globalBubbleDrift{
+0%{opacity:0;transform:translate3d(0,12vh,0) scale(.65)}
+8%{opacity:.62}
+25%{transform:translate3d(7vw,-18vh,0) scale(.9);opacity:.5}
+50%{transform:translate3d(-5vw,-48vh,0) scale(1.05);opacity:.4}
+75%{transform:translate3d(9vw,-78vh,0) scale(1.12);opacity:.25}
+100%{transform:translate3d(-4vw,-115vh,0) scale(1.2);opacity:0}
+}
+.app{background:transparent!important}
+@media(prefers-reduced-motion:reduce){.global-atmosphere .bubble,.global-atmosphere .lightbeam{display:none!important;animation:none!important}}
 </style>
 </head>
 <body>
