@@ -247,3 +247,12 @@ if('serviceWorker'in navigator){window.addEventListener('load',()=>navigator.ser
 let deferredPrompt;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;const cta=document.querySelector('.cta');cta.textContent='Install the app';cta.onclick=async ev=>{ev.preventDefault();if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;}else location.href='https://liviococozza.com';};});
 </script>
 </body></html>
+/* v20 — immersive full-app background using the exact sea water-polo photo */
+body{background:#03101f!important;background-image:url('../images/Pallanuoto%20tra%20le%20onde%20blu-1.webp')!important;background-position:center center!important;background-size:cover!important;background-repeat:no-repeat!important;background-attachment:fixed!important}
+body:after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(2,12,26,.52) 0%,rgba(2,12,26,.64) 45%,rgba(2,12,26,.78) 100%),linear-gradient(90deg,rgba(2,12,26,.28),rgba(2,12,26,.08),rgba(2,12,26,.32))}
+.app{position:relative;z-index:1;background:transparent!important}
+.hero{background:linear-gradient(135deg,rgba(3,20,40,.64),rgba(5,35,62,.42))!important;border-color:rgba(110,225,255,.42)!important;backdrop-filter:blur(3px);box-shadow:0 12px 35px rgba(0,0,0,.22)!important}
+.hero:before{background:linear-gradient(90deg,rgba(3,17,38,.36),rgba(3,17,38,.12))!important}
+.topic-icons a,.quick,.feature{background:linear-gradient(145deg,rgba(12,39,66,.72),rgba(4,22,42,.7))!important;backdrop-filter:blur(9px);border-color:rgba(120,225,255,.22)!important;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.bottom{background:rgba(3,14,28,.78)!important;backdrop-filter:blur(18px)}
+.global-atmosphere{z-index:0}
