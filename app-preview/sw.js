@@ -1,4 +1,4 @@
-const CACHE_NAME = 'scm-preview-shell-v39';
+const CACHE_NAME = 'scm-preview-shell-v40';
 const SHELL = ['./', './manifest.json', './icon.svg', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', event => {
@@ -32,6 +32,14 @@ self.addEventListener('fetch', event => {
         })
         .catch(() => caches.match(event.request).then(cached => cached || caches.match('./')))
     );
+    return;
+  }
+
+  if (event.request.url.endsWith('/manifest.json')) {
+    event.respondWith(fetch(event.request).then(response => {
+      if (response.ok) caches.open(CACHE_NAME).then(cache => cache.put(event.request, response.clone()));
+      return response;
+    }).catch(() => caches.match(event.request)));
     return;
   }
 
