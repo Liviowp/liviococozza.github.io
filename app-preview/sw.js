@@ -1,10 +1,10 @@
-const CACHE_NAME = 'scm-preview-shell-v40';
+const CACHE_NAME = 'scm-preview-shell-v41';
 const SHELL = ['./', './manifest.json', './icon.svg', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(SHELL))
+      .then(cache => Promise.allSettled(SHELL.map(url => cache.add(url))))
       .then(() => self.skipWaiting())
   );
 });
