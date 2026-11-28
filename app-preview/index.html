@@ -281,8 +281,37 @@ body:before{animation:colorFlow 1.8s ease-in-out infinite alternate!important}
 <a class="bottom-action linkedin" href="https://www.linkedin.com/in/livio-cocozza-710257a2" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="brandicon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.2 3.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4M3.5 9h3.4v11.5H3.5zm5.5 0h3.3v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.4v6.3h-3.4v-5.6c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1v5.7H9z"/></svg></span><small>LinkedIn</small><em>Livio Cocozza</em></a>
 <a class="bottom-action youtube" href="https://www.youtube.com/@wpsmethodology" target="_blank" rel="noopener" aria-label="YouTube"><span class="brandicon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2C.5 9 .5 12 .5 12s0 3 .5 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.8.5-4.8.5-4.8s0-3-.5-4.8M9.5 15.5v-7l6 3.5z"/></svg></span><small>YouTube</small><em>wpsmethodology</em></a></div></nav>
 <audio id="backgroundMusic" src="../audio/paulyudin-inspirational-490406.mp3.mpeg" loop preload="auto"></audio>
+<div class="install-guide" id="installGuide" role="dialog" aria-modal="true" aria-labelledby="installGuideTitle"><div class="install-guide-card"><h2 id="installGuideTitle">Install the app</h2><p>Follow these steps to add Swimming Coach & Methodology to your device.</p><div id="installGuideText"></div><p class="guide-note">If the Install option is not visible, try opening this page in your browser (Chrome on Android or Safari on iPhone).</p><button class="guide-close" id="installGuideClose">Got it</button></div></div>
 <script>
-let deferredPrompt;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;const cta=document.querySelector('.cta');cta.textContent='Install the app';cta.onclick=async ev=>{ev.preventDefault();if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;}else location.href='https://liviococozza.com';};});
+let deferredPrompt;
+const installCTA=document.querySelector('.cta');
+const installGuide=document.getElementById('installGuide');
+const installGuideText=document.getElementById('installGuideText');
+function showInstallGuide(){
+ const ua=navigator.userAgent;
+ const isIOS=/iPhone|iPad|iPod/i.test(ua);
+ const isAndroid=/Android/i.test(ua);
+ installGuideText.innerHTML=isIOS
+ ? '<ol><li>Open this page in <b>Safari</b>.</li><li>Tap the <b>Share</b> button.</li><li>Select <b>Add to Home Screen</b>.</li><li>Tap <b>Add</b>.</li></ol>'
+ : isAndroid
+ ? '<ol><li>Open this page in <b>Chrome</b>.</li><li>Tap the browser menu <b>⋮</b>.</li><li>Choose <b>Install app</b> or <b>Add to Home screen</b>.</li><li>Confirm <b>Install</b>.</li></ol>'
+ : '<ol><li>Open this page in Chrome or Edge.</li><li>Look for the <b>Install</b> icon in the address bar or open the browser menu.</li><li>Select <b>Install app</b>.</li></ol>';
+ installGuide.classList.add('open');
+}
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;});
+installCTA.onclick=async ev=>{
+ ev.preventDefault();
+ if(deferredPrompt){
+  deferredPrompt.prompt();
+  const choice=await deferredPrompt.userChoice;
+  deferredPrompt=null;
+  if(choice?.outcome==='accepted')installCTA.textContent='App installation started';
+  else showInstallGuide();
+ }else showInstallGuide();
+};
+document.getElementById('installGuideClose').onclick=()=>installGuide.classList.remove('open');
+installGuide.addEventListener('click',e=>{if(e.target===installGuide)installGuide.classList.remove('open');});
+window.addEventListener('appinstalled',()=>{installCTA.textContent='App installed';});
 const posts=[
 {category:"PE",title:"Acrobatics in Physical Education: Balance, Trust and Cooperation",desc:"A learning experience built around movement, balance, teamwork and mutual trust.",date:"Latest blog",url:"https://liviococozza.com/blog/acrobatics-physical-education-balance-trust-cooperation.html",image:""},
 {category:"Methodology",title:"Action and Reaction: Every Choice Has a Consequence",desc:"A reflection on choices, responsibility and how actions shape our sporting and everyday lives.",date:"Blog",url:"https://liviococozza.com/blog/action-and-reaction-every-choice-has-a-consequence.html",image:"https://liviococozza.com/images/Azione%20e%20reazione_%20sport%20e%20vita%20quotidiana.png"},
