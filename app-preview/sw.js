@@ -1,4 +1,4 @@
-const CACHE_NAME = 'scm-preview-shell-v41';
+const CACHE_NAME = 'scm-preview-shell-v42';
 const SHELL = ['./', './manifest.json', './icon.svg', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', event => {
